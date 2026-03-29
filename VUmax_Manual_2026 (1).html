@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+<title>Porxu VUmax 2026 — Manual del Operador</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent;-webkit-touch-callout:none}
+html,body{background:#000;color:#fff;font-family:-apple-system,BlinkMacSystemFont,'SF Pro Display','Helvetica Neue',Arial,sans-serif;height:100%;overflow:hidden}
+::-webkit-scrollbar{display:none}
+#sh{position:fixed;inset:0;background:#000;z-index:10;display:flex;flex-direction:column;overflow:hidden}
+#sa{position:fixed;inset:0;background:#000;z-index:5;display:flex;flex-direction:column;overflow:hidden;visibility:hidden;opacity:0;transform:translateY(20px);transition:opacity .35s,transform .35s,visibility .35s}
+#sa.on{visibility:visible;opacity:1;transform:translateY(0);z-index:15}
+.hi{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.3}
+.hg{position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.5) 0%,transparent 40%,rgba(0,0,0,.95) 75%,#000 100%)}
+.ht{position:relative;z-index:2;padding:52px 24px 0;display:flex;justify-content:space-between;align-items:flex-start}
+.hw{font-size:9px;letter-spacing:.22em;color:rgba(255,255,255,.3);margin-bottom:6px}
+.hm{font-size:30px;font-weight:200;letter-spacing:-.04em;color:#fff;line-height:1}
+.hm b{color:rgba(255,255,255,.28);font-weight:200}
+.hbg{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:6px;padding:6px 11px;font-size:9px;letter-spacing:.1em;color:rgba(255,255,255,.35)}
+.hb{position:absolute;bottom:0;left:0;right:0;z-index:2;padding:0 22px 48px}
+.htag{font-size:14px;color:rgba(255,255,255,.38);line-height:1.7;margin-bottom:28px}
+.hsp{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:32px}
+.hs{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);border-radius:11px;padding:14px 8px;text-align:center}
+.hsv{font-size:18px;font-weight:200;color:#fff;letter-spacing:-.02em}
+.hsl{font-size:8px;letter-spacing:.1em;color:rgba(255,255,255,.25);margin-top:4px}
+.hcta{width:100%;background:#fff;color:#000;border:none;border-radius:14px;padding:18px;font-size:15px;font-weight:500;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:10px;-webkit-appearance:none;touch-action:manipulation}
+.hcta:active{opacity:.85;transform:scale(.98)}
+.nav{flex-shrink:0;background:rgba(0,0,0,.75);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid rgba(255,255,255,.07);padding:56px 18px 0}
+.nr{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px}
+.nb{font-size:13.5px;color:rgba(255,255,255,.4)}
+.nb b{color:#fff;font-weight:500}
+.nbk{width:36px;height:36px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.1);border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:18px;color:rgba(255,255,255,.6);-webkit-appearance:none;touch-action:manipulation}
+.nbk:active{background:rgba(255,255,255,.15)}
+.sw{position:relative;margin-bottom:12px}
+.si{position:absolute;left:13px;top:50%;transform:translateY(-50%);opacity:.2;pointer-events:none}
+.sinp{width:100%;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.09);border-radius:11px;padding:11px 13px 11px 36px;font-size:15px;color:#fff;-webkit-appearance:none;font-family:inherit}
+.sinp:focus{outline:none;border-color:rgba(255,255,255,.2)}
+.pw{display:flex;gap:7px;overflow-x:auto;padding-bottom:14px;-webkit-overflow-scrolling:touch}
+.pill{flex-shrink:0;padding:7px 15px;border-radius:20px;border:1px solid rgba(255,255,255,.1);background:transparent;color:rgba(255,255,255,.32);font-size:12px;cursor:pointer;-webkit-appearance:none;font-family:inherit;touch-action:manipulation;white-space:nowrap}
+.pill.on{background:#fff;border-color:#fff;color:#000;font-weight:500}
+.pill:active{opacity:.7}
+.lst{flex:1;overflow-y:auto;-webkit-overflow-scrolling:touch;padding:4px 14px 120px}
+.bh{display:flex;align-items:center;gap:12px;padding:22px 0 12px}
+.bl{flex:1;height:1px;background:rgba(255,255,255,.06)}
+.bt{font-size:8px;letter-spacing:.14em;color:rgba(255,255,255,.18);white-space:nowrap}
+.cap{border-radius:13px;border:1px solid rgba(255,255,255,.07);background:rgba(255,255,255,.02);margin-bottom:9px;overflow:hidden}
+.cap.open{border-color:rgba(255,255,255,.14);background:#0c0c0c}
+.ch{display:flex;align-items:center;gap:12px;padding:14px;cursor:pointer;touch-action:manipulation;-webkit-user-select:none;user-select:none}
+.ch:active{background:rgba(255,255,255,.03)}
+.cico{width:42px;height:42px;border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:filter .25s,transform .2s}
+.cap.open .cico{filter:brightness(1.2);transform:scale(1.06)}
+.ci{flex:1;min-width:0}
+.ct{font-size:14.5px;font-weight:400;color:#d5d5d5;margin-bottom:3px}
+.cap.open .ct{color:#fff;font-weight:500}
+.cs{font-size:11px;color:rgba(255,255,255,.26);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.cn{font-size:10px;color:rgba(255,255,255,.16);flex-shrink:0}
+.cc{width:20px;height:20px;color:rgba(255,255,255,.2);flex-shrink:0;transition:transform .3s}
+.cap.open .cc{transform:rotate(180deg);color:rgba(255,255,255,.5)}
+.cb{max-height:0;overflow:hidden;transition:max-height .4s cubic-bezier(.16,1,.3,1)}
+.cb.open{max-height:4000px}
+.cbi{padding:0 14px 18px}
+.di{width:100%;height:140px;object-fit:cover;border-radius:10px;margin-bottom:16px;opacity:.45;display:block}
+.sec{margin-bottom:18px}
+.st{font-size:8.5px;letter-spacing:.13em;color:rgba(255,255,255,.25);border-bottom:1px solid rgba(255,255,255,.06);padding-bottom:7px;margin-bottom:10px}
+.sb{font-size:13px;color:rgba(255,255,255,.48);line-height:1.75}
+.stbl{width:100%;border-collapse:collapse}
+.stbl tr{border-bottom:1px solid rgba(255,255,255,.05)}
+.stbl td{padding:8px 0;font-size:12.5px;vertical-align:top}
+.stbl td:first-child{color:rgba(255,255,255,.3);width:44%;padding-right:12px;font-size:12px}
+.stbl td:last-child{color:rgba(255,255,255,.62)}
+.vtbl{width:100%;border-collapse:collapse}
+.vtbl tr{border-bottom:1px solid rgba(255,255,255,.05)}
+.vtbl td{padding:8px 5px;font-size:12px}
+.vtbl td:first-child{color:rgba(255,255,255,.55);width:30%}
+.vtbl td:nth-child(2){color:rgba(255,255,255,.3);width:22%}
+.vtbl td:last-child{color:rgba(255,255,255,.48)}
+.vtbl tr:last-child td{color:#c84040!important}
+.chks{display:flex;flex-direction:column;gap:8px}
+.chk{display:flex;gap:10px;align-items:flex-start;font-size:13px;color:rgba(255,255,255,.48);line-height:1.55}
+.cd{width:7px;height:7px;border-radius:50%;background:rgba(255,255,255,.15);flex-shrink:0;margin-top:4px}
+.steps{display:flex;flex-direction:column;gap:10px}
+.step{display:flex;gap:12px;align-items:flex-start}
+.sn{width:24px;height:24px;border-radius:50%;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;font-size:10px;color:rgba(255,255,255,.35);flex-shrink:0;margin-top:1px}
+.stx{font-size:13px;color:rgba(255,255,255,.48);line-height:1.65}
+.al{border-radius:9px;padding:12px 14px;margin-bottom:8px;border-left:2.5px solid}
+.al.danger{background:rgba(155,28,28,.13);border-left-color:rgba(200,55,55,.55)}
+.al.warn{background:rgba(145,95,10,.13);border-left-color:rgba(205,140,25,.5)}
+.al.info{background:rgba(18,68,170,.13);border-left-color:rgba(50,100,215,.5)}
+.al.ok{background:rgba(18,115,48,.13);border-left-color:rgba(32,155,68,.5)}
+.al-lbl{font-size:9px;font-weight:700;letter-spacing:.1em;margin-bottom:5px}
+.al.danger .al-lbl{color:#d04040}
+.al.warn .al-lbl{color:#c08535}
+.al.info .al-lbl{color:#4a88d0}
+.al.ok .al-lbl{color:#38aa55}
+.al-txt{font-size:12.5px;color:rgba(255,255,255,.5);line-height:1.62}
+.ft{flex-shrink:0;background:rgba(0,0,0,.75);backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);border-top:1px solid rgba(255,255,255,.07);padding:14px 18px 32px;display:flex;align-items:center;justify-content:space-between}
+.fti strong{color:#fff;font-size:13.5px;font-weight:400;display:block;margin-bottom:2px}
+.fti span{font-size:11px;color:rgba(255,255,255,.28)}
+.fbs{display:flex;gap:9px}
+.fwa{background:#fff;color:#000;border:none;border-radius:10px;padding:10px 20px;font-size:13px;font-weight:500;cursor:pointer;text-decoration:none;display:block;-webkit-appearance:none;touch-action:manipulation}
+.fwa:active{opacity:.8}
+.fwb{background:transparent;color:rgba(255,255,255,.4);border:1px solid rgba(255,255,255,.12);border-radius:10px;padding:10px 14px;font-size:13px;cursor:pointer;text-decoration:none;display:block;-webkit-appearance:none;touch-action:manipulation}
+</style>
+</head>
+<body>
+<div id="sh">
+  <img class="hi" src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=900&q=80" alt="">
+  <div class="hg"></div>
+  <div class="ht">
+    <div><div class="hw">PORXU CAMPER — COCHABAMBA, BOLIVIA</div><div class="hm">VUmax <b>2026</b></div></div>
+    <div class="hbg">ED. 2026.1</div>
+  </div>
+  <div class="hb">
+    <p class="htag">Pickup camper de expedición fabricada artesanalmente en acero CNC 3mm y paneles FPRV sándwich.</p>
+    <div class="hsp">
+      <div class="hs"><div class="hsv">4.0m</div><div class="hsl">LARGO</div></div>
+      <div class="hs"><div class="hsv">300W</div><div class="hsl">SOLAR</div></div>
+      <div class="hs"><div class="hsv">70L</div><div class="hsl">AGUA</div></div>
+      <div class="hs"><div class="hsv">100Ah</div><div class="hsl">BATERÍA</div></div>
+    </div>
+    <button class="hcta" id="be">
+      <svg width="17" height="17" viewBox="0 0 17 17" fill="none" stroke="currentColor" stroke-width="2.2"><line x1="2" y1="8.5" x2="15" y2="8.5"/><polyline points="10,4 15,8.5 10,13"/></svg>
+      Abrir manual del operador
+    </button>
+  </div>
+</div>
+<div id="sa">
+  <div class="nav">
+    <div class="nr"><div class="nb"><b>VUmax 2026</b> · Manual completo</div><button class="nbk" id="bv">←</button></div>
+    <div class="sw">
+      <svg class="si" width="15" height="15" viewBox="0 0 16 16" fill="none" stroke="white" stroke-width="1.5"><circle cx="6.5" cy="6.5" r="4.5"/><line x1="10.2" y1="10.2" x2="14" y2="14"/></svg>
+      <input class="sinp" id="q" placeholder="Buscar en los 25 capítulos..." autocomplete="off" autocorrect="off" spellcheck="false">
+    </div>
+    <div class="pw" id="pills"></div>
+  </div>
+  <div class="lst" id="list"></div>
+  <div class="ft">
+    <div class="fti"><strong>Porxu Camper</strong><span>+591 759 97125 · <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="5c3d383135321c2c332e2429723f3331">[email&#160;protected]</a></span></div>
+    <div class="fbs"><a class="fwa" href="https://wa.me/59175997125">WhatsApp</a><a class="fwb" href="https://www.porxu.com">Web</a></div>
+  </div>
+</div>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+function oa(){document.getElementById('sa').classList.add('on');document.getElementById('sh').style.zIndex='5';}
+function ca(){document.getElementById('sa').classList.remove('on');document.getElementById('sh').style.zIndex='10';openId=null;}
+document.getElementById('be').addEventListener('click',oa);
+document.getElementById('be').addEventListener('touchstart',function(e){e.preventDefault();oa();},{passive:false});
+document.getElementById('bv').addEventListener('click',ca);
+document.getElementById('bv').addEventListener('touchstart',function(e){e.preventDefault();ca();},{passive:false});
+document.getElementById('q').addEventListener('input',render);
+
+const BLK=[{id:0,l:"Todo"},{id:1,l:"Bienvenida"},{id:2,l:"Off-Road"},{id:3,l:"Eléctrico"},{id:4,l:"Agua"},{id:5,l:"Gas"},{id:6,l:"Confort"},{id:7,l:"Mantenimiento"},{id:8,l:"Emergencias"}];
+const BN={1:"Bloque 1 — Bienvenida y Seguridad",2:"Bloque 2 — Conducción y Off-Road",3:"Bloque 3 — Sistema Eléctrico",4:"Bloque 4 — Agua y Sanitarios",5:"Bloque 5 — Gas y Agua Caliente",6:"Bloque 6 — Confort y Cocina",7:"Bloque 7 — Mantenimiento",8:"Bloque 8 — Emergencias y Soporte"};
+const IM=["https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&q=70","https://images.unsplash.com/photo-1519681393784-d120267933ba?w=600&q=70","https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=600&q=70","https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?w=600&q=70","https://images.unsplash.com/photo-1508739773434-c26b3d09e071?w=600&q=70","https://images.unsplash.com/photo-1547234935-80c7145ec969?w=600&q=70","https://images.unsplash.com/photo-1454496522488-7a8e488e8606?w=600&q=70","https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?w=600&q=70","https://images.unsplash.com/photo-1509391366360-2e959784a276?w=600&q=70","https://images.unsplash.com/photo-1497435334941-8c899ee9e8e9?w=600&q=70","https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=70","https://images.unsplash.com/photo-1504280390367-361c6d9f38f4?w=600&q=70","https://images.unsplash.com/photo-1551632811-561732d1e306?w=600&q=70","https://images.unsplash.com/photo-1483728642387-6c3bdd6c93e5?w=600&q=70","https://images.unsplash.com/photo-1476231682828-37e571bc172f?w=600&q=70","https://images.unsplash.com/photo-1439853949212-36589f09ce2e?w=600&q=70","https://images.unsplash.com/photo-1517824806704-9040b037703b?w=600&q=70","https://images.unsplash.com/photo-1533240332313-0db49b459ad6?w=600&q=70","https://images.unsplash.com/photo-1532339142463-fd0a8979791a?w=600&q=70","https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=600&q=70","https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&q=70","https://images.unsplash.com/photo-1519681393784-d120267933ba?w=600&q=70","https://images.unsplash.com/photo-1508739773434-c26b3d09e071?w=600&q=70","https://images.unsplash.com/photo-1547234935-80c7145ec969?w=600&q=70","https://images.unsplash.com/photo-1454496522488-7a8e488e8606?w=600&q=70"];
+
+// COLORES POR CAPÍTULO — cada bloque temático tiene su color
+const IC={
+  1:{bg:'rgba(99,78,210,.22)',bd:'rgba(140,115,255,.4)',s:'#b8aeff'},  // indigo — bienvenida
+  2:{bg:'rgba(99,78,210,.22)',bd:'rgba(140,115,255,.4)',s:'#b8aeff'},
+  3:{bg:'rgba(99,78,210,.22)',bd:'rgba(140,115,255,.4)',s:'#b8aeff'},
+  4:{bg:'rgba(99,78,210,.22)',bd:'rgba(140,115,255,.4)',s:'#b8aeff'},
+  5:{bg:'rgba(215,120,20,.22)',bd:'rgba(250,155,40,.4)',s:'#ffa845'},  // amber — off-road
+  6:{bg:'rgba(215,120,20,.22)',bd:'rgba(250,155,40,.4)',s:'#ffa845'},
+  7:{bg:'rgba(215,120,20,.22)',bd:'rgba(250,155,40,.4)',s:'#ffa845'},
+  8:{bg:'rgba(210,175,10,.2)',bd:'rgba(240,210,30,.38)',s:'#f2d940'},   // gold — eléctrico
+  9:{bg:'rgba(210,175,10,.2)',bd:'rgba(240,210,30,.38)',s:'#f2d940'},
+  10:{bg:'rgba(210,175,10,.2)',bd:'rgba(240,210,30,.38)',s:'#f2d940'},
+  11:{bg:'rgba(210,175,10,.2)',bd:'rgba(240,210,30,.38)',s:'#f2d940'},
+  12:{bg:'rgba(20,155,215,.2)',bd:'rgba(40,190,245,.38)',s:'#4dcaff'},  // cyan — agua
+  13:{bg:'rgba(20,155,215,.2)',bd:'rgba(40,190,245,.38)',s:'#4dcaff'},
+  14:{bg:'rgba(20,155,215,.2)',bd:'rgba(40,190,245,.38)',s:'#4dcaff'},
+  15:{bg:'rgba(220,55,55,.2)',bd:'rgba(255,80,80,.38)',s:'#ff7070'},    // red — gas
+  16:{bg:'rgba(220,55,55,.2)',bd:'rgba(255,80,80,.38)',s:'#ff7070'},
+  17:{bg:'rgba(20,180,130,.2)',bd:'rgba(35,215,155,.38)',s:'#35e8a8'}, // teal — confort
+  18:{bg:'rgba(20,180,130,.2)',bd:'rgba(35,215,155,.38)',s:'#35e8a8'},
+  19:{bg:'rgba(20,180,130,.2)',bd:'rgba(35,215,155,.38)',s:'#35e8a8'},
+  20:{bg:'rgba(90,195,40,.2)',bd:'rgba(115,225,55,.38)',s:'#88e040'},  // lime — mantenimiento
+  21:{bg:'rgba(90,195,40,.2)',bd:'rgba(115,225,55,.38)',s:'#88e040'},
+  22:{bg:'rgba(220,55,55,.24)',bd:'rgba(255,80,80,.45)',s:'#ff6060'},  // red vivo — emergencias
+  23:{bg:'rgba(155,80,225,.2)',bd:'rgba(185,110,255,.38)',s:'#c898ff'}, // purple — diagnóstico
+  24:{bg:'rgba(30,185,105,.2)',bd:'rgba(45,220,125,.38)',s:'#40e898'},  // green — contacto
+  25:{bg:'rgba(30,185,105,.2)',bd:'rgba(45,220,125,.38)',s:'#40e898'},
+};
+
+function mkico(id){
+  const c=IC[id]||{bg:'rgba(255,255,255,.06)',bd:'rgba(255,255,255,.15)',s:'rgba(255,255,255,.6)'};
+  const s=c.s;
+  const map={
+    1:`<path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/>`,
+    2:`<path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>`,
+    3:`<rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/>`,
+    4:`<polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/>`,
+    5:`<circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/>`,
+    6:`<polygon points="3 11 22 2 13 21 11 13 3 11"/>`,
+    7:`<rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/><line x1="12" y1="12" x2="12" y2="16"/><line x1="10" y1="14" x2="14" y2="14"/>`,
+    8:`<rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/>`,
+    9:`<circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/>`,
+    10:`<polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>`,
+    11:`<rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/>`,
+    12:`<path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/>`,
+    13:`<path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 002 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/>`,
+    14:`<circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/>`,
+    15:`<path d="M8.5 14.5A2.5 2.5 0 0011 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 01-7 7c-1.53 0-2.94-.5-4.06-1.33"/>`,
+    16:`<path d="M18 8h1a4 4 0 010 8h-1"/><path d="M2 8h16v9a4 4 0 01-4 4H6a4 4 0 01-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/>`,
+    17:`<path d="M3 2h18l-2 7H5L3 2z"/><path d="M5 9v11a2 2 0 002 2h10a2 2 0 002-2V9"/>`,
+    18:`<path d="M17.5 19H9a7 7 0 116.71-9h1.79a4.5 4.5 0 110 9z"/>`,
+    19:`<path d="M2 4v16M22 4v16M2 8h20M2 16h20"/>`,
+    20:`<path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/>`,
+    21:`<rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/>`,
+    22:`<path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/>`,
+    23:`<circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>`,
+    24:`<path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 11.5 19.79 19.79 0 01.22 2.84 2 2 0 012.22.84h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/>`,
+    25:`<path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/>`,
+  };
+  return `<div class="cico" style="background:${c.bg};border:1px solid ${c.bd}"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="${s}" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">${map[id]||''}</svg></div>`;
+}
+
+const DATA=[
+{id:1,b:1,title:"Bienvenida y filosofía Porxu",sub:"Sistema QR · Tu VUmax · Operador",sec:[{t:"DESCRIPCIÓN",body:"La VUmax es un módulo habitable desmontable que se instala en la caja de tu camioneta pickup. No es un remolque — va encima de tu camioneta mediante el sistema de anclaje RoRo. Con agua caliente, electricidad solar, cocina, baño privado y dormitorio cómodo. Todo en un módulo que sube y baja de tu camioneta en menos de 20 minutos."},{t:"EL SISTEMA QR",body:"Tu VUmax tiene stickers QR pegados sobre cada componente importante. Cuando estás frente al calefón, la bomba o el panel solar: saca el teléfono, escanea el sticker y accede al capítulo exacto del manual y al video tutorial. Sin buscar en Google. Sin llamar a nadie."},{t:"FILOSOFÍA LEAVE NO TRACE",body:"Nunca vacíes las aguas grises en ríos, lagunas ni en el suelo sin enterrar. Nunca vacíes el Potti en la naturaleza. Recoge toda tu basura. No hagas fuego en zonas no autorizadas. Deja el lugar mejor de como lo encontraste."}],al:[{t:"info",l:"NOTA CLAVE",txt:"Si solo lees una cosa antes de tu primer viaje: lee el Cap. 15 (gas) y Cap. 08 (batería). Esos dos sistemas requieren atención especial."}]},
+{id:2,b:1,title:"Advertencias legales y exención",sub:"3 reglas de oro · Garantía · Modificaciones",sec:[{t:"LAS 3 REGLAS DE ORO",body:"REGLA 1: Si hueles a gas — NO enciendas ninguna llama ni interruptor. Abre todas las ventanas, cierra la válvula de la garrafa y sal.\n\nREGLA 2: Nunca uses el calefón ni la hornilla en espacio completamente cerrado. Siempre con al menos una ventana abierta.\n\nREGLA 3: Nunca dejes que la batería baje de 12.0V. Si el voltímetro marca menos, desconecta todos los consumidores de inmediato."},{t:"MODIFICACIONES NO AUTORIZADAS",body:"Cualquier perforación, soldadura o corte del exoesqueleto de 3mm o de los paneles FPRV sin autorización escrita de Porxu Camper: anula la garantía de 2 años, puede comprometer la integridad estructural, puede crear cortocircuitos y puede provocar fugas de gas."}],al:[{t:"danger",l:"PELIGRO",txt:"NUNCA perfores, cortes ni modifiques la estructura sin autorización escrita. Consulta: admin@porxu.com o +591 75997125."},{t:"warn",l:"PRÉSTAMO",txt:"Si prestas tu VUmax es tu obligación legal asegurarte de que la otra persona lea este manual completo antes de usarla."}]},
+{id:3,b:1,title:"Especificaciones técnicas",sub:"4005×1850×2070mm · CNC 3mm · FPRV",sec:[{t:"DIMENSIONES DEL MÓDULO",specs:[["Largo total","4.005 mm"],["Ancho total","1.850 mm"],["Alto módulo","2.070 mm (sin camioneta)"],["Dormitorio interior","1.800 × 1.500 mm"],["Colchón","1.800×1.500mm · 13cm grosor"],["Puerta entrada","1.800mm alto × 550mm ancho"],["Depósito agua limpia","70 litros"],["Toldo exterior","2.50 m × 2.00 m"],["Ventanas","5 unidades abatibles + mosquitera"],["Gatos estabilizadores","4 unidades con manivela lateral"]]},{t:"MATERIALES",specs:[["Exoesqueleto","Acero CNC 3mm · Pintura electrostática negro mate"],["Paredes y techo","Paneles FPRV sándwich (mismo material que barcos profesionales)"],["Techo interior","Moqueta gris oscuro antihumedad"],["Suelo interior","Piso flotante de madera color claro"],["Paredes del baño","Alucoband impermeable"],["Muebles","Madera vinílica CNC · agarradores de cuero"],["Sellados","Sikaflex alta resistencia · impermeable y flexible"]]}],al:[{t:"warn",l:"ALTURA TOTAL",txt:"El peligro nº1: el ALTO TOTAL. Mide tu conjunto (camioneta + módulo) y pega el resultado en tu tablero. Puentes y techos de gasolineras pueden golpear el módulo."}]},
+{id:4,b:1,title:"Inspección pre-entrega",sub:"Checklist completo · Firmas · Pre-viaje",sec:[{t:"CHECKLIST A — ESTRUCTURA",chk:["Pintura electrostática del exoesqueleto: sin raspaduras, golpes ni burbujas","Paneles FPRV exteriores: sin impactos, fisuras ni deformaciones","Sellados Sikaflex de ventanas y juntas: intactos, sin grietas","5 ventanas abatibles: abren, cierran y brazos aguantan la posición abierta","Puerta de entrada: abre y cierra con suavidad. Cerradura funciona con llave","Escalera lateral: fija, sin movimiento, sin piezas sueltas","Toldo exterior: se despliega y recoge correctamente","4 gatos estabilizadores: suben y bajan con la manivela sin atascarse","Correas RoRo: instaladas correctamente, tensores funcionando","Luces traseras: todas las LED y de gálibo funcionan"]},{t:"CHECKLIST B — SISTEMAS",chk:["Voltímetro: debe marcar entre 12.5V y 12.8V en reposo","Todas las luces LED interiores encienden correctamente","Tomas USB: carga teléfono en ambas tomas","Inversor 2.000W: enciende sin pitidos de error","Panel solar: el regulador muestra carga activa con sol","Bomba de agua: arranca en menos de 2 segundos al abrir grifo","Hornilla dual: enciende, llama azul y estable","Calefón 6L: enciende automático, agua caliente en menos de 30 segundos","Inodoro Potti: descarga manual funciona"]}],al:[{t:"danger",l:"IMPORTANTE",txt:"NO firmes la recepción si detectas olor a gas, cable pelado, fuga de agua o ventana que no cierra. Espera a que sea corregido."}]},
+{id:5,b:2,title:"Conducción y dinámica de carga",sub:"CG elevado · Efecto vela · Slosh · Altitud",sec:[{t:"VELOCIDADES MÁXIMAS",specs:[["Autopista / asfalto","90 km/h — nunca superar"],["Carretera secundaria","70 km/h"],["Curvas de montaña","40-50 km/h"],["Ripio compactado","40 km/h"],["Ripio suelto / calaminas","20-30 km/h"],["Barro / terreno blando","15 km/h con 4×4"],["Distancia de seguridad","Mínimo 4 segundos al vehículo delante"]]},{t:"CENTRO DE GRAVEDAD Y EFECTO VELA",body:"Con la VUmax encima, el CG sube casi un metro. Mayor riesgo de vuelco en curvas rápidas y ante rachas de viento. Reduce la velocidad en curvas al menos un 40%.\n\nLos paneles FPRV tienen ~8m² de superficie lateral — una vela gigante. Con viento superior a 60 km/h: detente y estaciona con el frente apuntando hacia el viento."},{t:"INERCIA DEL AGUA (SLOSH)",body:"El depósito de 70L a mitad de capacidad genera el efecto 'slosh': la masa de agua se mueve libremente en curvas generando fuerzas laterales inesperadas. Solución: viaja con el depósito completamente LLENO o completamente VACÍO."}],al:[{t:"danger",l:"CG ELEVADO",txt:"Si sientes pérdida de control lateral: NO frenes de golpe. Suelta el acelerador suavemente, mantén el volante firme. Frenar bruscamente con CG alto puede provocar vuelco."},{t:"warn",l:"FATIGA",txt:"Paradas cada 2h en asfalto y cada 90 min en ripio. Las vibraciones agotan el sistema nervioso mucho más rápido de lo habitual."}]},
+{id:6,b:2,title:"Técnicas off-road y rescate",sub:"Calaminas · Barro · Crestas · Eslinga",sec:[{t:"PRESIONES DE NEUMÁTICOS",specs:[["Asfalto con VUmax","+2-3 PSI sobre presión normal"],["Ripio compactado","28-32 PSI"],["Ripio suelto","24-28 PSI"],["Barro / tierra húmeda","20-24 PSI"],["Arena","16-20 PSI (mínimo: 14 PSI)"],["¡CLAVE!","Volver a inflar ANTES de regresar al asfalto"]]},{t:"CALAMINAS — TÉCNICA",body:"La velocidad óptima no es la más baja — es la que te permite 'flotar' sobre las ondulaciones (40-60 km/h). Reduce la presión a 28-30 PSI. Para y revisa cada 50 km de calaminas."},{t:"PROTOCOLO RESCATE CON ESLINGA",steps:["Identifica los ganchos del chasis de la pickup (bajo los paragolpes). NUNCA el exoesqueleto de la VUmax.","Conecta la eslinga al chasis de tu camioneta y al vehículo auxiliar.","Aleja a todos los espectadores al menos 10 metros a los lados.","El operador DEBE estar dentro de la cabina durante toda la maniobra.","El vehículo auxiliar jala despacio, sin tirones bruscos."]}],al:[{t:"danger",l:"ESLINGA",txt:"NUNCA ates la eslinga al exoesqueleto de la VUmax. La fuerza de un tirón puede arrancar el módulo entero."},{t:"warn",l:"POST-RIPIO",txt:"Cada 100 km de ripio: toca físicamente los pernos del exoesqueleto, tensores RoRo y bisagras de ventanas."}]},
+{id:7,b:2,title:"Sistema de anclaje RoRo y gatos",sub:"Roll-on/Roll-off · Montaje · Desmontaje",sec:[{t:"¿QUÉ ES EL RORO?",body:"RoRo = Roll-on / Roll-off. El módulo se asegura con correas de alta resistencia tensadas con tensores metálicos. Son el ÚNICO elemento que mantiene el módulo unido a la camioneta durante la conducción."},{t:"DESMONTAJE",steps:["Desconecta el conector de 7 pines primero.","Suelta todos los tensores de las correas RoRo. Guarda las correas enrolladas.","Baja los gatos DELANTEROS 5cm, luego los TRASEROS 5cm. SIEMPRE alternando.","Cuando los gatos toquen el suelo, mueve la camioneta hacia adelante muy despacio con un ayudante guiando.","Baja los gatos hasta que el módulo quede a 30-40cm del suelo."]},{t:"MONTAJE",steps:["Posiciona la camioneta: motor apagado, freno de mano puesto y cuñas en las ruedas.","Sube los gatos traseros hasta ~5cm por encima del borde de la caja.","Mete la camioneta hacia atrás despacio con ayudante guiando la alineación.","Baja los gatos de forma alterna (5cm adelante, 5cm atrás) hasta que el módulo descanse.","Instala las correas RoRo en cruzado. Sube completamente los gatos. Conecta el conector 7 pines."]}],al:[{t:"danger",l:"ZONA DE EXCLUSIÓN",txt:"JAMÁS se sitúe nadie debajo del módulo elevado sobre gatos sin la camioneta debajo. Un gato que cede = caída inmediata del módulo."},{t:"warn",l:"CONDICIONES",txt:"Suelo FIRME y PLANO obligatorio. Con viento >30 km/h o suelo blando: NO hagas el desmontaje ahí."}]},
+{id:8,b:3,title:"La batería GEL 100Ah",sub:"Voltajes · Sulfatación · HAUSPROFI ZYX-J30",sec:[{t:"ESPECIFICACIONES",specs:[["Tipo","GEL de ciclo profundo solar — sellada"],["Capacidad","100 Ah a 12 voltios"],["Voltaje operativo","11.8V (descargada) — 12.9V (llena)"],["Ciclos de vida","1.200+ ciclos al 50% / 300 ciclos al 100%"],["Ubicación","Compartimento bajo el escalón principal"]]},{t:"TABLA DE VOLTAJE",volt:[["12.7–12.9 V","100% LLENA","Usa todo con libertad"],["12.5–12.7 V","75-100%","Usa todo normalmente"],["12.3–12.5 V","50-75%","Modera el inversor"],["12.0–12.3 V","25-50%","Apaga frigobar e inversor"],["11.8–12.0 V","10-25%","CRÍTICO — apaga todo"],["< 11.8 V","¡PELIGRO!","DAÑO IRREVERSIBLE — desconecta ya"]]},{t:"CARGADOR HAUSPROFI ZYX-J30",specs:[["Modelo","HAUSPROFI ZYX-J30 · 12V/24V Inteligente"],["Entrada","AC 100-240V / 50-60Hz"],["Salida 12V","DC 13.8V · máximo 8A"],["Modo CORRECTO","AGM/GEL — selecciona SIEMPRE este modo"],["Modo NO usar","Vehicle Mode — daña la batería GEL"],["Tiempo desde 20%","~9-10 horas hasta carga completa"]]}],al:[{t:"danger",l:"LÍMITE CRÍTICO",txt:"NUNCA dejes bajar la batería de 12.0V. La sulfatación es daño irreversible."},{t:"warn",l:"CARGADOR",txt:"Selecciona SIEMPRE el modo AGM/GEL. El modo Vehicle Mode usa voltajes más altos que dañan tu batería GEL."}]},
+{id:9,b:3,title:"Panel solar y regulador MPPT",sub:"2×150W = 300W · ML2420 · Etapas · Sombras",sec:[{t:"ESPECIFICACIONES",specs:[["Paneles","2 × 150W monocristalino = 300W totales"],["Regulador","MPPT ML2420 — 15-20% más eficiente que PWM"],["Corriente máxima","20A"],["Producción estimada","~100-120 Ah con 5h de sol directo"]]},{t:"ETAPAS DE CARGA",specs:[["MPPT","<80% batería · corriente alta 16-20A · LED PV fijo"],["BOOST","80-95% · voltaje ~14.4V · corriente baja · LED parpadeo lento"],["FLOAT","100% llena · voltaje ~13.8V · LED parpadeo rápido"],["EQUALIZE","Ciclo mensual automático · LED doble parpadeo"]]},{t:"MAXIMIZAR PRODUCCIÓN",body:"Orienta el módulo hacia el NORTE durante las horas centrales. Una sombra en el 10% de un panel puede reducir la producción TOTAL hasta un 40%. El polvo acumulado reduce un 15-25% — limpia los paneles cada 2-3 semanas."}],al:[{t:"info",l:"PRODUCCIÓN",txt:"Con 300W y consumo moderado, en 5-6h de sol produces suficiente para cubrir todo el consumo y mantener la batería al 100%."},{t:"warn",l:"SOMBRAS",txt:"Una sombra en el 10% de un panel puede reducir la producción total hasta un 40%."}]},
+{id:10,b:3,title:"Inversor de corriente 2000W",sub:"220V en campo · Aparatos · Consumo",sec:[{t:"ESPECIFICACIONES",specs:[["Potencia continua","2.000 Watts"],["Potencia pico","4.000 Watts"],["Voltaje de salida","220V AC · 50Hz"],["Corte por batería baja","Automático a 11.0V"],["Enchufes","2 tomas 220V (panel + cocina)"]]},{t:"TABLA DE APARATOS",specs:[["Cafetera 800-1200W","✓ PERMITIDO — usar 5-10 min máximo"],["Laptop 65-90W","✓ TOTALMENTE OK — consumo bajo"],["Drone / cámara","✓ TOTALMENTE OK — consumo mínimo"],["Licuadora 400-800W","✓ PERMITIDO — uso breve"],["Microondas 700W","⚠ CON PRECAUCIÓN — solo batería >12.5V"],["Calefactor >1500W","✗ NO RECOMENDADO — agota batería"],["Aire acondicionado","✗ PROHIBIDO — supera capacidad del inversor"]]}],al:[{t:"danger",l:"LÍMITE",txt:"NUNCA conectes aparatos que superen 2.000W. Aire acondicionado: absolutamente prohibido."},{t:"warn",l:"CONSUMO EN ESPERA",txt:"El inversor en espera consume 1-2A. En 10h agota el 20% de tu batería. Apágalo siempre cuando no lo uses."}]},
+{id:11,b:3,title:"Panel de control y circuito 12V",sub:"6 interruptores · Voltímetro · Fusibles · Alternador",sec:[{t:"COMPONENTES",specs:[["Voltímetro digital","Voltaje de la batería en tiempo real"],["6 interruptores","Luces · Bomba agua · Frigobar · Inversor · Luz exterior · Extractor baño"],["Puertos USB ×2","5V/2A — dormitorio y zona mesa"],["Toma 12V mechero","Para cargadores y compresores portátiles (máx 10A/120W)"],["Desconector general","Corte TOTAL del circuito eléctrico"]]},{t:"CÓMO CAMBIAR UN FUSIBLE",steps:["Identifica qué circuito no funciona.","Abre la caja de fusibles y busca el LED encendido — esa vía tiene el fusible fundido.","Apaga el interruptor de ese circuito antes de tocar el fusible.","Extrae el fusible fundido con pinzas. Filamento roto o ennegrecido = fundido.","Reemplaza con fusible del MISMO amperaje exacto. NUNCA de mayor amperaje."]},{t:"CARGA DESDE ALTERNADOR",specs:[["1h de conducción","~10-15 Ah recuperados"],["3h de conducción","~30-45 Ah — del 50% al 95%"],["5h de conducción","~50-65 Ah — carga casi completa"],["Funcionamiento","Completamente automático con el conector 7 pines conectado"]]}],al:[{t:"danger",l:"FUSIBLES",txt:"NUNCA reemplaces un fusible por uno de mayor amperaje. El siguiente eslabón débil será el cable — y los cables simplemente se queman."},{t:"warn",l:"DESCONECTOR",txt:"En emergencia eléctrica (chispa, humo, olor a quemado): activa el desconector general DE INMEDIATO."}]},
+{id:12,b:4,title:"Depósito 70L y bomba 120 PSI",sub:"Llenado · Automática · Aguas grises · Purgado",sec:[{t:"CÓMO LLENAR EL DEPÓSITO",steps:["Localiza la tapa circular de rosca en la pared lateral exterior del módulo. Gírala antihorario para abrirla.","Usa SIEMPRE agua potable o tratada con pastillas purificadoras.","Vierte despacio con embudo o manguera.","Cuando el agua rebose = está lleno. Cierra la tapa inmediatamente (horario).","Enciende la bomba y abre un grifo brevemente para verificar que no hay fugas."]},{t:"CONSUMO DE AGUA",specs:[["Lavado de manos","~0.5-1 litro"],["Ducha eficiente","~5-8 litros"],["Ducha normal (5 min)","~25-30 litros"],["Consumo 2 personas/día","~20-30 litros"],["Duración depósito 70L","2.5-3.5 días para 2 personas"]]}],al:[{t:"danger",l:"CONDUCCIÓN",txt:"Apaga la bomba SIEMPRE antes de mover la camioneta. Las vibraciones activan el sensor y puede vaciar el depósito sin que te des cuenta."},{t:"warn",l:"AGUA",txt:"SOLO agua potable o tratada. El depósito no purifica el agua que introduces."}]},
+{id:13,b:4,title:"La ducha: paso a paso completo",sub:"Agua caliente · Técnica eficiente · 5-8 litros",sec:[{t:"ANTES DE ENTRAR",steps:["Verifica que el depósito tenga agua suficiente.","Enciende la BOMBA DE AGUA en el panel de control.","Asegúrate de que la válvula de gas esté abierta.","Enciende el extractor de aire del baño."]},{t:"TÉCNICA EFICIENTE — 5 A 8 LITROS",steps:["Mójate completamente en 20-30 segundos.","CIERRA EL GRIFO mientras te enjabonas.","Enjabónate y lávate el cabello con el grifo cerrado.","Abre el grifo y enjuágate en 60-90 segundos.","CIERRA EL GRIFO en cuanto termines."]},{t:"CIERRE DEL SISTEMA",steps:["Cierra el grifo. El calefón se apaga automáticamente.","Cierra la válvula de la garrafa de gas.","Apaga la BOMBA DE AGUA en el panel.","Deja el extractor encendido 5-10 minutos más."]}],al:[{t:"info",l:"TÉCNICA EFICIENTE",txt:"Mójate 20 seg → cierra → enjabónate → abre → enjuágate 60 seg. Con 70L dos personas se duchan cómodamente 4-5 veces."}]},
+{id:14,b:4,title:"Baño químico (Potti)",sub:"Líquido azul · Vaciado · Higiene",sec:[{t:"PRODUCTOS NECESARIOS",specs:[["Líquido azul (depósito inferior)","IMPRESCINDIBLE. 100-150ml por 10L + 0.5-1L agua."],["Líquido rosa (depósito superior)","OPCIONAL. Agua de descarga con aroma fresco."],["Papel biodegradable","Específico para WC químico — se disuelve en minutos."]]},{t:"CÓMO VACIAR",steps:["Lleva guantes desechables.","Separa el depósito inferior usando el mecanismo de cierre lateral.","Lleva el depósito al inodoro público (camping, gasolinera, restaurant).","Presiona el botón de ventilación antes de abrir la válvula (evita salpicaduras).","Gira la válvula de vaciado y vacía suavemente.","Enjuaga el depósito 1-2 veces. Cierra la válvula. Prepara con líquido azul fresco."]}],al:[{t:"warn",l:"PROHIBIDO",txt:"Nunca introduzcas toallitas húmedas, compresas, tampones ni ningún objeto que no sea papel específico para WC químico."},{t:"danger",l:"VACIADO",txt:"NUNCA vacíes en ríos, lagunas, acequias ni en el suelo al aire libre."}]},
+{id:15,b:5,title:"Sistema de gas: garrafa y hornilla",sub:"7 reglas de oro · Detección de fugas · Hornilla dual",sec:[{t:"LAS 7 REGLAS DE ORO",specs:[["#1 CIERRA AL CONDUCIR","SIEMPRE. Válvula cerrada (horario) antes de arrancar."],["#2 VENTILACIÓN SIEMPRE","Nunca uses gas con ventanas y puerta completamente cerradas."],["#3 LLAMAS DESATENDIDAS","NUNCA. El viento puede apagar la llama dejando salir gas."],["#4 DOBLE CIERRE","1º cierra el mando de la hornilla. 2º cierra la válvula de la garrafa."],["#5 DETECTA FUGAS","Prueba de agua jabonosa al cambiar garrafa o cada mes."],["#6 NUNCA MODIFIQUES","No cortes, empalmes ni estires la manguera de gas."],["#7 CIERRA AL DORMIR","SIEMPRE. Una fuga lenta de 8 horas puede ser mortal."]]},{t:"PRUEBA DE FUGAS",steps:["Prepara: 1 cucharada de jabón líquido en medio vaso de agua.","Con el gas CERRADO, aplica la solución en TODAS las conexiones del sistema.","Abre la válvula suavemente — solo un cuarto de vuelta.","Observa 30 segundos. Burbujas que crecen = FUGA. Cierra la válvula inmediatamente.","Sin burbujas = sistema estanco. Abre completamente."]}],al:[{t:"danger",l:"EMERGENCIA GAS",txt:"1-Cierra válvula (horario) · 2-NO toques interruptores · 3-Abre TODO · 4-Sal y aléjate 10m · 5-Espera 10 min · 6-Agua jabonosa para encontrar la fuga."},{t:"danger",l:"GARRAFA HORIZONTAL",txt:"NUNCA instales la garrafa tumbada. El GLP líquido generaría una llama enorme e incontrolable — incendio inmediato."}]},
+{id:16,b:5,title:"Calefón de agua caliente 6L",sub:"Automático · Monóxido CO · Altitud extrema",sec:[{t:"ESPECIFICACIONES",specs:[["Tipo","Calentador de paso instantáneo a gas GLP"],["Ignición","Automática piezoeléctrica al abrir el grifo"],["Apagado","Automático al cerrar el grifo"],["Temperatura","Regulable entre 35°C y 55°C"],["Ubicación","Exterior del módulo con caja protectora"]]},{t:"CÓMO USAR",steps:["Verifica: válvula de garrafa ABIERTA, bomba ENCENDIDA, una ventana ABIERTA.","Gira el grifo hacia AGUA CALIENTE.","Escucha el 'clic-clic-clic' y luego el 'wump' del quemador encendiendo.","Espera 20-30 segundos — saldrá agua fría primero. Es normal.","Ajusta temperatura. Menos caudal = agua más caliente.","Al terminar: cierra el grifo. Luego cierra la válvula de la garrafa."]},{t:"MONÓXIDO DE CARBONO (CO)",body:"El CO es incoloro, inodoro e insípido. No puedes verlo ni olerlo. En concentraciones altas puede matar en minutos.\n\nSÍNTOMAS: dolor de cabeza repentino + mareo + náuseas mientras usas agua caliente. Si sientes esto: sal INMEDIATAMENTE al exterior y busca atención médica."}],al:[{t:"danger",l:"MONÓXIDO CO",txt:"Ventana abierta SIEMPRE al usar el calefón — sin excepciones ni importar el clima."},{t:"danger",l:"ALTIPLANO >4000 msnm",txt:"Abre DOS ventanas. La combustión incompleta por falta de O₂ produce MÁS CO. En altitud la ventilación es AÚN MÁS crítica."}]},
+{id:17,b:6,title:"Cocina y frigobar 12V",sub:"Hornilla dual · Fregadero · 50L · Termostato 1-7",sec:[{t:"ZONA DE COCINA",specs:[["Hornilla dual","Funciona con garrafa GLP O con cartucho camping gas"],["Fregadero","Redondo · acero inoxidable · grifo monocomando negro"],["Toma 220V","1 unidad en zona cocina (con inversor encendido)"],["Toma 12V","1 unidad tipo encendedor de mechero"],["Frigobar 12V","50L totales: 45L refrigeración + 5L freezer"]]},{t:"TERMOSTATO DEL FRIGOBAR",volt:[["1","8-10°C","Bebidas frescas · clima frío · consumo mínimo"],["2-3","5-8°C","Verano · uso diario general"],["3-4","2-5°C","USO NORMAL — punto óptimo"],["4-6","0-2°C","Invierno · alimentos delicados"],["7","-5 a -18°C","Solo para congelar — consumo máximo"]]}],al:[{t:"warn",l:"TAPA HORNILLA",txt:"Espera mínimo 10 min después de apagar la hornilla antes de cerrar la tapa. El calor atrapado puede deformar la encimera."},{t:"info",l:"TERMOSTATO",txt:"Posición 3-4 es el equilibrio perfecto entre temperatura y consumo de batería."}]},
+{id:18,b:6,title:"Ventilación, toldo y confort",sub:"5 ventanas · Condensación · Toldo 2.5×2m",sec:[{t:"CONFIGURACIONES POR CLIMA",specs:[["☀ Calor intenso","Abre todas las ventanas. Toldo en lado soleado."],["❄ Frío extremo","Cierra todo salvo apertura mínima de seguridad. Cortinas opacas retienen calor."],["🌧 Lluvia","Abre solo ventanas sin lluvia directa. Extractor de baño al máximo."],["💨 Viento fuerte","Frente de la camioneta apuntando hacia el viento."]]},{t:"LA CONDENSACIÓN",body:"Cada persona exhala ~0.5L de vapor de agua por noche. Sin ventilación se condensa en ventanas, techo y rincones. El moho negro es muy difícil de eliminar una vez establecido.\n\nSOLUCIÓN: deja siempre una ventana entreabierta de noche, incluso en invierno."}],al:[{t:"danger",l:"TOLDO EN MARCHA",txt:"NUNCA conduzcas con el toldo extendido. A 20 km/h el viento puede arrancarlo y proyectar la lona sobre el tráfico."},{t:"info",l:"CONFORT EXTREMO",txt:"Altiplano -15°C: usa saco de dormir adecuado. Valles +35°C: el toldo en el lado soleado reduce la temperatura interior hasta 10°C."}]},
+{id:19,b:6,title:"Dormitorio y almacenamiento",sub:"Colchón 13cm · Armarios CNC · Pistones",sec:[{t:"EL DORMITORIO",specs:[["Dimensiones","1.800 × 1.500 mm"],["Colchón","13 cm de grosor · funda removible lavable a 40°C"],["Bancadas","2 unidades con almacenamiento inferior"],["Cortinas","5 unidades doble tela: diseño + opaca (bloqueo total de luz)"],["Luz de lectura","Con puerto USB integrado"]]},{t:"ORGANIZACIÓN",specs:[["Almacén bajo suelo","Herramientas, correas de repuesto, botiquín"],["Armarios cocina inferiores","Utensilios, platos, ollas, conservas"],["Armarios superiores (pistones)","Ropa de temporada, sábanas, higiene"],["Armarios delanteros","Ropa diaria, toallas, calzado, mochilas"],["Bajo bancada","Sacos de dormir, equipo fotográfico, drones"]]}],al:[{t:"warn",l:"BAJO EL SUELO",txt:"NUNCA almacenes líquidos en el compartimento de la batería. Una fuga puede causar cortocircuito."},{t:"info",l:"COLCHÓN",txt:"Ventila el colchón cada 2 días con ventanas abiertas. Absorbe ~0.5L de humedad cada noche."}]},
+{id:20,b:7,title:"Mantenimiento preventivo",sub:"Por viaje · Mensual · Trimestral · Semestral",sec:[{t:"ANTES DE CADA VIAJE — 15-20 MIN",chk:["Tensión de las 4 correas RoRo: tirar de cada una, deben estar firmes","Los 4 gatos completamente recogidos","Conector de 7 pines conectado — verificar luces traseras","Válvula de la garrafa de gas CERRADA","Bomba de agua APAGADA antes de mover","Voltímetro: mínimo 12.3V para salir de viaje","Toldo completamente recogido y asegurado","Todas las ventanas cerradas","Puerta de entrada cerrada con llave"]},{t:"MANTENIMIENTO MENSUAL",chk:["Revisar y apretar todos los tornillos visibles del exoesqueleto","Revisar estado de sellados Sikaflex","Verificar y apretar bornes de la batería","Limpiar el panel solar con paño suave húmedo","Prueba de fugas de gas con agua jabonosa","Verificar pistones hidráulicos de los armarios","Limpiar interior del frigobar con agua + bicarbonato"]},{t:"TRIMESTRAL Y SEMESTRAL",chk:["Lubricar ejes del toldo con WD-40","Lubricar gatos estabilizadores con WD-40","Torque completo de TODOS los pernos del exoesqueleto","Limpiar bornes de la batería + aplicar vaselina técnica","Inspección completa del sistema de gas por técnico","Revisión técnica del calefón","Lubricación profunda de gatos con grasa de litio"]}],al:[{t:"info",l:"ANTES DE SALIR",txt:"15-20 minutos de inspección pueden evitar un problema grave en ruta."},{t:"warn",l:"RIPIO",txt:"Cada 500 km de ripio: apriete preventivo completo de todos los pernos del exoesqueleto."}]},
+{id:21,b:7,title:"Calendario de mantenimiento anual",sub:"Frecuencias · Registro histórico de servicio",sec:[{t:"RESUMEN DE FRECUENCIAS",specs:[["CADA VIAJE","Correas RoRo · Gatos recogidos · 7 pines · Gas cerrado · Bomba OFF · Voltímetro"],["MENSUAL","Tornillos exo · Panel solar · Bornes batería · Prueba fugas gas · Frigobar"],["TRIMESTRAL","Lubricación toldo · Gatos WD-40 · Torque completo · Sellado frigobar · Cal ducha"],["SEMESTRAL","Revisión técnica gas · Calefón · Gatos grasa litio · Inversor"],["ANUAL","Inspección estructural completa Porxu Camper · Manguera gas · Batería test"]]},{t:"REGISTRO DE MANTENIMIENTO",body:"Anota en tu manual físico: Fecha · Km de ripio · Tareas realizadas · Voltaje de la batería · Tu firma.\n\nEste historial es fundamental para mantener la garantía vigente y aumentar el valor de reventa de la VUmax."}],al:[{t:"info",l:"REGISTRO",txt:"El historial de mantenimiento es fundamental para la garantía y el valor de reventa."}]},
+{id:22,b:8,title:"Protocolo de incendio y evacuación",sub:"Fuego · Gas · Electricidad · Evacuación",sec:[{t:"PROTOCOLO INCENDIO",steps:["SAL de la camper inmediatamente. No intentes salvar ningún objeto.","Aleja a todas las personas al menos 30 metros.","Llama a bomberos: Bolivia 118 / Argentina 100.","Si tienes extintor ABC y el fuego es pequeño: úsalo desde la base de la llama.","Si el incendio es eléctrico: NO uses agua. Solo extintor ABC o CO2.","Si hay garrafa de gas en la zona: aléjate al menos 50 metros. Puede explotar.","No vuelvas hasta que los bomberos declaren el área segura."]},{t:"PROTOCOLO FUGA DE GAS",steps:["CIERRA la válvula de la garrafa (horario hasta el tope).","NO toques ningún interruptor eléctrico.","Abre TODAS las ventanas y la puerta de entrada.","Sal de la camper y aléjate 10 metros.","Espera 10 minutos con todo abierto.","Busca la fuga con agua jabonosa antes de volver a usar el gas."]}],al:[{t:"danger",l:"INCENDIO",txt:"SAL inmediatamente. Todos a 30m. Con garrafa de gas en la zona: retrocede a 50m mínimo."},{t:"warn",l:"EXTINTOR",txt:"Lleva siempre extintor ABC de 1kg en la cabina de la pickup, accesible desde el asiento."},{t:"danger",l:"NO USES BATERÍA GEL PARA ARRANCAR",txt:"NUNCA uses la batería GEL de la VUmax para arrancar la camioneta. Puede dañarse irreversiblemente."}]},
+{id:23,b:8,title:"Guía maestra de fallos y soluciones",sub:"30 síntomas · Causa · Acción · ¿Técnico?",sec:[{t:"FALLOS ELÉCTRICOS",specs:[["Nada eléctrico funciona","Desconector general OFF o fusible 150A fundido. QUIZÁS técnico."],["Un circuito no funciona","Fusible de esa vía fundido. Reemplaza MISMO amperaje. NO — tú puedes."],["Panel solar no carga","Sombra, cable desconectado o fusible. QUIZÁS."],["Inversor pita al encender","Batería baja o sobrecarga. Lee voltaje primero. NO."],["Olor a quemado","Cortocircuito. Desconector OFF INMEDIATO. SÍ — técnico urgente."]]},{t:"FALLOS DE AGUA",specs:[["Sin agua al abrir grifo","Bomba apagada, depósito vacío o fusible. Verifica los tres. NO."],["Bomba arranca sola","Fuga en el sistema. Apaga bomba. Busca goteo. QUIZÁS."],["Agua con mal sabor","Depósito contaminado. Vacía y limpia con bicarbonato. NO."]]},{t:"FALLOS DE GAS Y CALEFÓN",specs:[["Huele a gas sin nada encendido","Fuga. PROTOCOLO GAS completo. SÍ — técnico antes de volver a usar."],["Hornilla no enciende","Sin gas, quemador sucio o encendedor agotado. NO."],["Calefón no enciende","Sin gas, caudal insuficiente o altitud. NO."],["Módulo se mueve en marcha","Correas RoRo flojas. PARA INMEDIATAMENTE. Retensa en cruzado. URGENTE."]]}],al:[{t:"info",l:"CÓMO USAR",txt:"Síntoma → causa probable → acción → ¿Técnico?: NO (tú puedes), QUIZÁS (intenta primero), SÍ (llama antes de continuar)."}]},
+{id:24,b:8,title:"Contacto y soporte técnico",sub:"+591 75997125 · admin@porxu.com · porxu.com",sec:[{t:"CANALES DE CONTACTO",specs:[["WhatsApp / Llamada","+591 75997125 — diagnóstico en campo con foto o video"],["Email","admin@porxu.com — garantía, piezas, consultas"],["Web","www.porxu.com — manual digital, videos tutoriales, comunidad"],["Taller","Cochabamba, Bolivia — servicio técnico presencial"],["Emergencias","WhatsApp con texto 'EMERGENCIA + número de serie' — atención prioritaria"]]},{t:"QUÉ TENER LISTO",chk:["Número de serie de tu VUmax (placa metálica exterior)","Descripción del problema: qué pasó, cuándo, si fue repentino o gradual","Foto o video del problema (10 seg valen más que 100 palabras)","Voltaje actual de la batería","Tu ubicación aproximada"]}],al:[{t:"ok",l:"CONTACTO DIRECTO",txt:"+591 75997125 · admin@porxu.com · www.porxu.com · Taller: Cochabamba, Bolivia"}]},
+{id:25,b:8,title:"Garantía y condiciones",sub:"2 años · Cobertura · Exclusiones · Reclamación",sec:[{t:"LO QUE CUBRE ✓",chk:["Defectos de fabricación en el exoesqueleto de acero CNC","Defectos en los paneles FPRV sándwich","Defectos en los muebles CNC (uniones, bisagras, pistones de fábrica)","Defectos en el sistema eléctrico original","Defectos en la bomba de agua, tuberías y depósito","Defectos en los sellados Sikaflex de fábrica","Atención técnica remota sin costo durante la garantía"]},{t:"LO QUE NO CUBRE ✗",chk:["Daños por accidente de tráfico, vuelcos o impactos externos","Daños por uso inadecuado documentado en este manual","Daños por modificaciones no autorizadas","Desgaste normal: fusibles, correas RoRo, sellados, manguera gas >5 años","Daños a la batería GEL por sulfatación por descarga profunda repetida","El contenido personal almacenado en la VUmax"]},{t:"CÓMO RECLAMAR",steps:["Documenta el problema: fotos, videos y descripción escrita.","Envía email a admin@porxu.com con asunto 'GARANTÍA + número de serie'.","Porxu Camper responde en 48h hábiles.","Si es procedente: Porxu Camper coordina reparación o reemplazo."]}],al:[{t:"ok",l:"GARANTÍA VIGENTE",txt:"Usar la VUmax según este manual · No hacer modificaciones sin aprobación · Realizar el mantenimiento del Cap. 20."},{t:"warn",l:"IMPORTANTE",txt:"El off-road en ripio y barro NO anula la garantía. Lo que puede anularla es operar en condiciones que este manual identifica como peligrosas."}]}
+];
+
+let AB=0,openId=null;
+
+function renderPills(){
+  document.getElementById('pills').innerHTML=BLK.map(b=>`<button class="pill${AB===b.id?' on':''}">${b.l}</button>`).join('');
+  document.querySelectorAll('.pill').forEach((btn,i)=>{
+    btn.addEventListener('click',()=>setBlock(BLK[i].id));
+    btn.addEventListener('touchstart',function(e){e.preventDefault();setBlock(BLK[i].id);},{passive:false});
+  });
+}
+function setBlock(id){AB=id;openId=null;renderPills();render();}
+function toggle(id){
+  openId=openId===id?null:id;render();
+  if(openId){setTimeout(()=>{const el=document.getElementById('c'+id);if(el)el.scrollIntoView({behavior:'smooth',block:'nearest'});},120);}
+}
+function renderSec(s){
+  if(!s||!s.t)return'';
+  let inner='';
+  if(s.specs)inner=`<table class="stbl">${s.specs.map(r=>`<tr><td>${r[0]}</td><td>${r[1]}</td></tr>`).join('')}</table>`;
+  else if(s.volt)inner=`<table class="vtbl"><tr style="border-bottom:1px solid rgba(255,255,255,.1)"><td style="color:rgba(255,255,255,.22);font-size:9px;letter-spacing:.1em">VOLTAJE</td><td style="color:rgba(255,255,255,.22);font-size:9px">CARGA</td><td style="color:rgba(255,255,255,.22);font-size:9px">QUÉ HACER</td></tr>${s.volt.map(r=>`<tr><td>${r[0]}</td><td>${r[1]}</td><td>${r[2]}</td></tr>`).join('')}</table>`;
+  else if(s.chk)inner=`<div class="chks">${s.chk.map(c=>`<div class="chk"><div class="cd"></div><div>${c}</div></div>`).join('')}</div>`;
+  else if(s.steps)inner=`<div class="steps">${s.steps.map((st,i)=>`<div class="step"><div class="sn">${i+1}</div><div class="stx">${st}</div></div>`).join('')}</div>`;
+  else if(s.body)inner=`<div class="sb">${s.body.replace(/\n/g,'<br>')}</div>`;
+  return`<div class="sec"><div class="st">${s.t}</div>${inner}</div>`;
+}
+function render(){
+  const q=(document.getElementById('q').value||'').toLowerCase();
+  const vis=DATA.filter(c=>(AB===0||c.b===AB)&&(!q||c.title.toLowerCase().includes(q)||c.sub.toLowerCase().includes(q)));
+  if(!vis.length){document.getElementById('list').innerHTML=`<div style="padding:80px 0;text-align:center;color:rgba(255,255,255,.12);font-size:15px">Sin resultados</div>`;return;}
+  const grp={};vis.forEach(c=>{if(!grp[c.b])grp[c.b]=[];grp[c.b].push(c);});
+  let html='';
+  Object.keys(grp).forEach(bid=>{
+    if(AB===0)html+=`<div class="bh"><div class="bl"></div><div class="bt">${BN[bid]}</div><div class="bl"></div></div>`;
+    else html+='<div style="height:12px"></div>';
+    grp[bid].forEach(c=>{
+      const isOpen=openId===c.id;
+      const als=(c.al||[]).map(a=>`<div class="al ${a.t}"><div class="al-lbl">${a.l}</div><div class="al-txt">${a.txt}</div></div>`).join('');
+      const secs=(c.sec||[]).map(renderSec).join('');
+      html+=`<div class="cap${isOpen?' open':''}" id="c${c.id}">
+        <div class="ch" data-id="${c.id}">
+          ${mkico(c.id)}
+          <div class="ci"><div class="ct">${c.title}</div><div class="cs">${c.sub}</div></div>
+          <div class="cn">CAP.${String(c.id).padStart(2,'0')}</div>
+          <svg class="cc" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="5,8 10,13 15,8"/></svg>
+        </div>
+        <div class="cb${isOpen?' open':''}"><div class="cbi"><img class="di" src="${IM[c.id-1]}" loading="lazy" alt="">${secs}${als}</div></div>
+      </div>`;
+    });
+  });
+  document.getElementById('list').innerHTML=html;
+  document.querySelectorAll('.ch').forEach(el=>{
+    const id=parseI
