@@ -932,7 +932,7 @@ render();
 buildQRPage();
 </script>
 <!-- ============================================================
-     VUMAX AI CHAT — Pegar justo antes de </body>
+     VUMAX AI CHAT v2 — Pegar justo antes de </body>
      ============================================================ -->
 
 <style>
@@ -1012,8 +1012,7 @@ buildQRPage();
   padding: 10px 14px;
   border-radius: 12px;
   font-size: 14px;
-  line-height: 1.5;
-  white-space: pre-wrap;
+  line-height: 1.6;
 }
 .vc-msg.user {
   align-self: flex-end;
@@ -1027,6 +1026,8 @@ buildQRPage();
   border: 1px solid rgba(255,255,255,0.08);
   color: #e5e7eb;
 }
+.vc-msg.bot p { margin: 0 0 8px 0; }
+.vc-msg.bot p:last-child { margin-bottom: 0; }
 .vc-msg.bot ol { margin: 8px 0; padding-left: 20px; }
 .vc-msg.bot ol li { margin-bottom: 8px; }
 .vc-msg.bot ul { margin: 8px 0; padding-left: 18px; }
@@ -1129,9 +1130,6 @@ buildQRPage();
 
 <script>
 (function() {
-  const GEMINI_KEY = 'AIzaSyACWiYhrLjhrZIshcaT3avaTgmPmK4Di5Q';
-  const GEMINI_URL = 'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=' + GEMINI_KEY;
-
   const SYSTEM = `Eres el asistente oficial del manual de propietario del VUmax 2026, una camper de expedición fabricada artesanalmente por Porxu Camper en Cochabamba, Bolivia.
 
 REGLAS OBLIGATORIAS:
@@ -1168,7 +1166,7 @@ SISTEMA DE GAS:
 
 CLIMATIZACIÓN:
 - Ventilación mediante escotilla de techo con extractor.
-- Calefacción por sistema de combustible (según configuración).
+- Calefacción por sistema de combustible según configuración.
 - Abrir escotilla para ventilación cruzada.
 
 MANTENIMIENTO:
@@ -1194,7 +1192,6 @@ CONTACTO PORXU CAMPER:
 
   btn.addEventListener('click', () => panel.classList.toggle('open'));
   closeBtn.addEventListener('click', () => panel.classList.remove('open'));
-
   input.addEventListener('keydown', (e) => {
     if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); vcSend(); }
   });
@@ -1207,38 +1204,39 @@ CONTACTO PORXU CAMPER:
 
   function vcSend() {
     const text = input.value.trim();
-    if (!text) return;
+    if (!text || send.disabled) return;
     input.value = '';
     addMsg(text, 'user');
-    history.push({ role: 'user', parts: [{ text: SYSTEM + '\n\nUsuario: ' + text }] });
-    if (history.length > 1) {
-      history[history.length - 1].parts[0].text = text;
-    }
+    history.push({ role: 'user', content: text });
     send.disabled = true;
+
     const typing = document.createElement('div');
     typing.className = 'vc-typing';
     typing.textContent = 'Escribiendo...';
     messages.appendChild(typing);
     messages.scrollTop = messages.scrollHeight;
 
-    const payload = {
-      system_instruction: { parts: [{ text: SYSTEM }] },
-      contents: buildContents(text)
-    };
-
-    fetch(GEMINI_URL, {
+    fetch('https://api.anthropic.com/v1/messages', {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(payload)
+      headers: {
+        'Content-Type': 'application/json',
+        'anthropic-version': '2023-06-01',
+        'anthropic-dangerous-direct-browser-access': 'true'
+      },
+      body: JSON.stringify({
+        model: 'claude-sonnet-4-20250514',
+        max_tokens: 1000,
+        system: SYSTEM,
+        messages: history.slice(-10)
+      })
     })
     .then(r => r.json())
     .then(data => {
       typing.remove();
-      const reply = data?.candidates?.[0]?.content?.parts?.[0]?.text || 'No se pudo obtener respuesta. Inténtalo de nuevo.';
-      const clean = formatReply(reply);
-      addMsg(clean, 'bot');
-      history.push({ role: 'model', parts: [{ text: reply }] });
+      const reply = data?.content?.[0]?.text || 'No se pudo obtener respuesta. Inténtalo de nuevo.';
+      history.push({ role: 'assistant', content: reply });
       if (history.length > 12) history = history.slice(-12);
+      addMsg(formatReply(reply), 'bot');
     })
     .catch(() => {
       typing.remove();
@@ -1247,30 +1245,23 @@ CONTACTO PORXU CAMPER:
     .finally(() => { send.disabled = false; });
   }
 
-  function buildContents(newText) {
-    const contents = [];
-    const h = history.slice(-10);
-    for (let i = 0; i < h.length; i++) {
-      if (h[i].role === 'user') contents.push({ role: 'user', parts: [{ text: h[i].parts[0].text }] });
-      else contents.push({ role: 'model', parts: [{ text: h[i].parts[0].text }] });
-    }
-    contents.push({ role: 'user', parts: [{ text: newText }] });
-    return contents;
-  }
-
   function formatReply(text) {
     return text
+      .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
       .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
       .replace(/\*(.*?)\*/g, '<em>$1</em>')
-      .replace(/^(\d+)\.\s/gm, '\n$1. ')
-      .replace(/^[-–]\s/gm, '\n• ')
-      .trim();
+      .replace(/\n\n/g, '</p><p>')
+      .replace(/\n(\d+)\.\s/g, '<br><strong>$1.</strong> ')
+      .replace(/\n[-–•]\s/g, '<br>• ')
+      .replace(/\n/g, '<br>')
+      .replace(/^/, '<p>').replace(/$/, '</p>');
   }
 
   function addMsg(html, role) {
     const div = document.createElement('div');
     div.className = 'vc-msg ' + role;
-    div.innerHTML = html;
+    if (role === 'bot') div.innerHTML = html;
+    else div.textContent = html;
     messages.appendChild(div);
     messages.scrollTop = messages.scrollHeight;
   }
@@ -1278,7 +1269,7 @@ CONTACTO PORXU CAMPER:
 </script>
 
 <!-- ============================================================
-     FIN VUMAX AI CHAT
+     FIN VUMAX AI CHAT v2
      ============================================================ -->
 </body>
 </html>
