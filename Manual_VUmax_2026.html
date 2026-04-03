@@ -932,7 +932,7 @@ render();
 buildQRPage();
 </script>
 <!-- ============================================================
-     VUMAX AI CHAT v2 — Pegar justo antes de </body>
+     VUMAX AI CHAT v3 — Pegar justo antes de </body>
      ============================================================ -->
 
 <style>
@@ -1130,6 +1130,8 @@ buildQRPage();
 
 <script>
 (function() {
+  const PROXY_URL = 'https://vumax-proxy.vercel.app/api/gemini';
+
   const SYSTEM = `Eres el asistente oficial del manual de propietario del VUmax 2026, una camper de expedición fabricada artesanalmente por Porxu Camper en Cochabamba, Bolivia.
 
 REGLAS OBLIGATORIAS:
@@ -1207,7 +1209,7 @@ CONTACTO PORXU CAMPER:
     if (!text || send.disabled) return;
     input.value = '';
     addMsg(text, 'user');
-    history.push({ role: 'user', content: text });
+    history.push({ role: 'user', parts: [{ text }] });
     send.disabled = true;
 
     const typing = document.createElement('div');
@@ -1216,25 +1218,21 @@ CONTACTO PORXU CAMPER:
     messages.appendChild(typing);
     messages.scrollTop = messages.scrollHeight;
 
-    fetch('https://api.anthropic.com/v1/messages', {
+    const payload = {
+      system_instruction: { parts: [{ text: SYSTEM }] },
+      contents: history.slice(-10)
+    };
+
+    fetch(PROXY_URL, {
       method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        'anthropic-version': '2023-06-01',
-        'anthropic-dangerous-direct-browser-access': 'true'
-      },
-      body: JSON.stringify({
-        model: 'claude-sonnet-4-20250514',
-        max_tokens: 1000,
-        system: SYSTEM,
-        messages: history.slice(-10)
-      })
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(payload)
     })
     .then(r => r.json())
     .then(data => {
       typing.remove();
-      const reply = data?.content?.[0]?.text || 'No se pudo obtener respuesta. Inténtalo de nuevo.';
-      history.push({ role: 'assistant', content: reply });
+      const reply = data?.candidates?.[0]?.content?.parts?.[0]?.text || 'No se pudo obtener respuesta.';
+      history.push({ role: 'model', parts: [{ text: reply }] });
       if (history.length > 12) history = history.slice(-12);
       addMsg(formatReply(reply), 'bot');
     })
@@ -1269,7 +1267,8 @@ CONTACTO PORXU CAMPER:
 </script>
 
 <!-- ============================================================
-     FIN VUMAX AI CHAT v2
+     FIN VUMAX AI CHAT v3
      ============================================================ -->
+
 </body>
 </html>
