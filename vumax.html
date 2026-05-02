@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<link rel="icon" type="image/png" href="https://i.ibb.co/zKhfWBg/CE86-F48-A-fd9e4059-6613-42da-86d8-21e6d9fd9ba9.png">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="VUmax — Módulo pickup cabina completa. 300W solar, 100Ah GEL, calefón gas, ducha, baño completo. Porxu Camper Bolivia.">
+<meta property="og:title" content="VUmax — Porxu Camper Bolivia">
+<meta property="og:description" content="Módulo pickup cabina completa. 300W solar, 100Ah GEL, calefón gas, ducha, baño completo.">
+<meta property="og:image" content="https://i.ibb.co/BHS27txW/porxu-camper-vumax-5.png">
+<title>VUmax — Porxu Camper</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@300;400;600;700;800;900&family=Barlow:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{--yellow:#F5C000;--yellow2:#e6b000;--black:#1a1a1a;--dark:#111111;--dark2:#222222;--grey:#888;--lgrey:#aaaaaa;--white:#ffffff;--font-display:'Barlow Condensed',sans-serif;--font-body:'Barlow',sans-serif;}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{background:var(--black);color:var(--white);font-family:var(--font-body);overflow-x:hidden;}
+::-webkit-scrollbar{width:4px;}
+::-webkit-scrollbar-track{background:var(--black);}
+::-webkit-scrollbar-thumb{background:var(--yellow);border-radius:2px;}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:1000;display:flex;align-items:center;justify-content:space-between;padding:0 48px;height:68px;background:rgba(26,26,26,0.95);backdrop-filter:blur(12px);border-bottom:1px solid rgba(245,192,0,0.15);}
+.nav-logo{display:flex;align-items:center;text-decoration:none;}
+.nav-logo img{height:42px;}
+.nav-links{display:flex;align-items:center;gap:32px;list-style:none;}
+.nav-links a{font-family:var(--font-display);font-weight:600;font-size:15px;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,0.7);text-decoration:none;transition:color 0.2s;}
+.nav-links a:hover{color:var(--yellow);}
+.nav-cta{background:rgba(245,192,0,0.12)!important;border:1px solid rgba(245,192,0,0.35);color:var(--yellow)!important;padding:6px 18px;border-radius:3px;}
+.nav-cta:hover{background:var(--yellow)!important;color:var(--black)!important;}
+.nav-hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:8px;}
+.nav-hamburger span{width:24px;height:2px;background:var(--white);display:block;}
+
+/* HERO */
+.hero{position:relative;height:88vh;min-height:540px;display:flex;align-items:flex-end;padding-bottom:52px;overflow:hidden;margin-top:68px;}
+.hero-bg{position:absolute;inset:0;background:#111 url('https://i.ibb.co/BHS27txW/porxu-camper-vumax-5.png') center center/cover no-repeat;}
+.hero-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(26,26,26,0.97) 0%,rgba(26,26,26,0.3) 55%,rgba(26,26,26,0.1) 100%);}
+.hero-content{position:relative;z-index:2;padding:0 48px;width:100%;}
+.hero-eyebrow{font-family:var(--font-display);font-size:12px;font-weight:700;letter-spacing:4px;text-transform:uppercase;color:var(--yellow);margin-bottom:10px;}
+.hero-name{font-family:var(--font-display);font-size:clamp(72px,14vw,130px);font-weight:900;line-height:0.85;text-transform:uppercase;color:var(--white);letter-spacing:-2px;}
+.hero-type{font-family:var(--font-display);font-size:20px;font-weight:400;color:rgba(255,255,255,0.55);margin-top:10px;letter-spacing:1px;}
+.hero-bar{width:56px;height:3px;background:var(--yellow);margin:18px 0;}
+.hero-desc{font-family:var(--font-body);font-size:16px;color:rgba(255,255,255,0.55);max-width:480px;line-height:1.6;}
+
+/* SPECS STRIP */
+.specs-strip{background:var(--yellow);padding:18px 48px;display:flex;gap:0;overflow-x:auto;flex-wrap:wrap;}
+.spec-chip{display:flex;flex-direction:column;padding:0 32px 0 0;border-right:1px solid rgba(0,0,0,0.15);margin-right:32px;margin-bottom:4px;}
+.spec-chip:last-child{border-right:none;margin-right:0;}
+.spec-val{font-family:var(--font-display);font-size:24px;font-weight:900;color:var(--black);line-height:1;}
+.spec-lbl{font-family:var(--font-display);font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(0,0,0,0.5);margin-top:2px;}
+
+/* GALERÍA */
+.galeria-sec{background:var(--dark);padding:0;}
+.gal-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:3px;}
+.gal-item{aspect-ratio:4/3;background:var(--dark2);display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;cursor:pointer;transition:opacity 0.2s;}
+.gal-item:hover{opacity:0.85;}
+.gal-item.wide{grid-column:span 2;aspect-ratio:16/9;}
+.gal-img{width:100%;height:100%;object-fit:cover;display:block;}
+.gal-ph{display:flex;flex-direction:column;align-items:center;gap:6px;}
+.gal-ph span{font-size:28px;opacity:0.15;}
+.gal-ph p{font-family:var(--font-display);font-size:10px;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.2);}
+.gal-lbl{position:absolute;bottom:8px;right:8px;background:rgba(245,192,0,0.15);border:1px solid rgba(245,192,0,0.3);font-family:var(--font-display);font-size:9px;letter-spacing:1px;text-transform:uppercase;color:rgba(245,192,0,0.7);padding:3px 7px;border-radius:2px;}
+
+/* SECCIONES */
+section{padding:80px 48px;}
+.inner{max-width:1100px;margin:0 auto;}
+.s-eye{font-family:var(--font-display);font-size:11px;font-weight:700;letter-spacing:4px;text-transform:uppercase;color:var(--yellow);margin-bottom:10px;}
+.s-title{font-family:var(--font-display);font-size:clamp(30px,5vw,50px);font-weight:900;text-transform:uppercase;color:var(--white);line-height:1;letter-spacing:-0.5px;margin-bottom:28px;}
+
+/* SPECS 2COL */
+.specs-sec{background:var(--black);}
+.specs-2col{display:grid;grid-template-columns:1fr 1fr;gap:3px;}
+.specs-block{background:var(--dark);padding:32px;}
+.specs-block-title{font-family:var(--font-display);font-size:11px;font-weight:800;letter-spacing:3px;text-transform:uppercase;color:var(--yellow);margin-bottom:18px;padding-bottom:10px;border-bottom:1px solid rgba(245,192,0,0.15);}
+.s-row{display:flex;justify-content:space-between;align-items:baseline;padding:9px 0;border-bottom:1px solid rgba(255,255,255,0.05);gap:12px;}
+.s-row:last-child{border-bottom:none;}
+.s-row-l{font-size:14px;color:var(--lgrey);flex-shrink:0;}
+.s-row-v{font-size:14px;font-weight:600;color:var(--white);text-align:right;}
+
+/* EQUIPAMIENTO */
+.equip-sec{background:var(--dark);}
+.equip-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:2px;}
+.eq-item{background:var(--dark2);padding:26px;transition:background 0.2s;}
+.eq-item:hover{background:#2a2a2a;}
+.eq-icon{font-size:26px;display:block;margin-bottom:12px;}
+.eq-name{font-family:var(--font-display);font-size:17px;font-weight:800;text-transform:uppercase;color:var(--white);margin-bottom:5px;}
+.eq-desc{font-size:14px;color:var(--lgrey);line-height:1.5;}
+
+/* CTA */
+.cta-sec{background:var(--yellow);padding:72px 48px;text-align:center;}
+.cta-title{font-family:var(--font-display);font-size:clamp(36px,6vw,58px);font-weight:900;text-transform:uppercase;color:var(--black);margin-bottom:8px;}
+.cta-sub{font-size:16px;color:rgba(0,0,0,0.55);margin-bottom:32px;}
+.cta-btns{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;}
+.btn-dark{display:inline-block;background:var(--black);color:var(--white);font-family:var(--font-display);font-weight:800;font-size:15px;letter-spacing:2px;text-transform:uppercase;padding:16px 36px;text-decoration:none;border-radius:3px;transition:all 0.2s;}
+.btn-dark:hover{background:#333;transform:translateY(-2px);}
+.btn-ol{display:inline-block;background:transparent;color:var(--black);font-family:var(--font-display);font-weight:700;font-size:15px;letter-spacing:2px;text-transform:uppercase;padding:16px 36px;text-decoration:none;border:2px solid rgba(0,0,0,0.25);border-radius:3px;transition:all 0.2s;}
+.btn-ol:hover{border-color:var(--black);transform:translateY(-2px);}
+.btn-manual{display:inline-flex;align-items:center;gap:10px;background:var(--black);color:var(--white);font-family:var(--font-display);font-weight:900;font-size:16px;letter-spacing:2px;text-transform:uppercase;padding:16px 36px;border-radius:3px;text-decoration:none;transition:all 0.2s;}
+.btn-manual:hover{background:#333;transform:translateY(-2px);}
+
+/* FOOTER */
+footer{background:#0d0d0d;border-top:1px solid rgba(245,192,0,0.1);padding:32px 48px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;}
+.f-brand{font-family:var(--font-display);font-size:18px;font-weight:900;letter-spacing:2px;color:var(--white);}
+.f-brand span{color:var(--yellow);}
+.f-copy{font-size:12px;color:rgba(255,255,255,0.2);}
+.f-links{display:flex;gap:20px;list-style:none;}
+.f-links a{font-family:var(--font-display);font-size:12px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,0.3);text-decoration:none;transition:color 0.2s;}
+.f-links a:hover{color:var(--yellow);}
+
+/* WA FLOAT */
+.wa-float{position:fixed;bottom:28px;right:28px;z-index:999;}
+.wa-btn{width:56px;height:56px;background:#25D366;border-radius:50%;display:flex;align-items:center;justify-content:center;text-decoration:none;box-shadow:0 4px 20px rgba(37,211,102,0.4);animation:waPulse 3s ease-in-out infinite;transition:transform 0.2s;}
+.wa-btn:hover{transform:scale(1.1);}
+@keyframes waPulse{0%,100%{box-shadow:0 4px 20px rgba(37,211,102,0.4)}50%{box-shadow:0 4px 32px rgba(37,211,102,0.7),0 0 0 8px rgba(37,211,102,0.1)}}
+
+/* MOBILE */
+@media(max-width:768px){
+  nav{padding:0 16px;height:60px;}
+  .nav-logo img{height:32px;}
+  .nav-links{display:none;}
+  .nav-hamburger{display:flex;}
+  .nav-links.open{display:flex;flex-direction:column;position:fixed;top:60px;left:0;right:0;background:rgba(17,17,17,0.98);padding:24px 20px;gap:24px;border-bottom:1px solid rgba(245,192,0,0.2);}
+  .nav-links.open a{font-size:18px;}
+  .hero{height:56vw;min-height:320px;max-height:520px;padding-bottom:28px;margin-top:60px;}
+  .hero-bg{background-size:contain;background-position:center top;background-color:#111;}
+  .hero-overlay{background:linear-gradient(to top,rgba(26,26,26,1) 0%,rgba(26,26,26,0.5) 40%,rgba(26,26,26,0.05) 100%);}
+  .hero-content{padding:0 20px;}
+  .hero-name{font-size:clamp(48px,14vw,80px);}
+  .hero-type{font-size:15px;}
+  .hero-desc{font-size:14px;max-width:100%;}
+  .specs-strip{display:grid;grid-template-columns:repeat(3,1fr);gap:0;padding:0;overflow-x:visible;}
+  .spec-chip{padding:14px 10px;border-right:1px solid rgba(0,0,0,0.12);border-bottom:1px solid rgba(0,0,0,0.12);margin:0;align-items:center;text-align:center;}
+  .spec-chip:nth-child(3n){border-right:none;}
+  .spec-chip:nth-child(4),.spec-chip:nth-child(5){border-bottom:none;}
+  .spec-chip:last-child{border-right:none;border-bottom:none;}
+  .spec-val{font-size:20px;}
+  .gal-grid{grid-template-columns:1fr 1fr;}
+  .gal-item.wide{grid-column:span 2;}
+  section{padding:48px 16px;}
+  .specs-2col{grid-template-columns:1fr;}
+  .specs-block{padding:20px 16px;}
+  .equip-grid{grid-template-columns:1fr 1fr;}
+  .eq-item{padding:18px 14px;}
+  .cta-sec{padding:48px 20px;}
+  .cta-btns{flex-direction:column;align-items:stretch;gap:10px;}
+  .cta-btns a{text-align:center;padding:16px 20px;}
+  footer{padding:24px 16px;flex-direction:column;text-align:center;gap:12px;}
+  .f-links{flex-wrap:wrap;justify-content:center;}
+  .wa-float{bottom:18px;right:16px;}
+  .wa-btn{width:50px;height:50px;}
+}
+@media(max-width:400px){
+  .equip-grid{grid-template-columns:1fr;}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">
+    <img src="https://i.ibb.co/Z1fhSxzP/Dise-o-sin-t-tulo-16.png" alt="Porxu Camper">
+  </a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="index.html">Inicio</a></li>
+    <li><a href="index.html#modelos">Modelos</a></li>
+    <li><a href="index.html#nosotros">Nosotros</a></li>
+    <li><a href="index.html#contacto" class="nav-cta">Contacto</a></li>
+  </ul>
+  <button class="nav-hamburger" id="hamburger"><span></span><span></span><span></span></button>
+</nav>
+
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <p class="hero-eyebrow">Módulo Pickup · Porxu Camper</p>
+    <h1 class="hero-name">VUmax</h1>
+    <p class="hero-type">Cabina completa · El más equipado</p>
+    <div class="hero-bar"></div>
+    <p class="hero-desc">Autonomía total sobre tu pickup. Cocina, ducha, baño, cama y energía solar — listo para el altiplano, la selva y el ripio boliviano.</p>
+  </div>
+</section>
+
+<div class="specs-strip">
+  <div class="spec-chip"><span class="spec-val">300W</span><span class="spec-lbl">Solar</span></div>
+  <div class="spec-chip"><span class="spec-val">100Ah</span><span class="spec-lbl">Batería GEL</span></div>
+  <div class="spec-chip"><span class="spec-val">70L</span><span class="spec-lbl">Agua</span></div>
+  <div class="spec-chip"><span class="spec-val">2.000W</span><span class="spec-lbl">Inversor</span></div>
+  <div class="spec-chip"><span class="spec-val">MPPT</span><span class="spec-lbl">Regulador</span></div>
+</div>
+
+<div class="galeria-sec">
+  <div class="gal-grid">
+    <div class="gal-item wide" style="overflow:hidden;position:relative;background:#000;">
+  <iframe src="https://www.youtube.com/embed/3xk-O2D3MNc?autoplay=1&mute=1&loop=1&playlist=3xk-O2D3MNc&controls=0&rel=0&modestbranding=1&playsinline=1"
+    frameborder="0" allow="autoplay; encrypted-media" allowfullscreen
+    style="position:absolute;top:0;left:0;width:100%;height:100%;pointer-events:none;">
+  </iframe>
+  <div style="position:absolute;bottom:0;left:0;right:0;padding:12px 16px;background:linear-gradient(to top,rgba(0,0,0,0.7),transparent);z-index:2;">
+    <span style="font-family:'Barlow Condensed',sans-serif;font-size:13px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.85);">Maniobra de acople del módulo</span>
+  </div>
+</div>
+    <div class="gal-item"><img src="https://i.ibb.co/tpy1QJY5/VUmax-noche-nit-Porxu-Camper.png" class="gal-img" alt="VUmax de noche Porxu Camper"></div>
+    <div class="gal-item"><img src="https://i.ibb.co/B2ZNRWPd/VUmax-offroad-Porxu-Camper.png" class="gal-img" alt="VUmax offroad Porxu Camper"></div>
+    <div class="gal-item"><div class="gal-ph"><span>📷</span><p>Foto interior</p></div><div class="gal-lbl">Añadir foto</div></div>
+    <div class="gal-item"><div class="gal-ph"><span>📷</span><p>Foto baño</p></div><div class="gal-lbl">Añadir foto</div></div>
+    <div class="gal-item wide"><div class="gal-ph"><span>📷</span><p>Foto cocina</p></div><div class="gal-lbl">Añadir foto</div></div>
+  </div>
+</div>
+
+<section class="specs-sec">
+  <div class="inner">
+    <p class="s-eye">Ficha técnica</p>
+    <h2 class="s-title">Especificaciones</h2>
+    <div class="specs-2col">
+      <div class="specs-block">
+        <div class="specs-block-title">Dimensiones</div>
+        <div class="s-row"><span class="s-row-l">Largo módulo</span><span class="s-row-v">— mm</span></div>
+        <div class="s-row"><span class="s-row-l">Ancho</span><span class="s-row-v">— mm</span></div>
+        <div class="s-row"><span class="s-row-l">Alto total</span><span class="s-row-v">— mm</span></div>
+        <div class="s-row"><span class="s-row-l">Altura interior</span><span class="s-row-v">— mm</span></div>
+        <div class="s-row"><span class="s-row-l">Peso aproximado</span><span class="s-row-v">— kg</span></div>
+      </div>
+      <div class="specs-block">
+        <div class="specs-block-title">Sistema eléctrico</div>
+        <div class="s-row"><span class="s-row-l">Paneles solares</span><span class="s-row-v">2 × 150W monocristalino = 300W</span></div>
+        <div class="s-row"><span class="s-row-l">Batería</span><span class="s-row-v">100Ah GEL 12V ciclo profundo</span></div>
+        <div class="s-row"><span class="s-row-l">Regulador solar</span><span class="s-row-v">MPPT ML2420</span></div>
+        <div class="s-row"><span class="s-row-l">Cargador externo 220V</span><span class="s-row-v">HAUSPROFI ZYX-J30</span></div>
+        <div class="s-row"><span class="s-row-l">Inversor</span><span class="s-row-v">2.000W onda pura sinusoidal</span></div>
+        <div class="s-row"><span class="s-row-l">Panel de control</span><span class="s-row-v">6 circuitos + USB + voltímetro</span></div>
+      </div>
+      <div class="specs-block">
+        <div class="specs-block-title">Agua y gas</div>
+        <div class="s-row"><span class="s-row-l">Depósito agua</span><span class="s-row-v">70 litros</span></div>
+        <div class="s-row"><span class="s-row-l">Bomba</span><span class="s-row-v">12V eléctrica</span></div>
+        <div class="s-row"><span class="s-row-l">Calefón</span><span class="s-row-v">Gas GLP instantáneo</span></div>
+        <div class="s-row"><span class="s-row-l">Cocina</span><span class="s-row-v">Hornilla dual GLP / isobutano</span></div>
+        <div class="s-row"><span class="s-row-l">Ducha</span><span class="s-row-v">Manguera flexible agua caliente</span></div>
+        <div class="s-row"><span class="s-row-l">Aguas grises</span><span class="s-row-v">Depósito separado</span></div>
+      </div>
+      <div class="specs-block">
+        <div class="specs-block-title">Interior</div>
+        <div class="s-row"><span class="s-row-l">Cama</span><span class="s-row-v">Doble — colchón alta densidad</span></div>
+        <div class="s-row"><span class="s-row-l">Frigobar</span><span class="s-row-v">12V silencioso</span></div>
+        <div class="s-row"><span class="s-row-l">Baño</span><span class="s-row-v">Potti + ducha + lavamanos</span></div>
+        <div class="s-row"><span class="s-row-l">Armarios</span><span class="s-row-v">CNC + pistones hidráulicos</span></div>
+        <div class="s-row"><span class="s-row-l">Iluminación</span><span class="s-row-v">LED en todos los ambientes</span></div>
+        <div class="s-row"><span class="s-row-l">Toldo exterior</span><span class="s-row-v">2,5 × 2 m desplegable</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="equip-sec">
+  <div class="inner">
+    <p class="s-eye">Equipamiento</p>
+    <h2 class="s-title">Todo incluido</h2>
+    <div class="equip-grid">
+      <div class="eq-item"><span class="eq-icon">☀️</span><div class="eq-name">Solar 300W</div><p class="eq-desc">2 paneles monocristalino + regulador MPPT + batería GEL 100Ah</p></div>
+      <div class="eq-item"><span class="eq-icon">🔌</span><div class="eq-name">Electricidad</div><p class="eq-desc">Inversor 2.000W + cargador 220V + tomas USB + panel de control</p></div>
+      <div class="eq-item"><span class="eq-icon">💧</span><div class="eq-name">Agua caliente</div><p class="eq-desc">Depósito 70L + bomba 12V + calefón gas + ducha flexible</p></div>
+      <div class="eq-item"><span class="eq-icon">🍳</span><div class="eq-name">Cocina</div><p class="eq-desc">Hornilla dual GLP + fregadero inox + encimera + frigobar 12V</p></div>
+      <div class="eq-item"><span class="eq-icon">🚿</span><div class="eq-name">Baño</div><p class="eq-desc">Compartimento independiente: Potti + ducha + lavamanos</p></div>
+      <div class="eq-item"><span class="eq-icon">🛏️</span><div class="eq-name">Descanso</div><p class="eq-desc">Cama doble + colchón alta densidad + almacenaje bajo cama</p></div>
+      <div class="eq-item"><span class="eq-icon">🏗️</span><div class="eq-name">Armarios</div><p class="eq-desc">CNC con pistones hidráulicos + madera enchapada interior</p></div>
+      <div class="eq-item"><span class="eq-icon">⛺</span><div class="eq-name">Exterior</div><p class="eq-desc">Toldo 2,5×2m + gatos estabilizadores + iluminación LED</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-sec">
+  <h2 class="cta-title">¿Te interesa la VUmax?</h2>
+  <p class="cta-sub">Consulta disponibilidad, plazos y opciones de personalización</p>
+  <div class="cta-btns">
+    <a href="Manual_VUmax_2026.html" target="_blank" class="btn-manual">📖 Manual del propietario</a>
+    <a href="https://wa.me/59175997125" class="btn-dark" target="_blank">WhatsApp +591 75997125</a>
+    <a href="https://wa.me/59172776946" class="btn-ol" target="_blank">WhatsApp +591 72776946</a>
+  </div>
+</section>
+
+<footer>
+  <div class="f-brand">PORXU <span>CAMPER</span></div>
+  <ul class="f-links">
+    <li><a href="index.html">Inicio</a></li>
+    <li><a href="index.html#modelos">Modelos</a></li>
+    <li><a href="index.html#contacto">Contacto</a></li>
+  </ul>
+  <p class="f-copy">© 2026 Porxu Camper — Cochabamba, Bolivia</p>
+</footer>
+
+<div class="wa-float">
+  <a href="https://wa.me/59175997125" class="wa-btn" target="_blank" aria-label="WhatsApp">
+    <svg viewBox="0 0 24 24" fill="white" width="28" height="28"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.127.558 4.122 1.532 5.855L.057 23.886a.5.5 0 00.606.61l6.162-1.457A11.945 11.945 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.8 9.8 0 01-5.001-1.368l-.36-.214-3.716.878.938-3.617-.234-.373A9.778 9.778 0 012.182 12C2.182 6.57 6.57 2.182 12 2.182c5.43 0 9.818 4.388 9.818 9.818 0 5.43-4.388 9.818-9.818 9.818z"/></svg>
+  </a>
+</div>
+
+<script>
+const h = document.getElementById('hamburger');
+const n = document.getElementById('navLinks');
+if(h) h.addEventListener('click', () => n.classList.toggle('open'));
+if(n) n.querySelectorAll('a').forEach(a => a.addEventListener('click', () => n.classList.remove('open')));
+</script>
+</body>
+</html>
