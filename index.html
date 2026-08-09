@@ -1,0 +1,806 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+<link rel="preconnect" href="https://i.ibb.co">
+<link rel="preload" as="image" href="https://i.ibb.co/Q7vxTCjr/portada.webp">
+<meta name="google-site-verification" content="KM2P-ow6HYORXyUvRq8293aMowXHh94o4aDCSjW1zNA" />
+<link rel="icon" type="image/png" sizes="48x48" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAGU0lEQVR4nO2Ye4xcVR3HP+fe89tHdytlgZAYjMUKJihoUh6V1EiT8jI2VElr0AT9wxSIMcQETDTB9REVMUYJJgYNosYUXSVaQrs7O7vdbZfS3dI2JoKKBCQ8rLpCA7vbedzHzz/OPXPvrq10Z3bZIfGbTObOOffc+X7P73ku/B9LjgAIV5pEswhWmkAr8Lu+Ffh6dm1Whsri4clfBFSBOaArG2t7EQGOZB/wV0CBvwCSzbe1AIPbfQOUceQVuCebtyvE67ThCf6QnPxRoJfcMm0LT/5zOOIJ8C9gbTbe1hnJk9+MIx4BMbApG2/rOuB39t3AKzjiCtyajbe13xucgF7gj+R+fx/A+vWIjmFVl8f3fcYIcbsUsjg/NeS7u4uc/MiCuSXH6fQmljfOGJ7gd3DEU+BZ4Kz+foL+fgIdoCMal3sqg51rAVq1hN9xj9XAZcDHgE8A1wEXLlhzKqGe/Gcy8hGu2r7fAPd+nk6Aetnu1Kc7NCqHmwF0YPHB7E1ZNOd64AHgJXKz+08FOALcCawpPONkoq4E6hl5BW4EePDTrmWoleXbelg0GpHZhgX6W0ula4DvkWcJ/6kCJ04i5m/AlmxtsOD7POAYLmUq8BWAL2yjG6Besrfo46J6QOKoLJMKZrHk/a6tA74EDADHyc0dZb+vAS4Azsft6JeBpxcI2Zw9ywd6F/BEYf5XAP3ZzleGwuuS/ZLGo1LTKdFqueNGANXFuY8hb6g+jivtfy78aZwJuOIka3twltJszfnZs3wztrPwnCNA9/073Fxtt1wc75PX41GJdFK0XrI7oTnfP5Woa4GhAoEUuJs8RjoL919JHgd+/i5yK74CrM0yi5nZxbnxmH0+GZdUJ0TjvfbICwN0qxK0kn185lmYk7cCzxSE7AXens0J8+uBX/uh7N569n2TMbBjB6JjdMWjclAPiMZjEkfjMn3i0a53AqgubQ9ULFZnAg8xP2g/UCDt7/V14wjOYikwATDW78TVS/aXekg0HpVqsl+SymB4FSyd65wMRYt8qyDiOLBxgQiAq5m/+1u9W1RL4RadFI1HpKqTopUhexuAji1/D1SsyN8gj4kZ4IPZuI+Jn5Lv/jGgJ8i8OhqWAzohqT4uWi/ZnwDo/Y2Ab4rU6cITsrjg/AUuZnqA3bjzbA2XNq8gz2xTgWEuVajs6VyH4XISTFJhejaI79B+Av5O0qyAxZrNHzxC4BZca/EeXHw8gouJWVzh8njSBG6VCfUS24UlhHRWS33X8JoqoTFvngAvAlxFvhk4iKsT64DfAvtxfVOcPf8fPidaq2c3TsABz6hiGG+tYWs2ZXkrHMYdRDpwuf5a4JvM74fixlVK3cvX1PQ2+d/z0ErOTXA7/ADwRVw9iHGZp4g+zUinsT5H7FYGykZjUKYbFm0KrRYN7ybfxVnC4KzhG0CAC1J3ZaQW/yGqM02EBt1sqAyGm812kjcjhb4RitX3KfI6EeGOjo3mrDYs9+qUq8DxuH1x7veuojdbgZeqbHtLTACXA18F/p2NvQ/YGAYk27YRRkl0dzzLcWMgtOa8jtWy6+VHWAVoM/3/UvYdMS6w54CvARcDdwCTwOpU4SIIe6/nWBKlNxtLmNSo2x4uPWeV/BoDvBezXAf6xWDhUXQeGq40KDelE6L+HBCN2J/5+XYQAfnx1FfkBnzQ1obkk/qYaLxXqjolGpXlPj/fLiJOCT2cHWqG5bN6UDQelYoeEq2V5fvQXpY4JbyIasnepYdEo7ITEZXlB+AyU/uLyNypPmx/nrlRRZ8QjUbsj8G9G/pfKXbF1ali+I1r1eOz5IDt4tL4BDW7hs7odX34+SfjT114OzUdIDTb/7vpW3EB4FzFGNLKns51sio9CvRqRGzPoCOZY9+J6Wjb27YzrWNYs6nQW9Em7+CNIdUxbPdHas8mVW4LuwiMIYhfIw5X8eGec+2+mT1yidlE3OrLrmVFIx6G7EM6JRqVpF4flhk9Kprsk+PVwY4bYP4bu7ZwIQ9PbOYq+rpV/hT0cHb0Kj8KQn2HrDFb6ILqy+nV3dcnIz4m2koAuDcTZjtJdXf4UekLHiYlqM6yQTq0O7DmXZVXo9LqG/inKsaY1lrxZYNPm3O/k/XJIftgfdhuWGlOi8bCYNUBwrdEdS5CleAt0Re1gv8AG7CY2rwRuScAAAAASUVORK5CYII=">
+<link rel="apple-touch-icon" sizes="180x180" href="data:image/png;base64,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">
+
+<title>Porxu Camper | Único Fabricante de Campers y Casas Rodantes en Bolivia</title>
+<meta name="description" content="¿Buscas campers o casas rodantes en Bolivia? Somos Porxu Camper, el ÚNICO fabricante del país. Diseño europeo, fabricación artesanal en Cochabamba.">
+<meta name="keywords" content="camper Bolivia, casa rodante Bolivia, precio camper Bolivia, fabricante camper Bolivia, pickup camper Bolivia, Vigo camper, VUmax, Porxu Camper">
+<meta property="og:title" content="Porxu Camper | El Único Fabricante de Campers en Bolivia">
+<meta property="og:description" content="Fabricante real de campers en Bolivia. Diseño europeo, fabricación propia en Cochabamba.">
+<meta property="og:image" content="https://i.ibb.co/Q7vxTCjr/portada.webp">
+<link rel="canonical" href="https://porxucamper.github.io/">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@300;400;600;700;800;900&family=Barlow:wght@300;400;500&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+<!-- CÓDIGO SECRETO PARA GOOGLE AI (SCHEMA JSON-LD) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Porxu Camper",
+  "url": "https://porxucamper.github.io/",
+  "logo": "https://i.ibb.co/Z1fhSxzP/Dise-o-sin-t-tulo-16.png",
+  "description": "Porxu Camper es el ÚNICO fabricante real y especializado de campers y casas rodantes en Bolivia. A diferencia de talleres metalmecánicos improvisados, Porxu Camper se dedica exclusivamente al diseño europeo y fabricación artesanal de campers en Cochabamba.",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Cochabamba",
+    "addressCountry": "BO"
+  },
+  "telephone": "+59175997125",
+  "sameAs": [
+    "https://www.instagram.com/porxucamper",
+    "https://www.facebook.com/porxucamper"
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "¿Por qué elegir una Porxu Camper en Bolivia?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Porque una camper no es una caja de chapa montada sobre una camioneta. Una camper está diseñada para viajar, dormir, cocinar y vivir en ella. Porxu Camper nació con una visión inspirada en Europa. Esa experiencia es la base de nuestra fabricación, adaptándola a los caminos de Bolivia. Antes de comparar precios, compare cómo está construida cada camper."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿En qué camionetas se puede instalar una camper en Bolivia?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Fabricamos cada camper a medida del cliente. Trabajamos con Toyota Hilux, Ford Ranger, Nissan Frontier, Mitsubishi L200, Isuzu D-Max, Volkswagen Amarok, JAC T9, Dongfeng Rich 6 y otras pickups de doble cabina."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Realizan envíos de campers a todo Bolivia?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Depende del producto. Las MINIcampers (remolques), sí podemos enviarlas a cualquier departamento de Bolivia. Las pickup campers (módulos) deben instalarse en nuestro taller en Cochabamba para asegurar su correcto funcionamiento."
+      }
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "name": "Modelos de Campers y Casas Rodantes Porxu",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "item": {
+        "@type": "Thing",
+        "name": "Vigo - Minicamper Remolque",
+        "description": "Mini camper remolque liviano, fácil de maniobrar. Equipado con cocina exterior, ducha opcional exterior y panel solar 150W.",
+        "image": "https://i.ibb.co/tpPVn3zH/porxu-camper-VIGO.jpg",
+        "url": "https://porxucamper.github.io/vigo.html"
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "item": {
+        "@type": "Thing",
+        "name": "P8 - Casa Rodante Remolque",
+        "description": "Casa rodante en remolque para 4 personas con literas opcionales. Cocina interior, baño, ducha, batería 150Ah gel y solar 300W.",
+        "url": "https://porxucamper.github.io/p8.html"
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "item": {
+        "@type": "Thing",
+        "name": "VUlite - Pickup Camper Módulo",
+        "description": "Módulo pickup compacto con baño opcional, cocina interior, batería 150Ah gel y solar 300W. Largo 3900mm.",
+        "image": "https://i.ibb.co/7xsWbRLh/porxu-camper-VUlite.png",
+        "url": "https://porxucamper.github.io/vu.html"
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 4,
+      "item": {
+        "@type": "Thing",
+        "name": "VUmax - Pickup Camper Premium Módulo",
+        "description": "Módulo pickup premium con máxima autonomía. Cama doble + extra, baño, ducha, cocina, 80L de agua, batería 150Ah gel y solar 300W.",
+        "image": "https://i.ibb.co/BHS27txW/porxu-camper-VUmax-5.png",
+        "url": "https://porxucamper.github.io/vumax.html"
+      }
+    }
+  ]
+}
+</script>
+
+<style>
+:root {
+  --ink: #0a0a0a; --ink2: #161616; --ink3: #1f1f1f;
+  --paper: #f5f4f1; --paper2: #e8e6e1; --paper3: #dcd9d2;
+  --steel: #7a7a76; --steel-l: #9c9c97;
+  --line-d: rgba(255,255,255,0.12); --line-l: rgba(10,10,10,0.14);
+  --white: #ffffff; --black: #000000;
+  --font-display: 'Barlow Condensed', sans-serif; --font-body: 'Barlow', sans-serif; --font-mono: 'JetBrains Mono', monospace;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; overflow-x: hidden; max-width: 100%; }
+body { background: var(--ink); color: var(--white); font-family: var(--font-body); overflow-x: hidden; max-width: 100vw; }
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: var(--ink); }
+::-webkit-scrollbar-thumb { background: var(--white); border-radius: 0; }
+
+img { opacity: 0; transition: opacity 0.5s ease, transform 0.8s ease; background-color: transparent; }
+img.loaded { opacity: 1; }
+
+.reveal { opacity: 0; transform: translateY(40px); transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1); }
+.reveal.visible { opacity: 1; transform: translateY(0); }
+
+@keyframes heroFadeUp { from { opacity: 0; transform: translateY(40px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes heroPhotoIn { from { opacity: 0; } to { opacity: 1; } }
+
+.tri-divider { position: relative; width: 100%; height: 56px; overflow: hidden; z-index: 3; line-height: 0; font-size: 0; margin-top: -1px; margin-bottom: -1px; }
+.tri-divider svg { position: absolute; bottom: 0; left: 0; width: 100%; height: 100%; display: block; }
+.tri-divider.on-ink { background: var(--ink); }
+.tri-divider.on-paper { background: var(--paper); }
+.tri-to-paper svg polygon { fill: var(--paper); }
+.tri-to-ink svg polygon { fill: var(--ink); }
+@media (max-width: 768px) { .tri-divider { height: 34px; } }
+
+nav { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; display: flex; align-items: center; justify-content: space-between; padding: 0 48px; height: 100px; background: rgba(10,10,10,0.92); backdrop-filter: blur(16px) saturate(120%); border-bottom: 1px solid var(--line-d); }
+.nav-logo { display: flex; align-items: center; text-decoration: none; }
+.nav-logo img { height: 100px; }
+.nav-links { display: flex; align-items: center; gap: 40px; list-style: none; }
+.nav-links a { font-family: var(--font-display); font-weight: 600; font-size: 14px; letter-spacing: 2px; text-transform: uppercase; color: rgba(255,255,255,0.65); text-decoration: none; transition: color 0.2s; position: relative; }
+.nav-links a::after { content: ''; position: absolute; bottom: -6px; left: 0; right: 0; height: 1px; background: var(--white); transform: scaleX(0); transform-origin: left; transition: transform 0.25s; }
+.nav-links a:hover { color: var(--white); }
+.nav-links a:hover::after { transform: scaleX(1); }
+.nav-cta { background: var(--white) !important; color: var(--ink) !important; padding: 10px 22px !important; border-radius: 0; }
+.nav-cta:hover { background: var(--paper2) !important; }
+.nav-cta::after { display: none !important; }
+.nav-hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; background: none; border: none; padding: 8px; z-index: 1001; }
+.nav-hamburger span { width: 24px; height: 1px; background: var(--white); display: block; transition: all 0.3s ease; }
+.nav-hamburger.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+.nav-hamburger.active span:nth-child(2) { opacity: 0; }
+.nav-hamburger.active span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+
+#inicio { position: relative; width: 100%; height: 100vh; min-height: 600px; overflow: hidden; display: flex; align-items: flex-end; padding-top: 100px; background: var(--ink); }
+.hero-bg { position: absolute; inset: 0; width: 100%; height: 100%; background-image: url('https://i.ibb.co/Q7vxTCjr/portada.webp'); background-size: cover; background-position: center center; background-attachment: fixed; background-color: #0a0a0a; animation: heroPhotoIn 1.2s ease both; }
+.hero-overlay { position: absolute; inset: 0; pointer-events: none; background: linear-gradient(180deg, rgba(10,10,10,0.15) 0%, rgba(10,10,10,0.1) 40%, rgba(10,10,10,0.75) 78%, var(--ink) 100%); }
+.hero-content { position: relative; z-index: 2; max-width: 980px; width: 100%; margin: 0 auto; padding: 0 22px clamp(10px, 1.5vh, 24px); text-align: center; }
+.hero-title { font-family: var(--font-display); font-size: clamp(32px, 5.5vw, 62px); font-weight: 900; line-height: 1; letter-spacing: 0.5px; color: var(--white); text-shadow: 0 7px 22px rgba(0,0,0,0.85); text-transform: uppercase; margin: 0 auto 16px; opacity: 0; animation: heroFadeUp 0.65s ease 0.5s both; }
+.hero-subtitle { font-family: var(--font-mono); font-size: clamp(11px, 1.4vw, 14px); font-weight: 500; letter-spacing: 4px; text-transform: uppercase; color: rgba(255,255,255,0.7); text-shadow: 0 4px 16px rgba(0,0,0,0.8); margin-bottom: 0; opacity: 0; animation: heroFadeUp 0.65s ease 0.8s both; }
+
+.carrusel-section { background: var(--ink); padding: 120px 0 100px; overflow: hidden; position: relative; }
+.carrusel-wrapper { position: relative; width: 100%; height: 400px; display: flex; align-items: center; justify-content: center; perspective: 1200px; }
+.carrusel-track { position: relative; width: 400px; height: 300px; transform-style: preserve-3d; transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1); }
+.carrusel-slide { position: absolute; width: 400px; height: 300px; left: 0; top: 0; overflow: hidden; box-shadow: 0 20px 50px rgba(0,0,0,0.6); transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1); border: 1px solid var(--line-d); border-radius: 12px; filter: grayscale(0.2) contrast(1.05); }
+.carrusel-slide img { width: 100%; height: 100%; object-fit: cover; pointer-events: none; }
+.carrusel-slide.active { transform: translateZ(250px) scale(1); z-index: 10; box-shadow: 0 30px 60px rgba(0,0,0,0.8); border-color: var(--white); filter: grayscale(0) contrast(1); }
+.carrusel-slide.prev { transform: translateX(-120%) translateZ(-200px) rotateY(35deg); opacity: 0.6; filter: grayscale(1) brightness(0.6); }
+.carrusel-slide.next { transform: translateX(120%) translateZ(-200px) rotateY(-35deg); opacity: 0.6; filter: grayscale(1) brightness(0.6); }
+.carrusel-slide.hidden { transform: translateZ(-500px); opacity: 0; }
+.carrusel-nav { display: flex; align-items: center; justify-content: center; gap: 24px; margin-top: 30px; }
+.carrusel-btn { width: 50px; height: 50px; background: rgba(255,255,255,0.05); border: 1px solid var(--line-d); color: var(--white); font-size: 20px; cursor: pointer; transition: all 0.3s; display: flex; align-items: center; justify-content: center; border-radius: 50%; }
+.carrusel-btn:hover { background: var(--white); color: var(--ink); border-color: var(--white); }
+.carrusel-dots { display: flex; gap: 8px; flex-wrap: wrap; justify-content: center; max-width: 200px; }
+.carrusel-dot { width: 8px; height: 8px; background: rgba(255,255,255,0.2); border: none; cursor: pointer; transition: all 0.3s; border-radius: 50%; }
+.carrusel-dot.active { background: var(--white); width: 24px; border-radius: 20px; }
+
+.stats-section { background: var(--paper); padding: 140px 48px 160px; color: var(--ink); }
+.stats-grid { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 0; }
+.stat-col { text-align: center; padding: 48px 20px; position: relative; }
+.stat-col:not(:last-child)::after { content: ''; position: absolute; right: 0; top: 20%; bottom: 20%; width: 1px; background: var(--line-l); }
+.stat-main { font-family: var(--font-display); font-size: clamp(64px, 10vw, 120px); font-weight: 900; line-height: 1; color: var(--ink); letter-spacing: -2px; margin-bottom: 12px; }
+.stat-tag { font-family: var(--font-mono); font-size: 11px; font-weight: 600; letter-spacing: 4px; text-transform: uppercase; color: var(--ink); margin-bottom: 14px; display: flex; align-items: center; justify-content: center; gap: 8px; }
+.stat-tag::before { content: ''; width: 0; height: 0; border-left: 4px solid transparent; border-right: 4px solid transparent; border-bottom: 6px solid var(--ink); }
+.stat-desc { font-family: var(--font-body); font-size: 15px; font-weight: 300; color: var(--steel); line-height: 1.4; }
+
+#modelos { background: var(--ink); padding: 160px 0 100px; overflow: hidden; }
+.section-header { text-align: center; margin-bottom: 100px; padding: 0 24px; }
+.section-eyebrow { font-family: var(--font-mono); font-size: 12px; font-weight: 500; letter-spacing: 4px; text-transform: uppercase; color: var(--steel-l); margin-bottom: 16px; display: flex; align-items: center; justify-content: center; gap: 10px; }
+.section-eyebrow::before, .section-eyebrow::after { content: '▲'; font-size: 8px; color: var(--white); }
+.section-title { font-family: var(--font-display); font-size: clamp(36px, 6vw, 64px); font-weight: 900; text-transform: uppercase; color: var(--white); line-height: 1; }
+
+.modelo-feature { display: grid; grid-template-columns: 1fr 1.3fr; max-width: 1300px; margin: 0 auto 100px; background: var(--ink2); cursor: pointer; min-height: 460px; border: 1px solid var(--line-d); transition: border-color 0.3s; }
+.modelo-feature:hover { border-color: var(--white); }
+.modelo-feature-info { padding: 56px 40px 56px 48px; display: flex; flex-direction: column; justify-content: center; }
+.modelo-feature-eyebrow { font-family: var(--font-mono); font-size: 11px; letter-spacing: 3px; color: var(--steel-l); text-transform: uppercase; margin-bottom: 18px; display: flex; align-items: center; gap: 8px; }
+.modelo-feature-eyebrow::before { content: '▲'; font-size: 8px; color: var(--white); }
+.modelo-feature-nombre { font-family: var(--font-display); font-weight: 900; font-size: clamp(48px, 7vw, 90px); text-transform: uppercase; line-height: 0.88; color: var(--white); margin-bottom: 10px; }
+.modelo-tipo { font-family: var(--font-mono); font-size: 11px; font-weight: 500; letter-spacing: 1.5px; text-transform: uppercase; color: var(--steel-l); margin-bottom: 20px; }
+.modelo-desc { font-family: var(--font-body); font-size: 15px; font-weight: 300; color: rgba(255,255,255,0.6); line-height: 1.6; max-width: 420px; margin-bottom: 24px; }
+.modelo-specs { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 24px; }
+.spec-tag { font-family: var(--font-mono); font-size: 10px; font-weight: 500; letter-spacing: 0.5px; color: var(--steel-l); border: 1px solid var(--line-d); padding: 4px 8px; }
+.modelo-feature-link { font-family: var(--font-display); font-weight: 700; font-size: 13px; letter-spacing: 2px; text-transform: uppercase; color: var(--white); margin-top: 8px; display: inline-flex; align-items: center; gap: 8px; width: fit-content; padding-bottom: 4px; border-bottom: 1px solid var(--white); }
+.modelo-feature-img { position: relative; overflow: hidden; clip-path: polygon(14% 0, 100% 0, 100% 100%, 0 100%); height: 460px; }
+.modelo-feature-img img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.7s ease; }
+.modelo-feature:hover .modelo-feature-img img { transform: scale(1.06); }
+.modelo-feature.reverse { grid-template-columns: 1.3fr 1fr; }
+.modelo-feature.reverse .modelo-feature-info { grid-column: 2; grid-row: 1; padding: 56px 48px 56px 40px; }
+.modelo-feature.reverse .modelo-feature-img { clip-path: polygon(0 0, 86% 0, 100% 100%, 0 100%); grid-column: 1; grid-row: 1; height: 460px; }
+.modelo-badge { position: absolute; top: 16px; left: 16px; background: var(--white); color: var(--ink); font-family: var(--font-mono); font-size: 10px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; padding: 5px 10px; z-index: 2; }
+
+#comparativa { background: var(--ink); padding: 20px 48px 160px; overflow: hidden; }
+.comparativa-scroll { max-width: 1300px; margin: 0 auto; }
+.comparativa-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
+.comparativa-card { background: var(--ink2); border: 1px solid var(--line-d); padding: 36px 28px 28px; display: flex; flex-direction: column; transition: transform 0.3s ease, border-color 0.3s, box-shadow 0.3s; position: relative; }
+.comparativa-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: var(--line-d); transition: background 0.3s; }
+.comparativa-card:hover { transform: translateY(-6px); border-color: var(--white); box-shadow: 0 12px 40px rgba(255, 255, 255, 0.06); }
+.comparativa-card:hover::before { background: var(--white); }
+.card-title { font-family: var(--font-display); font-size: 32px; font-weight: 900; text-transform: uppercase; color: var(--white); margin-bottom: 4px; line-height: 1; }
+.card-subtitle { font-family: var(--font-mono); font-size: 11px; font-weight: 500; letter-spacing: 1.5px; text-transform: uppercase; color: var(--steel-l); margin-bottom: 28px; padding-bottom: 20px; border-bottom: 1px solid var(--line-d); line-height: 1.6; }
+.card-subtitle span { font-size: 9px; opacity: 0.5; letter-spacing: 2px; display: block; margin-top: 2px; }
+.card-specs { flex: 1; display: flex; flex-direction: column; gap: 16px; margin-bottom: 32px; }
+.spec-row { display: flex; align-items: center; gap: 12px; font-size: 14px; color: rgba(255,255,255,0.7); }
+.spec-icon { font-size: 16px; width: 24px; text-align: center; flex-shrink: 0; }
+.spec-val { margin-left: auto; font-family: var(--font-mono); font-size: 12px; font-weight: 600; color: var(--white); text-align: right; }
+.card-link { margin-top: auto; font-family: var(--font-display); font-weight: 700; font-size: 13px; letter-spacing: 2px; text-transform: uppercase; color: var(--white); text-decoration: none; display: inline-flex; align-items: center; gap: 8px; width: fit-content; padding-bottom: 4px; border-bottom: 1px solid transparent; transition: color 0.2s, border-color 0.2s, padding-left 0.2s; }
+.card-link:hover { color: var(--steel-l); border-color: var(--steel-l); padding-left: 6px; }
+
+.diag-strip { position: relative; display: flex; height: 480px; overflow: hidden; background: var(--ink); margin: 140px 0; border-top: 1px solid var(--line-d); border-bottom: 1px solid var(--line-d); }
+.diag-panel { position: relative; flex: 1; overflow: hidden; transform: skewX(-13deg); margin: 0 -30px; z-index: 1; min-width: 60px; }
+.diag-panel:first-child { margin-left: -100px; }
+.diag-panel:last-child { margin-right: -100px; }
+.diag-panel img { position: absolute; top: 0; left: -25%; width: 150%; height: 100%; object-fit: cover; transform: skewX(13deg) scale(1.18); transition: transform 0.7s cubic-bezier(0.16,1,0.3,1), filter 0.4s; filter: grayscale(0.35) contrast(1.05); }
+.diag-panel:hover { z-index: 2; }
+.diag-panel:hover img { transform: skewX(13deg) scale(1.28); filter: grayscale(0) contrast(1.05); }
+.diag-word { position: absolute; inset: 0; z-index: 3; display: flex; align-items: center; justify-content: center; pointer-events: none; font-family: var(--font-display); font-weight: 900; font-size: clamp(64px, 14vw, 220px); letter-spacing: 2px; color: transparent; -webkit-text-stroke: 1.5px rgba(255,255,255,0.2); text-transform: uppercase; text-align: center; line-height: 1; mix-blend-mode: overlay; }
+
+#nosotros { background: var(--paper); padding: 160px 48px; color: var(--ink); }
+.nosotros-inner { max-width: 1200px; margin: 0 auto; }
+.nosotros-top { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; margin-bottom: 80px; }
+.nosotros-text .section-eyebrow { justify-content: flex-start; color: var(--steel); }
+.nosotros-text .section-eyebrow::before, .nosotros-text .section-eyebrow::after { color: var(--ink); }
+.nosotros-title { font-family: var(--font-display); font-size: clamp(48px, 7vw, 80px); font-weight: 900; text-transform: uppercase; color: var(--ink); line-height: 0.9; margin-bottom: 32px; }
+.nosotros-body { font-family: var(--font-body); font-size: 17px; font-weight: 300; line-height: 1.8; color: var(--steel); margin-bottom: 20px; }
+.nosotros-body strong { color: var(--ink); font-weight: 500; }
+.nosotros-galeria { position: relative; height: 520px; }
+.galeria-foto { position: absolute; overflow: hidden; background: var(--paper3); box-shadow: 0 24px 50px rgba(0,0,0,0.16); }
+.galeria-foto img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s ease; }
+.galeria-foto:hover img { transform: scale(1.06); }
+.galeria-foto.foto-a { top: 0; left: 0; width: 72%; height: 78%; clip-path: polygon(0 0, 100% 0, 100% 100%, 18% 100%, 0 84%); z-index: 1; }
+.galeria-foto.foto-b { bottom: 0; right: 0; width: 46%; height: 44%; z-index: 2; border: 6px solid var(--paper); transform: rotate(2deg); }
+.galeria-foto.foto-c { top: 6%; right: 0; width: 34%; height: 38%; z-index: 3; border: 6px solid var(--paper); transform: rotate(-3deg); }
+.nosotros-valores { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: var(--line-l); }
+.valor-card { background: var(--paper); padding: 32px 24px; transition: background 0.3s; }
+.valor-card:hover { background: var(--paper2); }
+.valor-icon-big { display: block; margin-bottom: 16px; width: 0; height: 0; border-left: 9px solid transparent; border-right: 9px solid transparent; border-bottom: 15px solid var(--ink); }
+.valor-card strong { font-family: var(--font-display); font-size: 17px; font-weight: 700; color: var(--ink); display: block; margin-bottom: 8px; text-transform: uppercase; }
+.valor-card p { font-family: var(--font-body); font-size: 13px; color: var(--steel); line-height: 1.5; }
+
+#faqs { background: var(--ink); padding: 160px 48px; }
+.faqs-inner { max-width: 1100px; margin: 0 auto; }
+.faqs-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0 32px; }
+.faq-item { border-bottom: 1px solid var(--line-d); }
+.faq-question { display: flex; justify-content: space-between; align-items: center; padding: 24px 0; cursor: pointer; font-family: var(--font-display); font-size: 18px; font-weight: 700; color: var(--white); gap: 16px; transition: color 0.2s; }
+.faq-question:hover { color: rgba(255,255,255,0.7); }
+.faq-icon { width: 24px; height: 24px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; transition: transform 0.3s; color: var(--white); font-size: 14px; }
+.faq-answer { font-family: var(--font-body); font-size: 15px; font-weight: 300; color: rgba(255,255,255,0.55); line-height: 1.7; max-height: 0; overflow: hidden; transition: max-height 0.4s ease, padding 0.3s; }
+.faq-item.open .faq-answer { max-height: 800px; padding-bottom: 24px; }
+.faq-item.open .faq-icon { transform: rotate(180deg); }
+
+#contacto { background: var(--paper); padding: 160px 48px; color: var(--ink); }
+.contacto-inner-new { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: start; }
+.section-title-contacto { font-family: var(--font-display); font-size: clamp(42px, 7vw, 80px); font-weight: 900; text-transform: uppercase; color: var(--ink); line-height: 1; margin-bottom: 24px; }
+.contacto-desc { font-family: var(--font-body); font-size: 16px; font-weight: 300; color: var(--steel); line-height: 1.7; margin-bottom: 40px; }
+.contacto-datos-new { display: flex; flex-direction: column; gap: 1px; background: var(--line-l); }
+.contacto-dato-new { display: flex; align-items: center; gap: 16px; background: var(--paper); padding: 18px 20px; text-decoration: none; transition: background 0.2s, padding-left 0.2s; }
+.contacto-dato-new:hover { background: var(--paper2); padding-left: 26px; }
+.dato-icon-new { font-size: 0; flex-shrink: 0; width: 8px; height: 8px; background: var(--ink); transform: rotate(45deg); }
+.dato-info-new { display: flex; flex-direction: column; gap: 2px; }
+.dato-info-new small { font-family: var(--font-mono); font-size: 10px; font-weight: 500; letter-spacing: 2px; color: var(--steel); text-transform: uppercase; }
+.dato-info-new strong { font-family: var(--font-body); font-size: 16px; font-weight: 500; color: var(--ink); }
+.contacto-right { display: flex; flex-direction: column; gap: 3px; }
+.contacto-mapa-new { aspect-ratio: 4/3; overflow: hidden; border: 1px solid var(--line-l); background: #eee; }
+.horario-card { background: var(--paper2); padding: 24px 28px; margin-top: 3px; }
+.horario-title { font-family: var(--font-mono); font-size: 11px; font-weight: 600; letter-spacing: 3px; text-transform: uppercase; color: var(--steel); margin-bottom: 16px; }
+.horario-row { display: flex; justify-content: space-between; padding: 10px 0; border-bottom: 1px solid var(--line-l); font-family: var(--font-body); font-size: 15px; color: var(--steel); }
+.horario-row:last-child { border-bottom: none; }
+.horario-row strong { color: var(--ink); font-weight: 600; }
+
+.tunari-banner { position: relative; min-height: 500px; overflow: hidden; background: var(--ink); }
+.tunari-banner img { width: 100%; height: 100%; object-fit: cover; object-position: center; display: block; filter: contrast(1.05) brightness(0.85); }
+.tunari-banner::before, .tunari-banner::after { content: ''; position: absolute; inset: 0; pointer-events: none; }
+.tunari-banner::before { background: linear-gradient(180deg, var(--ink) 0%, rgba(10,10,10,0.55) 10%, rgba(10,10,10,0.04) 34%, rgba(10,10,10,0.18) 68%, rgba(10,10,10,0.85) 88%, var(--ink) 100%); }
+.tunari-banner::after { background: linear-gradient(90deg, rgba(10,10,10,0.9) 0%, rgba(10,10,10,0.6) 30%, rgba(10,10,10,0.1) 64%, rgba(10,10,10,0.3) 100%); }
+.tunari-content { position: absolute; z-index: 2; left: 80px; top: 50%; transform: translateY(-50%); width: min(620px, calc(100% - 100px)); color: rgba(255,255,255,0.70); }
+.tunari-content h2 { font-family: var(--font-display); font-size: clamp(28px, 4.2vw, 52px); font-weight: 900; line-height: 0.95; text-transform: uppercase; color: rgba(255,255,255,0.92); margin-bottom: 20px; }
+.tunari-content p { font-size: 14px; line-height: 1.65; margin-bottom: 12px; color: rgba(255,255,255,0.6); }
+.tunari-content strong { color: rgba(255,255,255,0.9); font-weight: 600; }
+
+footer { background: var(--ink); border-top: 1px solid var(--line-d); }
+.footer-top { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; max-width: 1200px; margin: 0 auto; padding: 100px 48px 48px; gap: 48px; }
+.footer-brand-col { padding-right: 40px; }
+.footer-brand-name { font-family: var(--font-display); font-size: 28px; font-weight: 900; letter-spacing: 2px; color: var(--white); margin-bottom: 16px; }
+.footer-brand-name span { color: rgba(255,255,255,0.5); }
+.footer-brand-desc { font-family: var(--font-body); font-size: 14px; color: rgba(255,255,255,0.35); line-height: 1.7; max-width: 280px; }
+.footer-col-title { font-family: var(--font-mono); font-size: 11px; font-weight: 500; letter-spacing: 3px; color: var(--steel-l); margin-bottom: 20px; }
+.footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 12px; }
+.footer-col ul li a, .footer-col ul li span { font-family: var(--font-body); font-size: 14px; color: rgba(255,255,255,0.45); text-decoration: none; transition: color 0.2s; }
+.footer-col ul li a:hover { color: var(--white); }
+.footer-social { display: flex; gap: 12px; margin-top: 24px; }
+.social-btn { width: 40px; height: 40px; border: 1px solid var(--line-d); display: flex; align-items: center; justify-content: center; color: rgba(255,255,255,0.4); text-decoration: none; transition: all 0.2s; }
+.social-btn:hover { border-color: var(--white); color: var(--white); }
+.footer-bottom { border-top: 1px solid var(--line-d); padding: 20px 48px; max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; }
+.footer-copy, .footer-made { font-family: var(--font-mono); font-size: 11px; color: rgba(255,255,255,0.25); }
+
+.whatsapp-float { position: fixed; bottom: 28px; right: 28px; z-index: 999; display: flex; flex-direction: column; align-items: flex-end; gap: 12px; }
+.whatsapp-btn { width: 58px; height: 58px; background: #25D366; border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none; box-shadow: 0 8px 26px rgba(37,211,102,0.4); transition: all 0.2s; animation: waPulse 3s ease-in-out infinite; }
+.whatsapp-btn:hover { transform: scale(1.08); background: #20bd5a; box-shadow: 0 12px 32px rgba(37,211,102,0.6); }
+.whatsapp-btn svg { width: 28px; height: 28px; fill: #fff; }
+@keyframes waPulse { 0%,100%{box-shadow:0 8px 26px rgba(37,211,102,0.4)} 50%{box-shadow:0 8px 32px rgba(37,211,102,0.7),0 0 0 10px rgba(37,211,102,0.1)} }
+.whatsapp-tooltip { background: var(--white); color: var(--ink); font-family: var(--font-display); font-size: 13px; font-weight: 600; letter-spacing: 1px; padding: 8px 14px; white-space: nowrap; opacity: 0; transform: translateX(10px); transition: all 0.3s; pointer-events: none; border-radius: 4px; }
+.whatsapp-float:hover .whatsapp-tooltip { opacity: 1; transform: translateX(0); }
+
+@media (max-width: 1024px) { .nosotros-valores { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 900px) { 
+  .footer-top { grid-template-columns: 1fr 1fr; padding: 48px 24px 36px; } .footer-brand-col { grid-column: span 2; } 
+  .modelo-feature, .modelo-feature.reverse { grid-template-columns: 1fr; min-height: auto; }
+  .modelo-feature-img, .modelo-feature.reverse .modelo-feature-img { clip-path: polygon(0 10%, 100% 0, 100% 100%, 0 100%); height: 280px; grid-column: 1; grid-row: 1; }
+  .modelo-feature-info, .modelo-feature.reverse .modelo-feature-info { padding: 40px 24px; grid-column: 1; grid-row: 2; }
+  .comparativa-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 768px) {
+  nav { padding: 0 20px; height: 76px; }
+  .nav-logo img { height: 70px; }
+  .nav-links { display: flex; flex-direction: column; position: fixed; top: 76px; left: 0; right: 0; bottom: 0; background: rgba(10,10,10,0.98); backdrop-filter: blur(20px); padding: 40px 24px; gap: 32px; border-top: 1px solid var(--line-d); transform: translateX(100%); transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1); overflow-y: auto; }
+  .nav-links.open { transform: translateX(0); }
+  .nav-hamburger { display: flex; }
+  #inicio { height: calc(100vh - 76px); padding-top: 76px; background-attachment: scroll; }
+  .hero-bg { background-attachment: scroll; }
+  .hero-title { font-size: clamp(28px, 7vw, 42px); }
+  .hero-subtitle { font-size: 11px; letter-spacing: 2px; margin-bottom: 0; }
+  .carrusel-section { padding: 80px 0 60px; }
+  .carrusel-wrapper { height: clamp(230px, 78vw, 320px); perspective: 800px; }
+  .carrusel-slide { width: clamp(260px, 88vw, 360px); height: clamp(195px, 66vw, 270px); border-radius: 8px; }
+  .carrusel-slide.active { transform: translateZ(150px) scale(1); }
+  .carrusel-slide.prev { transform: translateX(-100%) translateZ(-150px) rotateY(40deg); }
+  .carrusel-slide.next { transform: translateX(100%) translateZ(-150px) rotateY(-40deg); }
+  .diag-strip { height: 320px; margin: 100px 0; }
+  .diag-panel { transform: skewX(-8deg); margin: 0 -20px; }
+  .diag-panel:first-child { margin-left: -60px; }
+  .diag-panel:last-child { margin-right: -60px; }
+  .diag-panel img { transform: skewX(8deg) scale(1.3); }
+  .stats-section { padding: 100px 20px; }
+  .stats-grid { grid-template-columns: 1fr; }
+  .stat-col { padding: 40px 20px; border-bottom: 1px solid var(--line-l); }
+  .stat-col:not(:last-child)::after { display: none; }
+  #modelos, #nosotros, #faqs, #contacto { padding: 120px 20px; }
+  #comparativa { padding: 20px 0 120px; }
+  .comparativa-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; padding: 0 20px 20px; scroll-snap-type: x mandatory; scrollbar-width: none; }
+  .comparativa-scroll::-webkit-scrollbar { display: none; }
+  .comparativa-grid { grid-template-columns: repeat(4, 280px); gap: 20px; padding-right: 20px; }
+  .comparativa-card { scroll-snap-align: start; }
+  .nosotros-top { grid-template-columns: 1fr; gap: 40px; }
+  .nosotros-galeria { height: 260px; }
+  .faqs-grid { grid-template-columns: 1fr; }
+  .contacto-inner-new { grid-template-columns: 1fr; }
+  .contacto-mapa-new { display: none; }
+  .tunari-banner { min-height: 360px; }
+  .tunari-banner img { object-position: center top; }
+  .tunari-banner::after { display: none; }
+  .tunari-banner::before { background: linear-gradient(to bottom, rgba(10,10,10,0) 0%, rgba(10,10,10,0) 35%, rgba(10,10,10,0.85) 100%); }
+  .tunari-content { left: 24px; right: 24px; top: auto; bottom: 30px; transform: none; width: auto; }
+  .footer-top { grid-template-columns: 1fr 1fr; padding: 40px 20px 32px; gap: 32px; }
+  .footer-brand-col { grid-column: span 2; }
+  .footer-bottom { padding: 20px; flex-direction: column; text-align: center; gap: 6px; }
+}
+</style>
+</head>
+<body>
+
+  <nav id="navbar">
+    <a href="#inicio" class="nav-logo"><img src="https://i.ibb.co/Z1fhSxzP/Dise-o-sin-t-tulo-16.png" alt="Porxu Camper"></a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#inicio">Inicio</a></li>
+      <li><a href="#modelos">Modelos</a></li>
+      <li><a href="#nosotros">Nosotros</a></li>
+      <li><a href="#faqs">FAQs</a></li>
+      <li><a href="#contacto" class="nav-cta">Contacto</a></li>
+    </ul>
+    <button class="nav-hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+  </nav>
+
+  <section id="inicio">
+    <div class="hero-bg"></div>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <h1 class="hero-title">No fabricamos de todo.<br>Fabricamos campers.</h1>
+      <p class="hero-subtitle">Diseño europeo. Construidas artesanalmente en Bolivia.</p>
+    </div>
+  </section>
+
+  <div class="carrusel-section reveal">
+    <div class="carrusel-wrapper">
+      <div class="carrusel-track" id="track">
+        <div class="carrusel-slide active"><img src="https://i.ibb.co/j90ys50S/Dise-o-sin-t-tulo-16.png" alt="Pico Tunari Cochabamba" decoding="async" fetchpriority="high"></div>
+        <div class="carrusel-slide next"><img src="https://i.ibb.co/tpy1QJY5/VUmax-noche-nit-Porxu-Camper.png" alt="VUmax de noche" loading="lazy" decoding="async"></div>
+        <div class="carrusel-slide prev"><img src="https://i.ibb.co/B2ZNRWPd/VUmax-offroad-Porxu-Camper.png" alt="VUmax offroad" loading="lazy" decoding="async"></div>
+        <div class="carrusel-slide hidden"><img src="https://i.ibb.co/BHS27txW/porxu-camper-VUmax-5.png" alt="VUmax Porxu" loading="lazy" decoding="async"></div>
+        <div class="carrusel-slide hidden"><img src="https://i.ibb.co/hRxbN3ZZ/Generated-Image-September-02-2025-5-58-PM.jpg" alt="Vigo minicamper" loading="lazy" decoding="async"></div>
+        <div class="carrusel-slide hidden"><img src="https://i.ibb.co/Cp7BkCjn/HUK-porxu-camper-2.png" alt="HUK Porxu" loading="lazy" decoding="async"></div>
+        <div class="carrusel-slide hidden"><img src="https://i.ibb.co/tpPVn3zH/porxu-camper-VIGO.jpg" alt="Vigo minicamper" loading="lazy" decoding="async"></div>
+        <div class="carrusel-slide hidden"><img src="https://i.ibb.co/Z1RpLCqY/porxu-camper-vigo-uyuni.png" alt="Vigo Uyuni" loading="lazy" decoding="async"></div>
+        <div class="carrusel-slide hidden"><img src="https://i.ibb.co/7xsWbRLh/porxu-camper-VUlite.png" alt="VUlite" loading="lazy" decoding="async"></div>
+        <div class="carrusel-slide hidden"><img src="https://i.ibb.co/YFSQ9qSZ/porxu-camper.png" alt="Porxu Camper" loading="lazy" decoding="async"></div>
+      </div>
+    </div>
+    <div class="carrusel-nav">
+      <button class="carrusel-btn" id="prevBtn">❮</button>
+      <div class="carrusel-dots" id="dots"></div>
+      <button class="carrusel-btn" id="nextBtn">❯</button>
+    </div>
+  </div>
+
+  <div class="tri-divider on-ink tri-to-paper" aria-hidden="true"><svg viewBox="0 0 100 10" preserveAspectRatio="none"><polygon points="0,10 50,0 100,10"/></svg></div>
+
+  <div class="stats-section reveal">
+    <div class="stats-grid">
+      <div class="stat-col"><div class="stat-main">4</div><span class="stat-tag">MODELOS</span><p class="stat-desc">Un camper para cada gusto</p></div>
+      <div class="stat-col"><div class="stat-main" style="font-size:clamp(14px,2.2vw,26px);letter-spacing:1px;color:var(--ink);line-height:1.4;">MINICAMPER<br>MÓDULO PICKUP<br>CASA RODANTE</div><span class="stat-tag">FORMATOS</span><p class="stat-desc">El que se adapte a tu vida</p></div>
+      <div class="stat-col"><div class="stat-main" style="font-size:clamp(22px,3.2vw,42px);color:var(--ink);line-height:1.1;">EQUIPAMIENTO<br>COMPLETO</div><span class="stat-tag">AUTONOMÍA REAL</span><p class="stat-desc">Energía solar, cocina, baño y dormitorio</p></div>
+    </div>
+  </div>
+
+  <div class="tri-divider on-paper tri-to-ink" aria-hidden="true"><svg viewBox="0 0 100 10" preserveAspectRatio="none"><polygon points="0,10 30,0 100,10"/></svg></div>
+
+  <section id="modelos">
+    <div class="section-header reveal"><p class="section-eyebrow">Nuestra línea</p><h2 class="section-title">Los modelos</h2></div>
+
+    <div class="modelo-feature reveal" onclick="location.href='vigo.html'">
+      <div class="modelo-feature-info">
+        <span class="modelo-feature-eyebrow">El más pedido</span>
+        <div class="modelo-feature-nombre">Vigo</div>
+        <div class="modelo-tipo">Minicamper</div>
+        <p class="modelo-desc">El más ágil de la familia. Mini remolque liviano, fácil de maniobrar, perfecto para explorar rutas donde los remolques grandes no llegan.</p>
+        <div class="modelo-specs"><span class="spec-tag">Liviano</span><span class="spec-tag">Off-road</span><span class="spec-tag">Compacto</span></div>
+        <span class="modelo-feature-link">Ver ficha completa ▸</span>
+      </div>
+      <div class="modelo-feature-img"><img src="https://i.ibb.co/kgQZ22Y4/Gemini-Generated-Image-nfmnkpnfmnkpnfmn.png" loading="lazy" alt="Vigo minicamper"></div>
+    </div>
+
+    <div class="modelo-feature reverse reveal" onclick="location.href='vu.html'">
+      <div class="modelo-feature-info">
+        <span class="modelo-feature-eyebrow">Versión compacta</span>
+        <div class="modelo-feature-nombre">VUlite</div>
+        <div class="modelo-tipo">Módulo pickup — versión compacta</div>
+        <p class="modelo-desc">Versión más corta que cierra la puerta trasera de la camioneta. Ideal para uso diario y aventuras de fin de semana sin sacrificar capacidad esencial.</p>
+        <div class="modelo-specs"><span class="spec-tag">Solar</span><span class="spec-tag">Batería GEL</span><span class="spec-tag">Cama</span><span class="spec-tag">Cocina</span></div>
+        <span class="modelo-feature-link">Ver ficha completa ▸</span>
+      </div>
+      <div class="modelo-feature-img"><img src="https://i.ibb.co/LDQ6wDfV/Gemini-Generated-Image-z0ep43z0ep43z0ep.png" loading="lazy" alt="VUlite módulo pickup"></div>
+    </div>
+
+    <div class="modelo-feature reveal" onclick="location.href='vumax.html'">
+      <div class="modelo-feature-info">
+        <span class="modelo-feature-eyebrow">Cabina completa</span>
+        <div class="modelo-feature-nombre">VUmax</div>
+        <div class="modelo-tipo">Módulo pickup — cabina completa</div>
+        <p class="modelo-desc">El más equipado de la línea. Módulo que se monta sobre la caja de la pickup y ofrece autonomía total: cocina, ducha, baño, cama, electricidad solar y calefacción.</p>
+        <div class="modelo-specs"><span class="spec-tag">300W Solar</span><span class="spec-tag">100Ah GEL</span><span class="spec-tag">Calefón gas</span><span class="spec-tag">Ducha</span><span class="spec-tag">70L agua</span></div>
+        <span class="modelo-feature-link">Ver ficha completa ▸</span>
+      </div>
+      <div class="modelo-feature-img"><img src="https://i.ibb.co/tpNDNZp4/Gemini-Generated-Image-kqdmvgkqdmvgkqdm.png" loading="lazy" alt="VUmax módulo pickup"></div>
+    </div>
+
+    <div class="modelo-feature reverse reveal" onclick="location.href='p8.html'">
+      <div class="modelo-feature-info">
+        <span class="modelo-feature-eyebrow">Próximamente</span>
+        <div class="modelo-feature-nombre">P8</div>
+        <div class="modelo-tipo">Casa rodante — remolque</div>
+        <p class="modelo-desc">La casa rodante de Porxu Camper. Remolque con todos los equipos de la VUmax en un formato más espacioso, pensado para viajes largos y familias.</p>
+        <div class="modelo-specs"><span class="spec-tag">Remolque</span><span class="spec-tag">Solar</span><span class="spec-tag">Autónomo</span><span class="spec-tag">Familia</span></div>
+        <span class="modelo-feature-link">Ver ficha completa ▸</span>
+      </div>
+      <div class="modelo-feature-img" style="position:relative;"><img src="https://i.ibb.co/XZLXcGHD/Gemini-Generated-Image-uv15xkuv15xkuv15.png" loading="lazy" alt="P8 casa rodante"><div class="modelo-badge">PRÓXIMO</div></div>
+    </div>
+  </section>
+
+  <section id="comparativa">
+    <div class="section-header reveal"><p class="section-eyebrow">Comparativa</p><h2 class="section-title">¿Cuál es tu camper?</h2></div>
+    <div class="comparativa-scroll">
+      <div class="comparativa-grid">
+        
+        <div class="comparativa-card reveal">
+          <div class="card-title">VIGO</div>
+          <div class="card-subtitle">Mini camper<span>Remolque</span></div>
+          <div class="card-specs">
+            <div class="spec-row"><span class="spec-icon">👥</span> Personas <span class="spec-val">2</span></div>
+            <div class="spec-row"><span class="spec-icon">🛏️</span> Cama doble <span class="spec-val">✅</span></div>
+            <div class="spec-row"><span class="spec-icon">🍳</span> Cocina <span class="spec-val">Exterior</span></div>
+            <div class="spec-row"><span class="spec-icon">🚿</span> Ducha <span class="spec-val">Opc. ext.</span></div>
+            <div class="spec-row"><span class="spec-icon">🚽</span> Baño <span class="spec-val">No</span></div>
+            <div class="spec-row"><span class="spec-icon">⚡</span> Batería <span class="spec-val">100 Ah gel</span></div>
+            <div class="spec-row"><span class="spec-icon">☀️</span> Solar <span class="spec-val">150 W</span></div>
+            <div class="spec-row"><span class="spec-icon">💧</span> Agua <span class="spec-val">20 L</span></div>
+            <div class="spec-row"><span class="spec-icon">📏</span> Peso <span class="spec-val">Muy ligero</span></div>
+          </div>
+          <a href="vigo.html" class="card-link">Ver modelo ▸</a>
+        </div>
+
+        <div class="comparativa-card reveal">
+          <div class="card-title">P8</div>
+          <div class="card-subtitle">Casa rodante<span>Remolque</span></div>
+          <div class="card-specs">
+            <div class="spec-row"><span class="spec-icon">👥</span> Personas <span class="spec-val">4</span></div>
+            <div class="spec-row"><span class="spec-icon">🛏️</span> Cama doble <span class="spec-val">✅</span></div>
+            <div class="spec-row"><span class="spec-icon">🛏️</span> Literas <span class="spec-val">Opcional</span></div>
+            <div class="spec-row"><span class="spec-icon">🍳</span> Cocina <span class="spec-val">Interior</span></div>
+            <div class="spec-row"><span class="spec-icon">🚿</span> Ducha <span class="spec-val">Sí</span></div>
+            <div class="spec-row"><span class="spec-icon">🚽</span> Baño <span class="spec-val">Sí</span></div>
+            <div class="spec-row"><span class="spec-icon">⚡</span> Batería <span class="spec-val">150 Ah gel</span></div>
+            <div class="spec-row"><span class="spec-icon">☀️</span> Solar <span class="spec-val">300 W</span></div>
+            <div class="spec-row"><span class="spec-icon">💧</span> Agua <span class="spec-val">80 L</span></div>
+            <div class="spec-row"><span class="spec-icon">📏</span> Largo <span class="spec-val">4300 mm</span></div>
+          </div>
+          <a href="p8.html" class="card-link">Ver modelo ▸</a>
+        </div>
+
+        <div class="comparativa-card reveal">
+          <div class="card-title">VUlite</div>
+          <div class="card-subtitle">Pickup camper<span>Módulo</span></div>
+          <div class="card-specs">
+            <div class="spec-row"><span class="spec-icon">👥</span> Personas <span class="spec-val">2</span></div>
+            <div class="spec-row"><span class="spec-icon">🛏️</span> Cama doble <span class="spec-val">✅</span></div>
+            <div class="spec-row"><span class="spec-icon">🍳</span> Cocina <span class="spec-val">Interior</span></div>
+            <div class="spec-row"><span class="spec-icon">🚿</span> Ducha <span class="spec-val">Opcional</span></div>
+            <div class="spec-row"><span class="spec-icon">🚽</span> Baño <span class="spec-val">Opcional</span></div>
+            <div class="spec-row"><span class="spec-icon">⚡</span> Batería <span class="spec-val">150 Ah gel</span></div>
+            <div class="spec-row"><span class="spec-icon">☀️</span> Solar <span class="spec-val">300 W</span></div>
+            <div class="spec-row"><span class="spec-icon">💧</span> Agua <span class="spec-val">Completo</span></div>
+            <div class="spec-row"><span class="spec-icon">📏</span> Largo <span class="spec-val">3900 mm</span></div>
+          </div>
+          <a href="vu.html" class="card-link">Ver modelo ▸</a>
+        </div>
+
+        <div class="comparativa-card reveal">
+          <div class="card-title">VUmax</div>
+          <div class="card-subtitle">Pickup premium<span>Módulo</span></div>
+          <div class="card-specs">
+            <div class="spec-row"><span class="spec-icon">👥</span> Personas <span class="spec-val">3</span></div>
+            <div class="spec-row"><span class="spec-icon">🛏️</span> Cama <span class="spec-val">Doble + extra</span></div>
+            <div class="spec-row"><span class="spec-icon">🍳</span> Cocina <span class="spec-val">Interior</span></div>
+            <div class="spec-row"><span class="spec-icon">🚿</span> Ducha <span class="spec-val">Sí</span></div>
+            <div class="spec-row"><span class="spec-icon">🚽</span> Baño <span class="spec-val">Sí</span></div>
+            <div class="spec-row"><span class="spec-icon">⚡</span> Batería <span class="spec-val">150 Ah gel</span></div>
+            <div class="spec-row"><span class="spec-icon">☀️</span> Solar <span class="spec-val">300 W</span></div>
+            <div class="spec-row"><span class="spec-icon">💧</span> Agua <span class="spec-val">80 L</span></div>
+            <div class="spec-row"><span class="spec-icon">📏</span> Peso <span class="spec-val">750 kg</span></div>
+          </div>
+          <a href="vumax.html" class="card-link">Ver modelo ▸</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <div class="diag-strip reveal">
+    <div class="diag-word" aria-hidden="true">PROCESO</div>
+    <div class="diag-panel"><img src="https://i.ibb.co/Wvbm6qZw/Chat-GPT-Image-5-jul-2026-09-38-11-p-m.png" alt="Fabricación taller Porxu Camper"></div>
+    <div class="diag-panel"><img src="https://i.ibb.co/hFKTYnNy/pomelli-photoshoot-image-1-1-0606-7.jpg" alt="Camper Porxu en taller"></div>
+    <div class="diag-panel"><img src="https://i.ibb.co/tpwZh8JQ/Captura-de-pantalla-2026-06-05-194443.png" alt="Estructura camper Porxu" loading="lazy" decoding="async"></div>
+    <div class="diag-panel"><img src="https://i.ibb.co/B2ZNRWPd/VUmax-offroad-Porxu-Camper.png" alt="VUmax offroad" loading="lazy" decoding="async"></div>
+    <div class="diag-panel"><img src="https://i.ibb.co/tpy1QJY5/VUmax-noche-nit-Porxu-Camper.png" alt="VUmax de noche" loading="lazy" decoding="async"></div>
+  </div>
+
+  <div class="tri-divider on-ink tri-to-paper" aria-hidden="true"><svg viewBox="0 0 100 10" preserveAspectRatio="none"><polygon points="0,10 20,0 40,7 60,1 80,7 100,0 100,10"/></svg></div>
+
+  <section id="nosotros">
+    <div class="nosotros-inner">
+      <div class="nosotros-top">
+        <div class="nosotros-text reveal">
+          <p class="section-eyebrow">Quiénes somos</p>
+          <h2 class="nosotros-title">Porxu<br>Camper</h2>
+          <p class="nosotros-body">Somos una empresa boliviana que <strong>fabrica campers artesanales</strong> en Cochabamba. Cada unidad se construye a mano, con materiales seleccionados y adaptados a las exigencias del territorio boliviano.</p>
+          <p class="nosotros-body">No fabricamos en serie. <strong>Cada camper es única</strong> — diseñada, soldada y ensamblada pensando en el cliente que la va a usar y en los caminos que va a recorrer.</p>
+          <p class="nosotros-body">Altiplano, selva, ripio, nieve. <strong>Hecho para todo.</strong></p>
+        </div>
+        <div class="nosotros-galeria reveal">
+          <div class="galeria-foto foto-a"><img src="https://i.ibb.co/Wvbm6qZw/Chat-GPT-Image-5-jul-2026-09-38-11-p-m.png" loading="lazy" alt="Fabricación taller"></div>
+          <div class="galeria-foto foto-b"><img src="https://i.ibb.co/hFKTYnNy/pomelli-photoshoot-image-1-1-0606-7.jpg" loading="lazy" alt="Camper Porxu en taller"></div>
+          <div class="galeria-foto foto-c"><img src="https://i.ibb.co/tpwZh8JQ/Captura-de-pantalla-2026-06-05-194443.png" loading="lazy" alt="Estructura camper"></div>
+        </div>
+      </div>
+      <div class="nosotros-valores reveal">
+        <div class="valor-card"><span class="valor-icon-big"></span><strong>Fabricación artesanal</strong><p>Cada unidad construida a mano en Cochabamba, Bolivia</p></div>
+        <div class="valor-card"><span class="valor-icon-big"></span><strong>Diseñado para Bolivia</strong><p>Probado en altiplano, ripio, selva y nieve</p></div>
+        <div class="valor-card"><span class="valor-icon-big"></span><strong>Autonomía real</strong><p>Solar, agua, gas y calefacción — sin depender de servicios</p></div>
+        <div class="valor-card"><span class="valor-icon-big"></span><strong>Soporte post-venta</strong><p>Acompañamos al cliente antes, durante y después</p></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="tri-divider on-paper tri-to-ink" aria-hidden="true"><svg viewBox="0 0 100 10" preserveAspectRatio="none"><polygon points="0,10 70,0 100,10"/></svg></div>
+
+  <section id="faqs">
+    <div class="section-header reveal"><p class="section-eyebrow">Preguntas frecuentes</p><h2 class="section-title">FAQs</h2></div>
+    <div class="faqs-inner"><div class="faqs-grid">
+      <div class="faq-item reveal"><div class="faq-question">¿Por qué elegir una Porxu Camper?<div class="faq-icon">▲</div></div><div class="faq-answer">Porque una camper no es una caja de chapa montada sobre una camioneta. Una camper está diseñada para viajar, dormir, cocinar y vivir en ella durante muchos años. Debe soportar caminos difíciles, lluvia, frío, calor, vibraciones y miles de kilómetros sin que aparezcan filtraciones, ruidos o problemas estructurales. Porxu Camper nació con una visión inspirada en Europa, donde la cultura camper lleva décadas evolucionando. Esa experiencia es la base de nuestra forma de diseñar y fabricar, adaptándola a las condiciones y caminos de Bolivia. Por eso, antes de comparar precios, compare cómo está construida cada camper.</div></div>
+      <div class="faq-item reveal"><div class="faq-question">¿En qué camionetas se puede instalar?<div class="faq-icon">▲</div></div><div class="faq-answer">Fabricamos cada camper a medida de la camioneta del cliente. Trabajamos con la mayoría de pickups de doble cabina disponibles en el mercado, como Toyota Hilux, Ford Ranger, Nissan Frontier, Mitsubishi L200, Isuzu D-Max, Volkswagen Amarok, JAC T9, Dongfeng Rich 6 y otras de características similares.</div></div>
+      <div class="faq-item reveal"><div class="faq-question">¿Necesito modificar mi camioneta?<div class="faq-icon">▲</div></div><div class="faq-answer">No. La instalación no requiere cortar, perforar ni realizar modificaciones permanentes en la camioneta. La camper se fija mediante un sistema diseñado para que pueda retirarse cuando lo desees.</div></div>
+      <div class="faq-item reveal"><div class="faq-question">¿Puedo quitar la camper cuando no la utilice?<div class="faq-icon">▲</div></div><div class="faq-answer">Sí. La camper es completamente desmontable. Puedes retirarla para utilizar la camioneta como vehículo de uso diario y volver a instalarla cuando quieras viajar.</div></div>
+      <div class="faq-item reveal"><div class="faq-question">¿Qué incluye el precio?<div class="faq-icon">▲</div></div><div class="faq-answer">Cada modelo incluye el equipamiento especificado en su ficha técnica. También ofrecemos diferentes accesorios y opciones para que cada cliente configure su camper según sus necesidades y presupuesto.</div></div>
+      <div class="faq-item reveal"><div class="faq-question">¿Puedo personalizar la camper?<div class="faq-icon">▲</div></div><div class="faq-answer">Sí. Ofrecemos diferentes opciones de personalización tanto en el equipamiento como en determinados acabados y accesorios, siempre que sean compatibles con el diseño y la seguridad del vehículo.</div></div>
+      <div class="faq-item reveal"><div class="faq-question">¿Cuánto tiempo tarda la fabricación?<div class="faq-icon">▲</div></div><div class="faq-answer">El plazo depende del modelo y de la carga de trabajo del taller. Al momento de realizar la reserva te informaremos una fecha estimada de entrega y te mantendremos informado durante todo el proceso.</div></div>
+      <div class="faq-item reveal"><div class="faq-question">¿Las campers están preparadas para caminos difíciles?<div class="faq-icon">▲</div></div><div class="faq-answer">Sí. Han sido diseñadas pensando en las condiciones de Bolivia, incluyendo carreteras asfaltadas, caminos de tierra, ripio y zonas de gran altitud. La estructura busca ofrecer resistencia, durabilidad y un buen comportamiento durante el viaje.</div></div>
+      <div class="faq-item reveal"><div class="faq-question">¿Son cómodas para viajar en cualquier época del año?<div class="faq-icon">▲</div></div><div class="faq-answer">Sí. Nuestras campers incorporan aislamiento térmico para mejorar el confort tanto en climas fríos como cálidos. La sensación interior dependerá también de la temperatura exterior y de la ventilación utilizada.</div></div>
+      <div class="faq-item reveal"><div class="faq-question">¿Qué garantía ofrecen?<div class="faq-icon">▲</div></div><div class="faq-answer">Todas nuestras campers cuentan con garantía contra defectos de fabricación. Además, ofrecemos soporte y asesoramiento después de la entrega para resolver cualquier consulta relacionada con el uso del producto.</div></div>
+      <div class="faq-item reveal"><div class="faq-question">¿Cómo es el proceso de compra?<div class="faq-icon">▲</div></div><div class="faq-answer">Una vez aceptada la cotización, programamos una reunión para formalizar el pedido. Como medida de seguridad para ambas partes, firmamos un <strong>contrato de fabricación con reconocimiento de firmas ante notario</strong>. Posteriormente, el cliente realiza el pago del anticipo, que normalmente es del <strong>70 % del valor del proyecto</strong>. A partir de ese momento, iniciamos la fabricación.</div></div>
+      <div class="faq-item reveal"><div class="faq-question">¿Puedo visitar el taller antes de comprar?<div class="faq-icon">▲</div></div><div class="faq-answer">Sí. Con previa coordinación estaremos encantados de recibirte para mostrarte los modelos disponibles y los proyectos que se encuentren en fabricación.</div></div>
+      <div class="faq-item reveal"><div class="faq-question">¿Realizan envíos a todo Bolivia?<div class="faq-icon">▲</div></div><div class="faq-answer">Depende del producto. En el caso de nuestras MINIcampers (remolques), sí podemos coordinar el envío a cualquier departamento de Bolivia. En cambio, las pickup campers (módulos para camioneta) deben instalarse en nuestro taller para asegurar que todo funcione correctamente.</div></div>
+      <div class="faq-item reveal"><div class="faq-question">¿Qué mantenimiento necesita una camper?<div class="faq-icon">▲</div></div><div class="faq-answer">El mantenimiento es sencillo y consiste principalmente en revisiones periódicas de fijaciones, limpieza, cuidado de los sellados y comprobación del funcionamiento de los diferentes sistemas y accesorios.</div></div>
+      <div class="faq-item reveal"><div class="faq-question">¿Cómo puedo solicitar una cotización?<div class="faq-icon">▲</div></div><div class="faq-answer">Puedes escribirnos por WhatsApp, llamarnos o completar el formulario de contacto de nuestra página web. Te asesoraremos para encontrar el modelo que mejor se adapte a tu camioneta y a la forma en que deseas viajar.</div></div>
+    </div></div>
+  </section>
+
+  <div class="tri-divider on-ink tri-to-paper" aria-hidden="true"><svg viewBox="0 0 100 10" preserveAspectRatio="none"><polygon points="0,0 100,10 0,10"/></svg></div>
+
+  <section id="contacto">
+    <div class="contacto-inner-new">
+      <div class="contacto-left reveal">
+        <p class="section-eyebrow">Hablemos</p>
+        <h2 class="section-title-contacto">Listo para<br><span style="color:var(--steel)">viajar?</span></h2>
+        <p class="contacto-desc">Quieres una camper? Tienes preguntas sobre los modelos? Escríbenos directamente, respondemos rápido.</p>
+        <div class="contacto-datos-new">
+          <a href="https://wa.me/59175997125" class="contacto-dato-new" target="_blank"><div class="dato-icon-new"></div><div class="dato-info-new"><small>WHATSAPP PRINCIPAL</small><strong>+591 75997125</strong></div></a>
+          <a href="https://wa.me/59172776946" class="contacto-dato-new" target="_blank"><div class="dato-icon-new"></div><div class="dato-info-new"><small>WHATSAPP SECUNDARIO</small><strong>+591 72776946</strong></div></a>
+          <a href="mailto:porxucamper@gmail.com" class="contacto-dato-new"><div class="dato-icon-new"></div><div class="dato-info-new"><small>EMAIL</small><strong>porxucamper@gmail.com</strong></div></a>
+          <div class="contacto-dato-new"><div class="dato-icon-new"></div><div class="dato-info-new"><small>TALLER Y SHOWROOM</small><strong>Cochabamba, Bolivia</strong></div></div>
+        </div>
+      </div>
+      <div class="contacto-right reveal">
+        <div class="contacto-mapa-new"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d500!2d-66.2513595!3d-17.3915898!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x93e375487dd40011:0x291f88abef54d737!2sPorxu%20Camper!5e0!3m2!1ses!2ses!4v1" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe></div>
+        <div class="horario-card">
+          <div class="horario-title">HORARIO DE ATENCIÓN</div>
+          <div class="horario-row"><span>Lunes - Viernes</span><span>9:00 - 18:00</span></div>
+          <div class="horario-row"><span>Sábado</span><span>9:00 - 13:00</span></div>
+          <div class="horario-row"><span>WhatsApp</span><span><strong>Respuesta en 24h</strong></span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="tunari-banner" aria-label="Pico Tunari, Cochabamba">
+    <img src="https://i.ibb.co/j90ys50S/Dise-o-sin-t-tulo-16.png" alt="Silueta del Pico Tunari en Cochabamba">
+    <div class="tunari-content">
+      <h2>Campers y Casas Rodantes en Bolivia</h2>
+      <p><strong>No fabricamos de todo. Fabricamos campers.</strong></p>
+      <p>En Porxu Camper nos dedicamos exclusivamente al diseño y fabricación de campers. Esa especialización nos permite concentrar toda nuestra experiencia en crear unidades funcionales, resistentes y duraderas, construidas artesanalmente con procesos profesionales y una filosofía de fabricación europea.</p>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-top">
+      <div class="footer-brand-col">
+        <div class="footer-brand-name">PORXU <span>CAMPER</span></div>
+        <p class="footer-brand-desc">Fabricamos campers artesanales en Cochabamba, Bolivia. Diseñados para el altiplano, la montaña y la selva.</p>
+        <div class="footer-social">
+          <a href="https://www.instagram.com/porxucamper" target="_blank" class="social-btn" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
+          <a href="https://www.facebook.com/porxucamper" target="_blank" class="social-btn" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.844v3.168h2.844v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title">MODELOS</div>
+        <ul>
+          <li><a href="vigo.html">Vigo</a></li>
+          <li><a href="vu.html">VUlite</a></li>
+          <li><a href="vumax.html">VUmax</a></li>
+          <li><a href="p8.html">P8</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title">EMPRESA</div>
+        <ul>
+          <li><a href="#nosotros">Quiénes somos</a></li>
+          <li><a href="#faqs">Preguntas frecuentes</a></li>
+          <li><a href="#contacto">Contacto</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title">CONTACTO</div>
+        <ul>
+          <li><a href="https://wa.me/59175997125">+591 75997125</a></li>
+          <li><a href="mailto:porxucamper@gmail.com">porxucamper@gmail.com</a></li>
+          <li><span>Cochabamba, Bolivia</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span class="footer-copy">© 2025 Porxu Camper. Todos los derechos reservados.</span>
+      <span class="footer-made">Hecho en Bolivia</span>
+    </div>
+  </footer>
+
+  <div class="whatsapp-float">
+    <span class="whatsapp-tooltip">Escríbenos</span>
+    <a href="https://wa.me/59175997125" class="whatsapp-btn" target="_blank" aria-label="WhatsApp">
+      <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+    </a>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      document.querySelectorAll('img').forEach(img => {
+        if (img.complete) img.classList.add('loaded');
+        else img.addEventListener('load', () => img.classList.add('loaded'));
+      });
+      const hamburger = document.getElementById('hamburger');
+      const navLinks = document.getElementById('navLinks');
+      if(hamburger && navLinks) {
+        hamburger.addEventListener('click', () => {
+          hamburger.classList.toggle('active');
+          navLinks.classList.toggle('open');
+        });
+        navLinks.querySelectorAll('a').forEach(link => {
+          link.addEventListener('click', () => {
+            hamburger.classList.remove('active');
+            navLinks.classList.remove('open');
+          });
+        });
+      }
+      const track = document.getElementById('track');
+      if(track) {
+        const slides = Array.from(track.querySelectorAll('.carrusel-slide'));
+        const dotsContainer = document.getElementById('dots');
+        const prevBtn = document.getElementById('prevBtn');
+        const nextBtn = document.getElementById('nextBtn');
+        let currentSlide = 0;
+        slides.forEach((_, i) => {
+          const dot = document.createElement('button');
+          dot.classList.add('carrusel-dot');
+          if (i === 0) dot.classList.add('active');
+          dot.addEventListener('click', () => goToSlide(i));
+          dotsContainer.appendChild(dot);
+        });
+        function updateClasses() {
+          const dots = dotsContainer.querySelectorAll('.carrusel-dot');
+          slides.forEach((slide, i) => {
+            slide.className = 'carrusel-slide';
+            if (i === currentSlide) slide.classList.add('active');
+            else if (i === (currentSlide - 1 + slides.length) % slides.length) slide.classList.add('prev');
+            else if (i === (currentSlide + 1) % slides.length) slide.classList.add('next');
+            else slide.classList.add('hidden');
+            dots[i].classList.toggle('active', i === currentSlide);
+          });
+        }
+        function goToSlide(index) { currentSlide = index; updateClasses(); }
+        prevBtn.addEventListener('click', () => goToSlide((currentSlide - 1 + slides.length) % slides.length));
+        nextBtn.addEventListener('click', () => goToSlide((currentSlide + 1) % slides.length));
+        let autoPlay = setInterval(() => goToSlide((currentSlide + 1) % slides.length), 5000);
+        const carruselSection = document.querySelector('.carrusel-section');
+        carruselSection.addEventListener('mouseenter', () => clearInterval(autoPlay));
+        carruselSection.addEventListener('mouseleave', () => { autoPlay = setInterval(() => goToSlide((currentSlide + 1) % slides.length), 5000); });
+      }
+      document.querySelectorAll('.faq-question').forEach(q => {
+        q.addEventListener('click', () => {
+          const item = q.parentElement;
+          const wasOpen = item.classList.contains('open');
+          document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+          if (!wasOpen) item.classList.add('open');
+        });
+      });
+      const revealElements = document.querySelectorAll('.reveal');
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) { entry.target.classList.add('visible'); observer.unobserve(entry.target); }
+        });
+      }, { threshold: 0.1 });
+      revealElements.forEach(el => observer.observe(el));
+    });
+  </script>
+
+</body>
+</html>
