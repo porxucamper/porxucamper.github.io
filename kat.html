@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+<link rel="preconnect" href="https://i.ibb.co">
+<link rel="preload" as="image" href="images/kat-%20porxucamper-exterior-atardecer.webp">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%230f0f0f' rx='16'/%3E%3Ctext x='50' y='72' font-family='sans-serif' font-size='65' font-weight='900' fill='%23F5C000' text-anchor='middle'%3EP%3C/text%3E%3C/svg%3E">
+
+<title>KAT — Porxu Camper | Mini Caravana Remolque en Bolivia</title>
+<meta name="description" content="KAT — Mini caravana remolque. Todo lo que necesitas, en menos espacio: baño completo, cocina, refrigerador, calefón, 100Ah batería, inversor 2000W y solar 150W. Porxu Camper Bolivia.">
+<meta property="og:title" content="KAT — Porxu Camper Bolivia">
+<meta property="og:description" content="Mini caravana remolque compacta por fuera, completa por dentro. Baño, cocina, refrigerador, calefón y energía solar.">
+<meta property="og:image" content="images/kat-%20porxucamper-exterior-atardecer.webp">
+<link rel="canonical" href="https://porxucamper.github.io/kat.html">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@300;400;600;700;800;900&family=Barlow:wght@300;400;500&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --ink: #0a0a0a; --ink2: #161616; --ink3: #1f1f1f;
+  --paper: #f5f4f1; --paper2: #e8e6e1; --paper3: #dcd9d2;
+  --steel: #7a7a76; --steel-l: #9c9c97;
+  --line-d: rgba(255,255,255,0.12); --line-l: rgba(10,10,10,0.14);
+  --white: #ffffff; --black: #000000;
+  --font-display: 'Barlow Condensed', sans-serif; --font-body: 'Barlow', sans-serif; --font-mono: 'JetBrains Mono', monospace;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; overflow-x: hidden; max-width: 100%; }
+body { background: var(--ink); color: var(--white); font-family: var(--font-body); overflow-x: hidden; max-width: 100vw; }
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: var(--ink); }
+::-webkit-scrollbar-thumb { background: var(--white); border-radius: 0; }
+
+img { opacity: 0; transition: opacity 0.5s ease, transform 0.8s ease; background-color: transparent; }
+img.loaded { opacity: 1; }
+
+.reveal { opacity: 0; transform: translateY(40px); transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1); }
+.reveal.visible { opacity: 1; transform: translateY(0); }
+
+nav { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; display: flex; align-items: center; justify-content: space-between; padding: 0 48px; height: 100px; background: rgba(10,10,10,0.92); backdrop-filter: blur(16px) saturate(120%); border-bottom: 1px solid var(--line-d); }
+.nav-logo { display: flex; align-items: center; text-decoration: none; }
+.nav-logo img { height: 100px; }
+.nav-links { display: flex; align-items: center; gap: 40px; list-style: none; }
+.nav-links a { font-family: var(--font-display); font-weight: 600; font-size: 14px; letter-spacing: 2px; text-transform: uppercase; color: rgba(255,255,255,0.65); text-decoration: none; transition: color 0.2s; position: relative; }
+.nav-links a::after { content: ''; position: absolute; bottom: -6px; left: 0; right: 0; height: 1px; background: var(--white); transform: scaleX(0); transform-origin: left; transition: transform 0.25s; }
+.nav-links a:hover { color: var(--white); }
+.nav-links a:hover::after { transform: scaleX(1); }
+.nav-cta { background: var(--white) !important; color: var(--ink) !important; padding: 10px 22px !important; border-radius: 0; }
+.nav-cta:hover { background: var(--paper2) !important; }
+.nav-cta::after { display: none !important; }
+.nav-hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; background: none; border: none; padding: 8px; z-index: 1001; }
+.nav-hamburger span { width: 24px; height: 1px; background: var(--white); display: block; transition: all 0.3s ease; }
+.nav-hamburger.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+.nav-hamburger.active span:nth-child(2) { opacity: 0; }
+.nav-hamburger.active span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+
+.modelo-hero { position: relative; width: 100%; height: 100vh; min-height: 600px; overflow: hidden; display: flex; align-items: flex-end; padding-top: 100px; background: var(--ink); }
+.modelo-hero-bg { position: absolute; inset: 0; width: 100%; height: 100%; background-size: cover; background-position: center center; background-attachment: fixed; background-color: #0a0a0a; }
+.modelo-hero-overlay { position: absolute; inset: 0; pointer-events: none; background: linear-gradient(180deg, rgba(10,10,10,0.2) 0%, rgba(10,10,10,0.1) 40%, rgba(10,10,10,0.8) 78%, var(--ink) 100%); }
+.modelo-hero-content { position: relative; z-index: 2; max-width: 980px; width: 100%; margin: 0 auto; padding: 0 48px clamp(10px, 1.5vh, 24px); }
+.modelo-hero-eyebrow { font-family: var(--font-mono); font-size: 11px; font-weight: 500; letter-spacing: 3px; text-transform: uppercase; color: var(--steel-l); margin-bottom: 12px; display: flex; align-items: center; gap: 8px; }
+.modelo-hero-eyebrow::before { content: '▲'; font-size: 8px; color: var(--white); }
+.modelo-hero-nombre { font-family: var(--font-display); font-size: clamp(80px, 14vw, 160px); font-weight: 900; line-height: 0.85; text-transform: uppercase; color: var(--white); letter-spacing: -2px; margin-bottom: 16px; }
+.modelo-hero-tipo { font-family: var(--font-mono); font-size: 11px; font-weight: 500; letter-spacing: 1.5px; text-transform: uppercase; color: var(--steel-l); margin-bottom: 20px; }
+
+.hero-micro-stats { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 24px; }
+.hero-micro-stats span { font-family: var(--font-mono); font-size: 10px; font-weight: 500; letter-spacing: 1px; text-transform: uppercase; color: rgba(255,255,255,0.7); border: 1px solid var(--line-d); padding: 4px 8px; }
+
+.modelo-hero-desc { font-family: var(--font-body); font-size: 16px; font-weight: 300; color: rgba(255,255,255,0.6); max-width: 480px; line-height: 1.6; }
+
+.modelo-stats { background: var(--ink2); border-top: 1px solid var(--line-d); border-bottom: 1px solid var(--line-d); padding: 0; display: grid; grid-template-columns: repeat(5, 1fr); }
+.stat-item { padding: 28px 24px; text-align: center; border-right: 1px solid var(--line-d); }
+.stat-item:last-child { border-right: none; }
+.stat-val { font-family: var(--font-display); font-size: 32px; font-weight: 900; color: var(--white); line-height: 1; }
+.stat-lbl { font-family: var(--font-mono); font-size: 10px; font-weight: 500; letter-spacing: 2px; text-transform: uppercase; color: var(--steel-l); margin-top: 6px; }
+
+.section-pad { padding: 160px 48px; overflow: hidden; }
+.section-inner { max-width: 1300px; margin: 0 auto; }
+.section-eyebrow { font-family: var(--font-mono); font-size: 12px; font-weight: 500; letter-spacing: 4px; text-transform: uppercase; color: var(--steel-l); margin-bottom: 16px; display: flex; align-items: center; gap: 10px; }
+.section-eyebrow::before, .section-eyebrow::after { content: '▲'; font-size: 8px; color: var(--white); }
+.section-title { font-family: var(--font-display); font-size: clamp(36px, 6vw, 64px); font-weight: 900; text-transform: uppercase; color: var(--white); line-height: 1; margin-bottom: 60px; }
+
+.gal-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; background: var(--line-d); }
+.gal-item { aspect-ratio: 4/3; position: relative; overflow: hidden; background: var(--ink2); cursor: pointer; }
+.gal-item.wide { grid-column: span 2; aspect-ratio: 16/9; }
+.gal-item img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s ease; }
+.gal-item:hover img { transform: scale(1.05); }
+
+.lightbox { position: fixed; inset: 0; background: rgba(0,0,0,0.95); z-index: 9999; display: none; align-items: center; justify-content: center; padding: 40px; cursor: zoom-out; backdrop-filter: blur(10px); }
+.lightbox.active { display: flex; }
+.lightbox img { max-width: 100%; max-height: 90vh; object-fit: contain; }
+.close-lb { position: absolute; top: 20px; right: 30px; color: white; font-size: 40px; font-weight: 300; cursor: pointer; z-index: 10000; transition: color 0.2s; font-family: var(--font-body); }
+.close-lb:hover { color: var(--steel-l); }
+
+.specs-2col { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--line-d); }
+.specs-block { background: var(--ink2); padding: 48px; }
+.specs-block-title { font-family: var(--font-mono); font-size: 11px; font-weight: 600; letter-spacing: 3px; text-transform: uppercase; color: var(--white); margin-bottom: 32px; padding-bottom: 16px; border-bottom: 1px solid var(--line-d); }
+.s-row { display: flex; justify-content: space-between; padding: 14px 0; border-bottom: 1px solid var(--line-d); gap: 20px; }
+.s-row:last-child { border-bottom: none; }
+.s-row-l { font-size: 14px; color: rgba(255,255,255,0.6); }
+.s-row-v { font-family: var(--font-mono); font-size: 12px; font-weight: 600; color: var(--white); text-align: right; }
+
+.equip-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: var(--line-d); }
+.eq-item { background: var(--ink2); padding: 36px 28px; transition: background 0.3s; }
+.eq-item:hover { background: var(--ink3); }
+.eq-icon { font-size: 24px; margin-bottom: 16px; display: block; }
+.eq-name { font-family: var(--font-display); font-size: 17px; font-weight: 700; color: var(--white); margin-bottom: 8px; text-transform: uppercase; }
+.eq-desc { font-size: 13px; color: var(--steel); line-height: 1.5; }
+
+.colores-row { display: flex; gap: 24px; flex-wrap: wrap; margin-top: 32px; }
+.color-item { text-align: center; }
+.color-item img { width: 220px; max-width: 100%; border-radius: 6px; border: 1px solid var(--line-d); }
+.color-item span { display: block; margin-top: 10px; font-family: var(--font-mono); font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: var(--steel-l); }
+
+.cta-sec { background: var(--paper); padding: 160px 48px; color: var(--ink); }
+.cta-inner { max-width: 1100px; margin: 0 auto; }
+.cta-title { font-family: var(--font-display); font-size: clamp(42px, 7vw, 80px); font-weight: 900; text-transform: uppercase; color: var(--ink); line-height: 1; margin-bottom: 24px; }
+.cta-sub { font-family: var(--font-body); font-size: 16px; font-weight: 300; color: var(--steel); margin-bottom: 48px; }
+.cta-btns { display: flex; gap: 16px; flex-wrap: wrap; }
+.btn-pill { display: inline-flex; align-items: center; gap: 8px; font-family: var(--font-display); font-weight: 700; font-size: 13px; letter-spacing: 2px; text-transform: uppercase; padding: 16px 32px; text-decoration: none; border-radius: 0; cursor: pointer; transition: all 0.2s; border: 1px solid var(--ink); }
+.btn-pill.primary { background: var(--ink); color: var(--white); }
+.btn-pill.primary:hover { background: var(--ink2); padding-left: 38px; }
+.btn-pill.secondary { background: transparent; color: var(--ink); }
+.btn-pill.secondary:hover { background: var(--ink); color: var(--white); padding-left: 38px; }
+
+footer { background: var(--ink); border-top: 1px solid var(--line-d); }
+.footer-top { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; max-width: 1200px; margin: 0 auto; padding: 100px 48px 48px; gap: 48px; }
+.footer-brand-col { padding-right: 40px; }
+.footer-brand-name { font-family: var(--font-display); font-size: 28px; font-weight: 900; letter-spacing: 2px; color: var(--white); margin-bottom: 16px; }
+.footer-brand-name span { color: rgba(255,255,255,0.5); }
+.footer-brand-desc { font-family: var(--font-body); font-size: 14px; color: rgba(255,255,255,0.35); line-height: 1.7; max-width: 280px; }
+.footer-col-title { font-family: var(--font-mono); font-size: 11px; font-weight: 500; letter-spacing: 3px; color: var(--steel-l); margin-bottom: 20px; }
+.footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 12px; }
+.footer-col ul li a, .footer-col ul li span { font-family: var(--font-body); font-size: 14px; color: rgba(255,255,255,0.45); text-decoration: none; transition: color 0.2s; }
+.footer-col ul li a:hover { color: var(--white); }
+.footer-social { display: flex; gap: 12px; margin-top: 24px; }
+.social-btn { width: 40px; height: 40px; border: 1px solid var(--line-d); display: flex; align-items: center; justify-content: center; color: rgba(255,255,255,0.4); text-decoration: none; transition: all 0.2s; }
+.social-btn:hover { border-color: var(--white); color: var(--white); }
+.footer-bottom { border-top: 1px solid var(--line-d); padding: 20px 48px; max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; }
+.footer-copy, .footer-made { font-family: var(--font-mono); font-size: 11px; color: rgba(255,255,255,0.25); }
+
+.whatsapp-float { position: fixed; bottom: 28px; right: 28px; z-index: 999; display: flex; flex-direction: column; align-items: flex-end; gap: 12px; }
+.whatsapp-btn { width: 58px; height: 58px; background: #25D366; border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none; box-shadow: 0 8px 26px rgba(37,211,102,0.4); transition: all 0.2s; animation: waPulse 3s ease-in-out infinite; }
+.whatsapp-btn:hover { transform: scale(1.08); background: #20bd5a; box-shadow: 0 12px 32px rgba(37,211,102,0.6); }
+.whatsapp-btn svg { width: 28px; height: 28px; fill: #fff; }
+@keyframes waPulse { 0%,100%{box-shadow:0 8px 26px rgba(37,211,102,0.4)} 50%{box-shadow:0 8px 32px rgba(37,211,102,0.7),0 0 0 10px rgba(37,211,102,0.1)} }
+.whatsapp-tooltip { background: var(--white); color: var(--ink); font-family: var(--font-display); font-size: 13px; font-weight: 600; letter-spacing: 1px; padding: 8px 14px; white-space: nowrap; opacity: 0; transform: translateX(10px); transition: all 0.3s; pointer-events: none; border-radius: 4px; }
+.whatsapp-float:hover .whatsapp-tooltip { opacity: 1; transform: translateX(0); }
+
+@media (max-width: 1024px) { .equip-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 900px) { 
+  .footer-top { grid-template-columns: 1fr 1fr; padding: 48px 24px 36px; } .footer-brand-col { grid-column: span 2; }
+  .specs-2col { grid-template-columns: 1fr; }
+  .gal-grid { grid-template-columns: 1fr 1fr; }
+  .gal-item.wide { grid-column: span 2; }
+}
+@media (max-width: 768px) {
+  nav { padding: 0 20px; height: 76px; }
+  .nav-logo img { height: 70px; }
+  .nav-links { display: flex; flex-direction: column; position: fixed; top: 76px; left: 0; right: 0; bottom: 0; background: rgba(10,10,10,0.98); backdrop-filter: blur(20px); padding: 40px 24px; gap: 32px; border-top: 1px solid var(--line-d); transform: translateX(100%); transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1); overflow-y: auto; }
+  .nav-links.open { transform: translateX(0); }
+  .nav-hamburger { display: flex; }
+  .modelo-hero { height: calc(100vh - 76px); padding-top: 76px; background-attachment: scroll; }
+  .modelo-hero-bg { background-attachment: scroll; }
+  .modelo-hero-content { padding: 0 20px; }
+  .modelo-stats { grid-template-columns: repeat(3, 1fr); }
+  .stat-item { border-bottom: 1px solid var(--line-d); padding: 20px 10px; }
+  .stat-item:nth-child(3n) { border-right: none; }
+  .stat-item:nth-child(4), .stat-item:nth-child(5) { border-bottom: none; }
+  .stat-item:last-child { border-right: none; border-bottom: none; }
+  .section-pad { padding: 100px 20px; }
+  .specs-block { padding: 32px 20px; }
+  .gal-grid { grid-template-columns: 1fr; }
+  .gal-item.wide { grid-column: span 1; aspect-ratio: 4/3; }
+  .equip-grid { grid-template-columns: 1fr; }
+  .cta-sec { padding: 100px 20px; }
+  .cta-btns { flex-direction: column; }
+  .footer-top { grid-template-columns: 1fr 1fr; padding: 40px 20px 32px; gap: 32px; }
+  .footer-brand-col { grid-column: span 2; }
+  .footer-bottom { padding: 20px; flex-direction: column; text-align: center; gap: 6px; }
+}
+</style>
+</head>
+<body>
+
+  <nav id="navbar">
+    <a href="index.html" class="nav-logo"><img src="https://i.ibb.co/Z1fhSxzP/Dise-o-sin-t-tulo-16.png" alt="Porxu Camper"></a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Inicio</a></li>
+      <li><a href="index.html#modelos">Modelos</a></li>
+      <li><a href="index.html#nosotros">Nosotros</a></li>
+      <li><a href="index.html#faqs">FAQs</a></li>
+      <li><a href="index.html#contacto" class="nav-cta">Contacto</a></li>
+    </ul>
+    <button class="nav-hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+  </nav>
+
+  <section class="modelo-hero">
+    <div class="modelo-hero-bg" style="background-image: url('images/kat-%20porxucamper-exterior-atardecer.webp');"></div>
+    <div class="modelo-hero-overlay"></div>
+    <div class="modelo-hero-content">
+      <p class="modelo-hero-eyebrow">Minicamper remolque · Porxu Camper</p>
+      <h1 class="modelo-hero-nombre">KAT</h1>
+      <p class="modelo-hero-tipo">Todo lo que necesitas. En menos espacio</p>
+      <div class="hero-micro-stats">
+        <span>2-3 Personas</span>
+        <span>150W Solar</span>
+        <span>Baño completo con ducha</span>
+        <span>Remolque</span>
+        <span>980kg Peso vacío</span>
+      </div>
+      <p class="modelo-hero-desc">La KAT es la nueva mini caravana de Porxu Camper: compacta por fuera, pero completa por dentro. Integra todo lo necesario para viajar con autonomía y confort — baño, cocina completa, refrigerador, calefón, batería, inversor y paneles solares.</p>
+    </div>
+  </section>
+
+  <div class="modelo-stats">
+    <div class="stat-item"><div class="stat-val">2-3</div><span class="stat-lbl">Personas</span></div>
+    <div class="stat-item"><div class="stat-val">150W</div><span class="stat-lbl">Solar</span></div>
+    <div class="stat-item"><div class="stat-val">Completo</div><span class="stat-lbl">Baño/Ducha</span></div>
+    <div class="stat-item"><div class="stat-val">Remolque</div><span class="stat-lbl">Formato</span></div>
+    <div class="stat-item"><div class="stat-val">980kg</div><span class="stat-lbl">Peso vacío</span></div>
+  </div>
+
+  <div class="section-pad" style="padding-bottom: 0;">
+    <div class="section-inner">
+      <p class="section-eyebrow">Galería</p>
+      <h2 class="section-title">KAT en detalle</h2>
+    </div>
+  </div>
+
+  <div class="gal-grid reveal">
+    <div class="gal-item wide"><img src="images/kat-%20porxucamper-exterior-atardecer.webp" loading="lazy" alt="KAT exterior atardecer"></div>
+    <div class="gal-item"><img src="images/kat-%20porxucamper-interior%20de%20dia.webp" loading="lazy" alt="KAT interior configuración de día"></div>
+    <div class="gal-item"><img src="images/kat-%20porxucamper-interior%20de%20noche.webp" loading="lazy" alt="KAT interior configuración de noche"></div>
+
+    <div class="gal-item"><img src="images/kat-porxucamper-altiplano.webp" loading="lazy" alt="KAT en el altiplano boliviano"></div>
+    <div class="gal-item"><img src="images/kat-porxucamper-pareja.webp" loading="lazy" alt="Pareja con KAT camper"></div>
+    <div class="gal-item"><img src="images/kat-porxucamper%20lago.webp" loading="lazy" alt="KAT junto a un lago"></div>
+
+    <div class="gal-item wide"><img src="images/kat-porxucamper%20noche.webp" loading="lazy" alt="KAT de noche"></div>
+    <div class="gal-item"><img src="images/kat-porxucamper.webp" loading="lazy" alt="KAT camper Porxu"></div>
+
+    <div class="gal-item"><img src="images/kat-porxucamper2.webp" loading="lazy" alt="KAT camper Porxu vista 2"></div>
+    <div class="gal-item wide"><img src="images/kat-porxucamper%20modelo.webp" loading="lazy" alt="Plano distribución interior KAT"></div>
+  </div>
+
+  <div id="lightbox" class="lightbox">
+    <span class="close-lb">&times;</span>
+    <img id="lightbox-img" src="" alt="Imagen ampliada">
+  </div>
+
+  <section class="section-pad" style="background: var(--ink);">
+    <div class="section-inner">
+      <p class="section-eyebrow">Ficha técnica</p>
+      <h2 class="section-title">Especificaciones</h2>
+      <div class="specs-2col reveal">
+        <div class="specs-block">
+          <div class="specs-block-title">Dimensiones y Capacidad</div>
+          <div class="s-row"><span class="s-row-l">Largo total</span><span class="s-row-v">4.100 mm</span></div>
+          <div class="s-row"><span class="s-row-l">Ancho total</span><span class="s-row-v">2.000 mm</span></div>
+          <div class="s-row"><span class="s-row-l">Alto total</span><span class="s-row-v">2.450 mm</span></div>
+          <div class="s-row"><span class="s-row-l">Peso en vacío (aprox.)</span><span class="s-row-v">980 kg</span></div>
+          <div class="s-row"><span class="s-row-l">Altura libre al suelo</span><span class="s-row-v">0,35 m</span></div>
+          <div class="s-row"><span class="s-row-l">Capacidad</span><span class="s-row-v">2-3 personas</span></div>
+        </div>
+        <div class="specs-block">
+          <div class="specs-block-title">Sistema eléctrico</div>
+          <div class="s-row"><span class="s-row-l">Panel solar</span><span class="s-row-v">150 W</span></div>
+          <div class="s-row"><span class="s-row-l">Batería</span><span class="s-row-v">100 Ah</span></div>
+          <div class="s-row"><span class="s-row-l">Inversor</span><span class="s-row-v">2.000 W</span></div>
+          <div class="s-row"><span class="s-row-l">Iluminación</span><span class="s-row-v">LED interior y exterior</span></div>
+        </div>
+        <div class="specs-block">
+          <div class="specs-block-title">Agua y gas</div>
+          <div class="s-row"><span class="s-row-l">Agua limpia</span><span class="s-row-v">80 litros</span></div>
+          <div class="s-row"><span class="s-row-l">Agua gris</span><span class="s-row-v">40 litros</span></div>
+          <div class="s-row"><span class="s-row-l">Calefón</span><span class="s-row-v">Gas GLP instantáneo</span></div>
+          <div class="s-row"><span class="s-row-l">Cocina</span><span class="s-row-v">Fregadero + 2 quemadores</span></div>
+          <div class="s-row"><span class="s-row-l">Refrigerador</span><span class="s-row-v">80 L a 12V</span></div>
+          <div class="s-row"><span class="s-row-l">Ducha</span><span class="s-row-v">Baño completo con ducha</span></div>
+        </div>
+        <div class="specs-block">
+          <div class="specs-block-title">Interior y Construcción</div>
+          <div class="s-row"><span class="s-row-l">Cama</span><span class="s-row-v">Con colchón</span></div>
+          <div class="s-row"><span class="s-row-l">Ventanas</span><span class="s-row-v">Con cortinas blackout</span></div>
+          <div class="s-row"><span class="s-row-l">Puerta de acceso</span><span class="s-row-v">Con cerradura</span></div>
+          <div class="s-row"><span class="s-row-l">Chasis</span><span class="s-row-v">Reforzado, suspensión a muelles</span></div>
+          <div class="s-row"><span class="s-row-l">Configuración</span><span class="s-row-v">Día (salón) / Noche (cama doble)</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-pad" style="background: var(--ink2);">
+    <div class="section-inner">
+      <p class="section-eyebrow">Equipamiento</p>
+      <h2 class="section-title">Todo incluido</h2>
+      <div class="equip-grid reveal">
+        <div class="eq-item"><span class="eq-icon">🛏️</span><div class="eq-name">Cama con colchón</div><p class="eq-desc">Configuración de noche con cama doble, configuración de día con salón y mesa</p></div>
+        <div class="eq-item"><span class="eq-icon">🍳</span><div class="eq-name">Cocina completa</div><p class="eq-desc">Fregadero y 2 quemadores</p></div>
+        <div class="eq-item"><span class="eq-icon">❄️</span><div class="eq-name">Refrigerador</div><p class="eq-desc">80 litros a 12V</p></div>
+        <div class="eq-item"><span class="eq-icon">🔥</span><div class="eq-name">Calefón a gas</div><p class="eq-desc">Agua caliente instantánea</p></div>
+        <div class="eq-item"><span class="eq-icon">⚡</span><div class="eq-name">Batería 100Ah</div><p class="eq-desc">Autonomía eléctrica para todo el equipo</p></div>
+        <div class="eq-item"><span class="eq-icon">🔌</span><div class="eq-name">Inversor 2000W</div><p class="eq-desc">Corriente 220V para tus aparatos</p></div>
+        <div class="eq-item"><span class="eq-icon">☀️</span><div class="eq-name">Panel solar 150W</div><p class="eq-desc">Carga tu batería de forma autónoma</p></div>
+        <div class="eq-item"><span class="eq-icon">🚿</span><div class="eq-name">Baño completo</div><p class="eq-desc">Con ducha incluida</p></div>
+      </div>
+
+      <div class="colores-row reveal">
+        <div class="color-item"><img src="images/kat-porxucamper%20gris.webp" loading="lazy" alt="KAT color gris/negro"><span>Gris / Negro</span></div>
+        <div class="color-item"><img src="images/kat-porxucamper%20blanco.webp" loading="lazy" alt="KAT color blanco"><span>Blanco</span></div>
+        <div class="color-item"><img src="images/kat-porxucamper%20rojo.webp" loading="lazy" alt="KAT color rojo"><span>Rojo</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-sec">
+    <div class="cta-inner reveal">
+      <p class="section-eyebrow" style="color: var(--steel);">Hablemos</p>
+      <h2 class="cta-title">¿Te interesa<br><span style="color:var(--steel)">la KAT?</span></h2>
+      <p class="cta-sub">Consulta disponibilidad, precio y tiempos de fabricación. Escríbenos directo por WhatsApp.</p>
+      <div class="cta-btns">
+        <a href="https://wa.me/59175997125?text=Hola%2C%20me%20interesa%20la%20KAT" target="_blank" class="btn-pill primary" style="border-color: #25D366; background:#25D366;">WhatsApp ▸</a>
+        <a href="index.html#modelos" class="btn-pill secondary">Ver otros modelos</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-top">
+      <div class="footer-brand-col">
+        <div class="footer-brand-name">PORXU <span>CAMPER</span></div>
+        <p class="footer-brand-desc">Fabricamos campers artesanales en Cochabamba, Bolivia. Diseñados para el altiplano, la montaña y la selva.</p>
+        <div class="footer-social">
+          <a href="https://www.instagram.com/porxucamper" target="_blank" class="social-btn" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
+          <a href="https://www.facebook.com/porxucamper" target="_blank" class="social-btn" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.844v3.168h2.844v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title">MODELOS</div>
+        <ul>
+          <li><a href="vigo.html">Vigo</a></li>
+          <li><a href="kat.html">KAT</a></li>
+          <li><a href="vu.html">VUlite</a></li>
+          <li><a href="vumax.html">VUmax</a></li>
+          <li><a href="p8.html">P8</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title">EMPRESA</div>
+        <ul>
+          <li><a href="index.html#nosotros">Quiénes somos</a></li>
+          <li><a href="index.html#faqs">Preguntas frecuentes</a></li>
+          <li><a href="index.html#contacto">Contacto</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title">CONTACTO</div>
+        <ul>
+          <li><a href="https://wa.me/59175997125">+591 75997125</a></li>
+          <li><a href="mailto:porxucamper@gmail.com">porxucamper@gmail.com</a></li>
+          <li><span>Cochabamba, Bolivia</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span class="footer-copy">© 2025 Porxu Camper. Todos los derechos reservados.</span>
+      <span class="footer-made">Hecho en Bolivia</span>
+    </div>
+  </footer>
+
+  <div class="whatsapp-float">
+    <span class="whatsapp-tooltip">Escríbenos</span>
+    <a href="https://wa.me/59175997125" class="whatsapp-btn" target="_blank" aria-label="WhatsApp">
+      <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+    </a>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      document.querySelectorAll('img').forEach(img => {
+        if (img.complete) img.classList.add('loaded');
+        else img.addEventListener('load', () => img.classList.add('loaded'));
+      });
+
+      const hamburger = document.getElementById('hamburger');
+      const navLinks = document.getElementById('navLinks');
+      if(hamburger && navLinks) {
+        hamburger.addEventListener('click', () => {
+          hamburger.classList.toggle('active');
+          navLinks.classList.toggle('open');
+        });
+        navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => navLinks.classList.remove('open')));
+      }
+
+      const lightbox = document.getElementById('lightbox');
+      const lbImg = document.getElementById('lightbox-img');
+      const galImgs = document.querySelectorAll('.gal-item img');
+      galImgs.forEach(img => {
+        img.addEventListener('click', (e) => {
+          lightbox.classList.add('active');
+          lbImg.src = e.target.src;
+        });
+      });
+      lightbox.addEventListener('click', (e) => {
+        if(e.target !== lbImg) lightbox.classList.remove('active');
+      });
+
+      const revealElements = document.querySelectorAll('.reveal');
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) { entry.target.classList.add('visible'); observer.unobserve(entry.target); }
+        });
+      }, { threshold: 0.1 });
+      revealElements.forEach(el => observer.observe(el));
+    });
+  </script>
+
+</body>
+</html>
