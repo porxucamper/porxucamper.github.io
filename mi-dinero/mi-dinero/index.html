@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#15191d">
+<title>Mi dinero</title>
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icon-192.png">
+<link rel="apple-touch-icon" href="icon-192.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="robots" content="noindex,nofollow">
+<style>
+:root{color-scheme:dark;--bg:#101316;--panel:#1a1f24;--line:#303840;--muted:#a7b0b8;--text:#f3f5f6;--accent:#d5e35c;--red:#ff9b8d;--green:#b9e6a4}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font:16px system-ui,-apple-system,Segoe UI,sans-serif}button,input,select,textarea{font:inherit}button{cursor:pointer;border:0;border-radius:12px;padding:13px 15px;font-weight:700;background:var(--accent);color:#16191b}button.secondary{background:#2a3138;color:var(--text);border:1px solid var(--line)}button.danger{background:#472724;color:#ffd4ce;border:1px solid #70403a}.wrap{max-width:780px;margin:auto;padding:17px 13px 40px}.top{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:18px}.brand{font-size:11px;letter-spacing:2px;color:var(--accent);font-weight:800}.top h1{font-size:24px;line-height:1.15;margin:5px 0}.sub,.note{font-size:12px;color:var(--muted);line-height:1.5}.stats{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:14px}.stat{background:var(--panel);border:1px solid var(--line);border-radius:15px;padding:13px;min-width:0}.stat small{display:block;color:var(--muted);font-size:12px;margin-bottom:6px}.stat strong{font-size:clamp(17px,4vw,23px);overflow-wrap:anywhere}.stat:last-child{grid-column:1/-1}.green{color:var(--green)}.red{color:var(--red)}.tabs{display:flex;gap:7px;margin:15px 0;flex-wrap:wrap}.tabs button{flex:1;min-width:95px;padding:12px 8px}.tabs .active{background:var(--accent);color:#15191d}.panel{background:var(--panel);border:1px solid var(--line);border-radius:17px;padding:15px;margin-bottom:13px}.section-title{font-size:17px;margin:0 0 14px}.grid{display:grid;grid-template-columns:1fr 1fr;gap:11px}.field{margin-bottom:12px}.full{grid-column:1/-1}label{display:block;font-size:13px;color:var(--muted);margin:0 0 6px}input,select,textarea{width:100%;background:#111519;color:var(--text);border:1px solid #39434c;border-radius:10px;padding:12px;min-width:0}textarea{resize:vertical;min-height:75px}.form-actions{display:flex;gap:8px;flex-wrap:wrap}.form-actions button{flex:1}.hidden{display:none!important}.entry{padding:13px 0;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;gap:10px}.entry:last-child{border-bottom:0}.entry-title{font-weight:700;overflow-wrap:anywhere}.meta{font-size:12px;color:var(--muted);margin-top:4px;overflow-wrap:anywhere}.amount{font-weight:800;white-space:nowrap;text-align:right}.amount.in{color:var(--green)}.amount.out{color:var(--red)}.smallbtn{font-size:12px;padding:7px 9px;margin-top:7px}.filters{display:grid;grid-template-columns:1fr 1fr;gap:9px}.empty{color:var(--muted);padding:20px 0;text-align:center}.footer{text-align:center;font-size:11px;color:var(--muted);padding:16px 0}.hint{background:#252c32;border-radius:10px;padding:10px 12px;font-size:12px;color:#c8d0d7;margin-bottom:12px}
+@media(max-width:440px){.grid{grid-template-columns:1fr}.full{grid-column:auto}.panel{padding:13px}.top h1{font-size:22px}.entry{gap:7px}.amount{font-size:14px}}
+
+.seg,.stat.tap{}.stat .chg{margin-top:8px;font-size:12px;padding:7px 10px}details#more{margin:4px 0 14px}details#more summary{cursor:pointer;color:var(--accent);font-weight:700;padding:8px 0}.warn{background:#472724;border:1px solid #70403a;color:#ffd4ce;border-radius:12px;padding:12px;font-size:13px;margin-bottom:12px;line-height:1.45}.entry-title{cursor:pointer}.flash{color:var(--green)!important}
+</style>
+</head>
+<body>
+<main class="wrap">
+<header class="top"><div><div class="brand">CONTROL PERSONAL</div><h1>Mi dinero</h1><div class="sub">Lo recibido, lo gastado y lo que te queda</div></div><div class="sub" id="saveState">Guardado en este móvil</div></header>
+<div id="warn" class="warn hidden"></div>
+<div class="stats">
+<div class="stat"><small>Total recibido</small><strong id="sIn" class="green">0,00 Bs</strong><br><button class="secondary chg" onclick="openTot()">Poner o cambiar total</button></div>
+<div class="stat"><small>Total gastado</small><strong id="sOut" class="red">0,00 Bs</strong></div>
+<div class="stat"><small>Saldo disponible (recibido − gastado)</small><strong id="sBal">0,00 Bs</strong></div>
+</div>
+<section id="totPanel" class="panel hidden">
+<h2 class="section-title">Total recibido</h2>
+<div class="field"><label for="totalIn">Monto (Bs)</label><input id="totalIn" inputmode="decimal" autocomplete="off" placeholder="Ej. 25.000"><div class="note" id="totHint"></div></div>
+<div class="form-actions"><button type="button" onclick="setTotal(false)">Guardar como total</button><button type="button" class="secondary" onclick="setTotal(true)">+ Sumar al total</button><button type="button" class="secondary" onclick="closeTot()">Cancelar</button></div>
+<p class="note">“Guardar como total” reemplaza el monto. “Sumar” lo añade a lo que ya tenías, útil cuando recibes más dinero.</p>
+</section>
+<div class="tabs">
+<button id="tabAdd" class="active" onclick="showTab('add')">＋ Anotar gasto</button>
+<button id="tabList" class="secondary" onclick="showTab('list')">Movimientos</button>
+<button id="tabSummary" class="secondary" onclick="showTab('summary')">Resumen y copia</button>
+</div>
+<section id="viewAdd" class="panel">
+<h2 class="section-title" id="formTitle">Anotar un gasto</h2>
+<form id="entryForm" novalidate>
+<div class="field"><label for="amount">Importe (Bs)</label><input id="amount" inputmode="decimal" autocomplete="off" placeholder="0,00"><div class="note" id="amtHint"></div></div>
+<div class="field"><label for="description">Concepto (opcional)</label><input id="description" maxlength="180" placeholder="Ej. Tornillos, comida…"></div>
+<details id="more"><summary>Más datos (opcional)</summary>
+<div class="grid">
+<div class="field"><label for="date">Fecha</label><input id="date" type="date"></div>
+<div class="field"><label for="project">Camper / destino</label><input id="project" list="projects" placeholder="Ej. VUmax"><datalist id="projects"><option value="VUmax"><option value="VIGO"><option value="VU"><option value="VUlite"><option value="KAT"><option value="P8"><option value="Personal / sustento"><option value="General"></datalist></div>
+<div class="field full"><label for="category">Categoría</label><select id="category"><option value="">Sin categoría</option><option>Materiales</option><option>Herramientas</option><option>Transporte</option><option>Pintura y acabados</option><option>Mano de obra</option><option>Alquiler del taller</option><option>Comida y gastos personales</option><option>Vivienda y servicios</option><option>Salud</option><option>Otros</option></select></div>
+<div class="field"><label for="qty">Cantidad</label><input id="qty" inputmode="decimal" placeholder="Ej. 3"></div>
+<div class="field"><label for="unit">Coste por unidad (Bs)</label><input id="unit" inputmode="decimal" placeholder="Ej. 85"></div>
+<div class="field full"><label for="detail">Detalle</label><textarea id="detail" maxlength="1000" placeholder="Tienda, medidas, motivo…"></textarea></div>
+</div></details>
+<div class="form-actions"><button type="submit" id="submitBtn">Guardar gasto</button><button type="button" class="secondary" onclick="resetForm()">Limpiar</button></div>
+<p class="note">Solo el importe es obligatorio. Si pones cantidad y coste por unidad, el importe se calcula solo.</p>
+</form></section>
+<section id="viewList" class="panel hidden">
+<h2 class="section-title">Movimientos</h2>
+<div class="filters"><div><label for="filterProject">Camper / destino</label><select id="filterProject" onchange="render()"><option value="">Todos</option></select></div></div>
+<div id="entries"></div>
+</section>
+<section id="viewSummary" class="panel hidden">
+<h2 class="section-title">Gastos por camper o destino</h2><div id="summaries"></div>
+<hr style="border:0;border-top:1px solid var(--line);margin:18px 0">
+<h3 class="section-title">Copia de seguridad</h3>
+<p class="note">Los datos se guardan en este navegador de este móvil. Exporta una copia regularmente, sobre todo antes de cambiar de móvil o borrar los datos del navegador.</p>
+<div class="form-actions"><button type="button" class="secondary" onclick="exportData()">Exportar copia</button><button type="button" class="secondary" onclick="document.getElementById('importFile').click()">Restaurar copia</button><input id="importFile" type="file" accept=".json,application/json" class="hidden" onchange="importData(event)"></div>
+</section>
+<div class="footer">Aplicación personal · No conectada al sistema de Porxu Camper</div>
+</main>
+<script>
+const STORE='mi_dinero_camper_v1',TKEY='mi_dinero_camper_total_v1';
+let records=[],total=0,editingId=null;
+const $=id=>document.getElementById(id);
+const money=n=>Number(n||0).toLocaleString('es-BO',{minimumFractionDigits:2,maximumFractionDigits:2})+' Bs';
+function parseNum(s){s=String(s==null?'':s).replace(/\s/g,'');if(!s)return NaN;if(/^\d{1,3}(\.\d{3})+$/.test(s))s=s.replace(/\./g,'');else if(s.includes(','))s=s.replace(/\./g,'').replace(',','.');return Number(s)}
+const num2=n=>String(n).replace('.',',');
+function today(){const d=new Date(),off=d.getTimezoneOffset();return new Date(d.getTime()-off*60000).toISOString().slice(0,10)}
+function esc(s){return String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+function storageOk(){try{localStorage.setItem('__t','1');localStorage.removeItem('__t');return true}catch(e){return false}}
+function persist(){try{localStorage.setItem(STORE,JSON.stringify(records));localStorage.setItem(TKEY,String(total));return true}catch(e){return false}}
+function migrate(){const old=records.filter(r=>r.type==='in');if(old.length){total+=old.reduce((s,r)=>s+Number(r.amount||0),0);records=records.filter(r=>r.type!=='in');persist()}}
+function load(){try{const x=JSON.parse(localStorage.getItem(STORE)||'[]');records=Array.isArray(x)?x:[]}catch(e){records=[]}total=Number(localStorage.getItem(TKEY))||0;migrate()}
+function save(msg){if(!persist())alert('No se pudieron guardar los datos. Exporta una copia y revisa el espacio disponible.');else{const s=$('saveState');s.textContent=msg||'Guardado en este móvil';s.className='sub flash';setTimeout(()=>{s.textContent='Guardado en este móvil';s.className='sub'},1800)}render()}
+function showTab(t){['add','list','summary'].forEach(x=>{$('view'+x[0].toUpperCase()+x.slice(1)).classList.toggle('hidden',x!==t);$('tab'+x[0].toUpperCase()+x.slice(1)).className=x===t?'active':'secondary'});render()}
+function openTot(){$('totPanel').classList.remove('hidden');$('totalIn').value=total?num2(total):'';hintTot();$('totalIn').focus()}
+function closeTot(){$('totPanel').classList.add('hidden')}
+function hintTot(){const a=parseNum($('totalIn').value);$('totHint').textContent=$('totalIn').value.trim()?(a>=0?'Se guardará: '+money(a):'Escribe un monto válido, por ejemplo 25000 o 25.000,50'):''}
+function setTotal(add){const a=parseNum($('totalIn').value);if(!Number.isFinite(a)||a<0){alert('Escribe el monto en números.');return}total=add?total+a:a;save('Total actualizado');closeTot()}
+function resetForm(){editingId=null;$('entryForm').reset();$('date').value=today();$('formTitle').textContent='Anotar un gasto';$('submitBtn').textContent='Guardar gasto';$('more').open=false;hint()}
+function hint(){const a=parseNum($('amount').value);$('amtHint').textContent=$('amount').value.trim()?(a>0?'Se guardará: '+money(a):'Escribe un importe válido, por ejemplo 85 o 1.500,50'):''}
+function calc(){if($('qty').value!==''&&$('unit').value!==''){const q=parseNum($('qty').value),u=parseNum($('unit').value);if(Number.isFinite(q)&&Number.isFinite(u))$('amount').value=num2((q*u).toFixed(2))}hint()}
+$('amount').addEventListener('input',hint);$('qty').addEventListener('input',calc);$('unit').addEventListener('input',calc);$('totalIn').addEventListener('input',hintTot);
+$('entryForm').addEventListener('submit',e=>{e.preventDefault();const amount=parseNum($('amount').value);if(!Number.isFinite(amount)||amount<=0){alert('Escribe el importe del gasto.');$('amount').focus();return}
+const q=$('qty').value.trim(),u=$('unit').value.trim(),r={id:editingId||('m'+Date.now().toString(36)+Math.random().toString(36).slice(2,7)),type:'out',date:$('date').value||today(),project:$('project').value.trim()||'General',category:$('category').value||'Sin categoría',description:$('description').value.trim()||'Gasto',qty:q===''?null:parseNum(q),unit:u===''?null:parseNum(u),amount,detail:$('detail').value.trim()};
+if(editingId){const i=records.findIndex(x=>x.id===editingId);if(i>=0)records[i]=r;else records.unshift(r)}else records.unshift(r);
+save(editingId?'Cambios guardados':'Gasto guardado');resetForm();showTab('list')});
+function render(){const out=records.reduce((s,r)=>s+Number(r.amount||0),0),bal=total-out;$('sIn').textContent=money(total);$('sOut').textContent=money(out);$('sBal').textContent=money(bal);$('sBal').className=bal<0?'red':'green';
+const projects=[...new Set(records.map(r=>r.project||'General'))].sort(),sel=$('filterProject'),prev=sel.value;sel.innerHTML='<option value="">Todos</option>'+projects.map(p=>'<option value="'+esc(p)+'">'+esc(p)+'</option>').join('');if(projects.includes(prev))sel.value=prev;
+const list=records.filter(r=>!sel.value||r.project===sel.value).sort((a,b)=>(b.date||'').localeCompare(a.date||''));
+$('entries').innerHTML=list.length?list.map(r=>'<article class="entry"><div style="min-width:0"><div class="entry-title" onclick="editRecord(\''+r.id+'\')">'+esc(r.description)+'</div><div class="meta">'+esc(r.date)+' · '+esc(r.project)+' · '+esc(r.category)+'</div>'+(r.qty!=null&&r.unit!=null?'<div class="meta">'+esc(r.qty)+' × '+money(r.unit)+'</div>':'')+(r.detail?'<div class="meta">'+esc(r.detail)+'</div>':'')+'<button class="smallbtn secondary" onclick="editRecord(\''+r.id+'\')">Editar</button> <button class="smallbtn danger" onclick="deleteRecord(\''+r.id+'\')">Eliminar</button></div><div class="amount out">−'+money(r.amount)+'</div></article>').join(''):'<div class="empty">Todavía no hay gastos. Anota el primero.</div>';
+const g={};records.forEach(r=>{const p=r.project||'General';if(!g[p])g[p]={out:0,count:0};g[p].out+=Number(r.amount)||0;g[p].count++});
+$('summaries').innerHTML=Object.keys(g).length?Object.entries(g).sort((a,b)=>b[1].out-a[1].out).map(([p,v])=>'<article class="entry"><div><div class="entry-title" style="cursor:default">'+esc(p)+'</div><div class="meta">'+v.count+' gastos</div></div><div class="amount out">'+money(v.out)+'</div></article>').join(''):'<div class="empty">El resumen aparecerá cuando anotes gastos.</div>'}
+function editRecord(id){const r=records.find(x=>x.id===id);if(!r)return;showTab('add');editingId=id;$('formTitle').textContent='Editar gasto';$('submitBtn').textContent='Guardar cambios';$('date').value=r.date||today();$('project').value=r.project==='General'?'':r.project;$('category').value=r.category==='Sin categoría'?'':r.category;$('description').value=r.description==='Gasto'?'':r.description;$('qty').value=r.qty==null?'':num2(r.qty);$('unit').value=r.unit==null?'':num2(r.unit);$('amount').value=num2(r.amount);$('detail').value=r.detail||'';$('more').open=true;hint();window.scrollTo({top:0,behavior:'smooth'})}
+function deleteRecord(id){if(!confirm('¿Eliminar este gasto? Esta acción no se puede deshacer.'))return;records=records.filter(x=>x.id!==id);save('Gasto eliminado')}
+function exportData(){const blob=new Blob([JSON.stringify({app:'MiDineroCamper',version:2,exportedAt:new Date().toISOString(),total,records},null,2)],{type:'application/json'}),url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download='copia-mi-dinero-'+today()+'.json';document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),1000)}
+function importData(e){const f=e.target.files&&e.target.files[0];if(!f)return;const reader=new FileReader();reader.onload=()=>{try{const obj=JSON.parse(reader.result);if(obj.app!=='MiDineroCamper'||!Array.isArray(obj.records))throw Error();if(!confirm('Esto reemplazará los datos actuales de este móvil. ¿Quieres continuar?'))return;records=obj.records;total=Number(obj.total)||0;migrate();save('Copia restaurada');alert('Copia restaurada correctamente.')}catch(err){alert('No se reconoce esta copia de seguridad. No se han cambiado los datos.')}e.target.value=''};reader.readAsText(f)}
+if(!storageOk()){$('warn').classList.remove('hidden');$('warn').textContent='Este navegador no permite guardar datos aquí, así que lo que anotes se perderá al cerrar. Abre esta página directamente en Chrome o Safari, no desde una vista previa de WhatsApp o del chat.';$('saveState').textContent='No se puede guardar aquí'}
+load();resetForm();render();if(!total&&!records.length)openTot();
+if('serviceWorker' in navigator)addEventListener('load',()=>navigator.serviceWorker.register('sw.js').catch(()=>{}));
+if(navigator.storage&&navigator.storage.persist)navigator.storage.persist();
+</script>
+</body></html>
