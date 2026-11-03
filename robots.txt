@@ -1,1 +1,1 @@
-User-agent: * Allow: / Sitemap: https://porxucamper.github.io/sitemap.xml
+User-agent: * Allow: / Sitemap: https://porxu.com/sitemap.xml
